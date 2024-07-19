@@ -1,0 +1,3 @@
+# Quarto features and book conventions
+
+As you work on your own book, you might find the following features and conventions useful for inspiration. 

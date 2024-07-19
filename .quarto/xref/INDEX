@@ -1,0 +1,23 @@
+{
+  "index.qmd": {
+    "index.html": "8999db95"
+  },
+  "intro.qmd": {
+    "intro.html": "fe4349e5"
+  },
+  "summary.qmd": {
+    "summary.html": "29e3cb47"
+  },
+  "references.qmd": {
+    "references.html": "de9e8e5b"
+  },
+  "workshop_prep.qmd": {
+    "workshop_prep.html": "fcdaa9e6"
+  },
+  "workshop_guide.qmd": {
+    "workshop_guide.html": "852d338c"
+  },
+  "book_conventions.qmd": {
+    "book_conventions.html": "fe17ab25"
+  }
+}

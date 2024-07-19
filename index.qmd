@@ -1,0 +1,14 @@
+# Workshop Overview {.unnumbered}
+
+In this informal workshop, I will walk through the steps to use the new PsyTeachR book template to create online books. This uses Quarto - a new version of R Markdown - to combine code with text. You can create a very simple Quarto book - I wrote this workshop guide using it - but the PsyTeachR template has more complete settings, placeholders, and conventions for our typical needs. 
+
+If you are unfamiliar with the PsyTeachR suite of books, you can see the website collection here: [https://psyteachr.github.io/](https://psyteachr.github.io/){target="_blank"}.
+
+Some of these examples use the old R Markdown version, so you can see an example of the new Quarto template in the [Applied Data Skills](https://psyteachr.github.io/ads-v3/){target="_blank"} book developed by Dr Emily Nordmann and Prof Lisa DeBruine (who also develops the PsyTeachR book template).
+
+When you are writing your book independently, it's useful to look at the code behind examples to see how they create certain features. For example, Dr Wil Toivo and I are rewriting the [Fundamentals of Quantitative Analysis](https://bartlettje.github.io/quant-fun-v3/){target="_blank"} book and you can see our [github repository](https://github.com/BartlettJE/quant-fun-v3){target="_blank"}.
+
+All of these books are designed to teach data skills as they demonstrate and render code well, but you can use them for any materials using Markdown features. For example, I host the [course information for RM1](https://bartlettje.github.io/RM1_Resources/){target="_blank"} using the book template.
+
+Once you knit them and push any changes to github, you get a url to link to them like any website. This is great for sharing with students as its free and simple to access, and its great for you and demonstrating impact as you share your work with others. 
+

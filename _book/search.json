@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "PsyTeachR Book Template Workshop",
+    "section": "",
+    "text": "Workshop Overview\nIn this informal workshop, I will walk through the steps to use the new PsyTeachR book template to create online books. This uses Quarto - a new version of R Markdown - to combine code with text. You can create a very simple Quarto book - I wrote this workshop guide using it - but the PsyTeachR template has more complete settings, placeholders, and conventions for our typical needs.\nIf you are unfamiliar with the PsyTeachR suite of books, you can see the website collection here: https://psyteachr.github.io/.\nSome of these examples use the old R Markdown version, so you can see an example of the new Quarto template in the Applied Data Skills book developed by Dr Emily Nordmann and Prof Lisa DeBruine (who also develops the PsyTeachR book template).\nWhen you are writing your book independently, it’s useful to look at the code behind examples to see how they create certain features. For example, Dr Wil Toivo and I are rewriting the Fundamentals of Quantitative Analysis book and you can see our github repository.\nAll of these books are designed to teach data skills as they demonstrate and render code well, but you can use them for any materials using Markdown features. For example, I host the course information for RM1 using the book template.\nOnce you knit them and push any changes to github, you get a url to link to them like any website. This is great for sharing with students as its free and simple to access, and its great for you and demonstrating impact as you share your work with others."
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "workshop_prep.html#download-r-and-rstudio",
+    "href": "workshop_prep.html#download-r-and-rstudio",
+    "title": "1  Preparation before the workshop",
+    "section": "1.2 Download R and RStudio",
+    "text": "1.2 Download R and RStudio"
+  },
+  {
+    "objectID": "workshop_prep.html#download-git-and-github",
+    "href": "workshop_prep.html#download-git-and-github",
+    "title": "1  Preparation before the workshop",
+    "section": "1.3 Download git and github",
+    "text": "1.3 Download git and github\nPotentially the most unfamiliar element of this process will be working with git and github. If you have not used it before, git is a version control system which tracks file changes on your computer. github is an online system which uses git to host those changes and make your code available online.\nThere is an installation guide on github, but we have access to a fantastic resource developed by our colleagues in Mathematics and Statistics. They developed an online course on Moodle introducing staff and students to git and github. You will need the enrollment code git_psych_24 to access the course.\nThere are 7 units in total, but for the purposes of this workshop, I would consider 1 and 2 as essential for downloading git/github and using it as a single user to track changes. Reaching this point will be super helpful for following on as easy as possible in the workshop.\nIf you have time, completing unit 3 will give you everything you need if you are only using it on your own. If you plan on writing the book in a team, units 4 and 5 cover being a group project user, then 6 and 7 for advanced features."
+  },
+  {
+    "objectID": "workshop_prep.html#finished",
+    "href": "workshop_prep.html#finished",
+    "title": "1  Preparation before the workshop",
+    "section": "1.4 Finished",
+    "text": "1.4 Finished\nYou are ready to make a book in the workshop!"
+  },
+  {
+    "objectID": "workshop_guide.html",
+    "href": "workshop_guide.html",
+    "title": "2  Workshop plan",
+    "section": "",
+    "text": "To follow along in the workshop if you fall behind, we will complete the following steps."
+  },
+  {
+    "objectID": "book_conventions.html",
+    "href": "book_conventions.html",
+    "title": "3  Quarto features and book conventions",
+    "section": "",
+    "text": "As you work on your own book, you might find the following features and conventions useful for inspiration."
+  },
+  {
+    "objectID": "workshop_prep.html#book-workflow",
+    "href": "workshop_prep.html#book-workflow",
+    "title": "1  Preparation before the workshop",
+    "section": "1.1 Book workflow",
+    "text": "1.1 Book workflow\nFor an overview to show why you need the following the pieces of software, the workflow for creating and editing the book is:\n\n1.1.1 Creating the book\n\n\n\n\n\n1.1.2 Editing the book"
+  }
+]

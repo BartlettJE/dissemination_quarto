@@ -6,4 +6,14 @@ To follow along in the workshop if you fall behind, we will complete the followi
 
 ## Tour of Quarto
 
-## Creating a 
+## Creating the book template
+
+## Creating a github repository
+
+You can either start with this point by creating a repository from scratch with a new folder, or creating a repository from an existing folder without a git component. 
+
+Publish repository to github
+
+## Publish to github pages 
+
+Actions and what to look out for if it does not build 

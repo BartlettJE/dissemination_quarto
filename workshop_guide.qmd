@@ -1,44 +1,54 @@
-# Workshop plan
+# Workshop plan {#workshop_plan}
 
 To follow along in the workshop if you fall behind, we will complete the following steps.
 
 ## Example book
 
+For an example of the new book template, we will explore the new [Fundamentals of Quantitative Analysis](https://bartlettje.github.io/quant-fun-v3/){target="_blank"} book. I have edited the first two chapters to use new Quarto features, so they can provide inspiration for what you can do with the book template. 
+
 ## Creating the book template
+
+If you have not followed the [preparation instructions](#workshop_prep) yet, you need to download the package from Lisa's github. Posit are rapidly developing Quarto, so make sure you have a relatively new version of R and RStudio. 
+
+```{r eval=FALSE}
+devtools::install_github("debruine/booktem")
+```
+
 
 ## Tour of the Quarto book template
 
 ## Creating a github repository
 
-You can either start with this point by creating a repository from scratch with a new folder, or creating a repository from an existing folder without a git component. 
+You can either start with this point by creating a repository from scratch with a new folder, or creating a repository from an existing folder without a git component.
 
 Publish repository to github
 
 ## Tour of github
 
-## Publish to github pages 
+## Publish to github pages
 
-Settings >> Pages. Set to none by default. Need to choose Main and /docs to point Github pages to where it needs to look for the rendered html files. 
+Settings \>\> Pages. Set to none by default. Need to choose Main and /docs to point Github pages to where it needs to look for the rendered html files.
 
-Wait for actions to show as green tick. 
+Wait for actions to show as green tick.
 
 Check back and at the top of the page, it should give you the url for the page link.
 
-Save to browser shortcut, add to repo about for a quick link. 
+Save to browser shortcut, add to repo about for a quick link.
 
-Tip: By default, its set to your github username .github.io and your repository name. If you want to get fancy, you can add a custom domain.  
+Tip: By default, its set to your github username .github.io and your repository name. If you want to get fancy, you can add a custom domain.
 
-Actions and what to look out for if it does not build. 
+Actions and what to look out for if it does not build.
 
-## Commiting and pushing changes 
+## Commiting and pushing changes
 
-Commit messages and future you 
+Commit messages and future you
 
 Reverting changes
 
-## Collaborating on github? 
+## Collaborating on github?
 
-## Start working on your own book! 
+## Start working on your own book!
 
-Start working on your own book in the remaining time we have together. 
+Start working on your own book in the remaining time we have together.
 
+See the next chapter on [Quarto features and book conventions](#quarto_features) for inspiration / example code for the kind of features you can use. 

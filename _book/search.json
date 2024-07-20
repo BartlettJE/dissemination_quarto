@@ -1,0 +1,128 @@
+[
+  {
+    "objectID": "book_conventions.html#quarto-guide",
+    "href": "book_conventions.html#quarto-guide",
+    "title": "3  Quarto features and book conventions",
+    "section": "3.1 Quarto guide",
+    "text": "3.1 Quarto guide\nTo check different features of Quarto, you can see an extensive user guide online."
+  },
+  {
+    "objectID": "book_conventions.html#worked-examples",
+    "href": "book_conventions.html#worked-examples",
+    "title": "3  Quarto features and book conventions",
+    "section": "3.2 Worked examples",
+    "text": "3.2 Worked examples\nIf you look through these books for inspiration, you can check the code to see how they do it.\nDr Wil Toivo and I are rewriting the Fundamentals of Quantitative Analysis book and you can see our github repository.\nYou can also see the Applied Data Skills book developed by Dr Emily Nordmann and Prof Lisa DeBruine, along with their github repository."
+  },
+  {
+    "objectID": "book_conventions.html#common-features",
+    "href": "book_conventions.html#common-features",
+    "title": "3  Quarto features and book conventions",
+    "section": "3.3 Common features",
+    "text": "3.3 Common features\n\n3.3.1 Markdown\nQuarto still uses Markdown for formatting, so you can see this part of the Quarto guide for Markdown Basics.\n\n3.3.1.1 Headers\nThe book template table of contents goes by default to level 3 headers (but you can go to level 6 headers if you really want), so keep in mind what will be a logical nesting of headers, sub-headers etc. You add a hash for each level of header:\n\n# Level 1 header\n\n## Level 2 header\n\n### Level 3 header\n\n\n\n3.3.1.2 Text formatting\nYou make text italics by surrounding it with one star (*italics*), or bold by surrounding it with two stars (**bold**).\nIf you want to give text code formatting, you can add back ticks around it.\n\n`example code`\n\nproduces:\nexample code.\nIf you want to add bullet points, you can use - or *:\n\n- Bullet point 1\n\n- Bullet point 2\n\n- Bullet point 3\n\n\nBullet point 1\nBullet point 2\nBullet point 3\n\nThe same applies to numbered lists:\n\n1. List 1\n\n2. List 2\n\n3. List 3\n\n\nList 1\nList 2\nList 3\n\nOr even sub-lists with a little indent:\n\n1. List 1\n\n    1. Sublist 1\n    \n    2. Sublist 2\n\n2. List 2\n\n\nList 1\n\nSublist 1\nSublist 2\n\nList 2\n\n\n\n3.3.1.3 Links\nYou can add hyperlinks with the form:\n\n[hyperlinks](https://quarto.org/docs/authoring/markdown-basics.html#links-images)\n\nwhere the writing in square brackets is the text, and the link goes in the round brackets. By default, these link within the current page which I find infuriating. So, you can add a little html code to open a new tab with the link:\n\n[hyperlinks](https://quarto.org/docs/authoring/markdown-basics.html#links-images){target=\"_blank\"}\n\n\n\n3.3.1.4 Images\nThere are different ways to add images, where the Markdown version uses a similar format to links which I will demonstrate through this duck:\n\n![This is a duck.](images/Duck.png)\n\n\n\n\nThis is a duck. If Helena is reading this, yes it has a creative commons licence.\n\n\nThere are some cool new Quarto features making it easy to combine multiple images. For example, we can add two ducks and specify we want them in two columns.\n\n::: {#fig-duck layout-ncol=2}\n![](images/images/Duck.png)\n![](images/images/Duck.png)\nDuck 1 (left) and Duck 2 (right). \n:::\n\n\n\n\n\n\n\n\n\n\n\nFigure 3.1: Duck 1 (left) and Duck 2 (right).\n\n\nYou can also reference figures to add little hyperlinks and automatically number them. The title after the hash must start with fig to be registered as a figure, and you can also add tbl to number tables separately.\nFigure 3.1 showed two ducks side by side. You do not even need to type Figure: @fig-duck.\nYou can also use knitr to add figures, and using code chunks has some new handy features using tags. They work in a similar way to code options, but make it easier to add longer captions etc, as shown in Figure 3.2.\n```{r}\n#| label: fig-img-duck\n#| fig.cap: \"This is a longer caption about our beloved duck.\"\n#| fig-alt: \"You can also add alt text to images.\"\n\nknitr::include_graphics(\"images/Duck.png\")\n```\n\n\n\n\n\nFigure 3.2: This is a longer caption about our beloved duck.\n\n\n\n\n\n\n\n3.3.2 Code chunks\nIf you are making a book to show code, there are a couple of features that might be useful.\nAdding code chunks will by default show both the code and output:\n```{r}\nrnorm(n = 5, mean = 10, sd = 2)\n```\n\nrnorm(n = 5, mean = 10, sd = 2)\n\n[1]  9.963190  9.426973  9.473009 10.586076  9.303388\n\n\nThere are several features you can edit by adding different options. For example, if you do not want to show the code, you can set echo=FALSE after the r {r echo=FALSE}:\n\n\n[1]  4.231036  8.731047 13.588353  9.336109 10.932884\n\n\nIf you want to demonstrate code but not execute it - such as to demonstrate inaccurate code, you can set eval=FALSE after the r {r eval=FALSE}:\n\nrnorm(n = 5, mean = 10, sd = 2)\n\n\n\n3.3.3 Callout blocks\nMy personal favourite features, you can highlight content with callout blocks. These range from notes that people might find interesting, to warnings that something could go mortally wrong.\n\n::: {.callout-note}\nThese are notes.\n:::\n\n\n\n\n\n\n\nNote\n\n\n\nThese are notes.\n\n\nYou can change the title by using hashes within the callout. They count as real headers in the Quarto outline. So, if you use one hash, it looks like a level one header which deeply disturbs me, so I like to use four hashes to make more sense in the chapter structure.\n\n::: {.callout-note}\n#### Look at my interesting title\nThese are notes.\n:::\n\n\n\n\n\n\n\nLook at my interesting title\n\n\n\nThese are notes.\n\n\nYou can also make the box collapse by default, which can be handy to hide solutions or obscure tangents.\n\n::: {.callout-note collapse=true}\n#### Please look at me\nSecret secret notes. \n:::\n\n\n\n\n\n\n\nPlease look at me\n\n\n\n\n\nSecret secret notes.\n\n\n\nOther types of callout blocks include:\n\nWarning\n\n\n::: {.callout-warning}\nThese are notes.\n:::\n\n\n\n\n\n\n\nWarning\n\n\n\nThese are warnings.\n\n\n\nImportant\n\n\n::: {.callout-important}\nThis is something important\n:::\n\n\n\n\n\n\n\nImportant\n\n\n\nThis is something important\n\n\n\nTip\n\n\n::: {.callout-tip}\nHere is a handy tip. \n:::\n\n\n\n\n\n\n\nTip\n\n\n\nHere is a handy tip.\n\n\n\nAnd, a caution\n\n\n::: {.callout-caution}\nHere is a caution about something.\n:::\n\n\n\n\n\n\n\nCaution\n\n\n\nHere is a caution about something.\n\n\n\n\n3.3.4 References\nIf you want to add proper references instead of just hyperlinks, you need a .bib file from a reference manager.\nThe .bib file should be in the include folder (unless you point it somewhere else) and you can specify it in the _quarto.yml file through the bibliography entry:\n\nbibliography: include/references.bib\n\n\n\n\n\n\n\nHow do I download and edit a .bib file?\n\n\n\nI use Zotero as a reference manager and its super easy to download a .bib file for a project you are working on. Downloading one entry is a little annoying as you need to export it as BibTex and copy from the file it produces, but if you create a folder to store everything for the book, you can just export the folder each time you add new entries (right click &gt;&gt; export collection &gt;&gt; BibTex format and OK).\nIf you do have the single entry, you can open the .bib file within RStudio and copy the entry in. It will look something like this:\n\n@article{bartlett_power_2022,\n    title = {Power to the {People}: {A} {Beginner}’s {Tutorial} to {Power} {Analysis} using jamovi},\n    volume = {6}\n    ...}\n\nwhich stores all the information for the .csl to pull out and cite/reference as needed.\n\n\nTo cite, you need the code at the start of the bib entry. For example, @bartlett_power_2022 produces Bartlett & Charles (2022) and the full reference will be added to the references chapter.\nDepending on the citation style you want, there are different codes, such as adding it in parentheses [@bartlett_power_2022] (Bartlett & Charles, 2022).\nBy default, the book template has APA style for referencing, but if you need a different referencing style, you can add and specify a different .csl file.\n\ncsl: include/apa.csl\n\n\n\n\n\n\n\nHow do I specify a .csl file?\n\n\n\n.csl stands for citation style language and you can download one from the Zotero style repository. For example, you could search for vancouver, click on the link, and it will download a new .csl file you can add to your repository.\n\n\n\n\n\n\nBartlett, J., & Charles, S. (2022). Power to the People: A Beginner’s Tutorial to Power Analysis using jamovi. Meta-Psychology, 6. https://doi.org/10.15626/MP.2021.3078"
+  },
+  {
+    "objectID": "workshop_prep.html#book-workflow",
+    "href": "workshop_prep.html#book-workflow",
+    "title": "1  Preparation before the workshop",
+    "section": "1.1 Book workflow",
+    "text": "1.1 Book workflow\nFor an overview to show why you need the following the pieces of software, the workflow for creating and editing the book is:\n\n1.1.1 Creating the book\n\n\n\n\n\n1.1.2 Editing the book"
+  },
+  {
+    "objectID": "workshop_prep.html#download-r-and-rstudio",
+    "href": "workshop_prep.html#download-r-and-rstudio",
+    "title": "1  Preparation before the workshop",
+    "section": "1.2 Download R and RStudio",
+    "text": "1.2 Download R and RStudio"
+  },
+  {
+    "objectID": "workshop_prep.html#download-git-and-github",
+    "href": "workshop_prep.html#download-git-and-github",
+    "title": "1  Preparation before the workshop",
+    "section": "1.3 Download git and github",
+    "text": "1.3 Download git and github\nPotentially the most unfamiliar element of this process will be working with git and github. If you have not used it before, git is a version control system which tracks file changes on your computer. github is an online system which uses git to host those changes and make your code available online.\nThere is an installation guide on github, but we have access to a fantastic resource developed by our colleagues in Mathematics and Statistics. They developed an online course on Moodle introducing staff and students to git and github. You will need the enrollment code git_psych_24 to access the course.\nThere are 7 units in total, but for the purposes of this workshop, I would consider 1 and 2 as essential for downloading git/github and using it as a single user to track changes. Reaching this point will be super helpful for following on as easy as possible in the workshop.\nIf you have time, completing unit 3 will give you everything you need if you are only using it on your own. If you plan on writing the book in a team, units 4 and 5 cover being a group project user, then 6 and 7 for advanced features.\nApply for education membership."
+  },
+  {
+    "objectID": "workshop_prep.html#finished",
+    "href": "workshop_prep.html#finished",
+    "title": "1  Preparation before the workshop",
+    "section": "1.4 Finished",
+    "text": "1.4 Finished\nYou are ready to make a book in the workshop!"
+  },
+  {
+    "objectID": "workshop_guide.html#example-book",
+    "href": "workshop_guide.html#example-book",
+    "title": "2  Workshop plan",
+    "section": "2.1 Example book",
+    "text": "2.1 Example book\nFor an example of the new book template, we will explore the new Fundamentals of Quantitative Analysis book. I have edited the first two chapters to use new Quarto features, so they can provide inspiration for what you can do with the book template."
+  },
+  {
+    "objectID": "workshop_guide.html#creating-the-book-template",
+    "href": "workshop_guide.html#creating-the-book-template",
+    "title": "2  Workshop plan",
+    "section": "2.2 Creating the book template",
+    "text": "2.2 Creating the book template\nIf you have not followed the preparation instructions yet, you need to download the package from Lisa’s github. Posit are rapidly developing Quarto, so make sure you have a relatively new version of R and RStudio.\n\ndevtools::install_github(\"debruine/booktem\")"
+  },
+  {
+    "objectID": "workshop_guide.html#tour-of-the-quarto-book-template",
+    "href": "workshop_guide.html#tour-of-the-quarto-book-template",
+    "title": "2  Workshop plan",
+    "section": "2.3 Tour of the Quarto book template",
+    "text": "2.3 Tour of the Quarto book template"
+  },
+  {
+    "objectID": "workshop_guide.html#creating-a-github-repository",
+    "href": "workshop_guide.html#creating-a-github-repository",
+    "title": "2  Workshop plan",
+    "section": "2.4 Creating a github repository",
+    "text": "2.4 Creating a github repository\nYou can either start with this point by creating a repository from scratch with a new folder, or creating a repository from an existing folder without a git component.\nPublish repository to github"
+  },
+  {
+    "objectID": "workshop_guide.html#tour-of-github",
+    "href": "workshop_guide.html#tour-of-github",
+    "title": "2  Workshop plan",
+    "section": "2.5 Tour of github",
+    "text": "2.5 Tour of github"
+  },
+  {
+    "objectID": "workshop_guide.html#publish-to-github-pages",
+    "href": "workshop_guide.html#publish-to-github-pages",
+    "title": "2  Workshop plan",
+    "section": "2.6 Publish to github pages",
+    "text": "2.6 Publish to github pages\nSettings &gt;&gt; Pages. Set to none by default. Need to choose Main and /docs to point Github pages to where it needs to look for the rendered html files.\nWait for actions to show as green tick.\nCheck back and at the top of the page, it should give you the url for the page link.\nSave to browser shortcut, add to repo about for a quick link.\nTip: By default, its set to your github username .github.io and your repository name. If you want to get fancy, you can add a custom domain.\nActions and what to look out for if it does not build."
+  },
+  {
+    "objectID": "workshop_guide.html#commiting-and-pushing-changes",
+    "href": "workshop_guide.html#commiting-and-pushing-changes",
+    "title": "2  Workshop plan",
+    "section": "2.7 Commiting and pushing changes",
+    "text": "2.7 Commiting and pushing changes\nCommit messages and future you\nReverting changes"
+  },
+  {
+    "objectID": "workshop_guide.html#collaborating-on-github",
+    "href": "workshop_guide.html#collaborating-on-github",
+    "title": "2  Workshop plan",
+    "section": "2.8 Collaborating on github?",
+    "text": "2.8 Collaborating on github?"
+  },
+  {
+    "objectID": "workshop_guide.html#start-working-on-your-own-book",
+    "href": "workshop_guide.html#start-working-on-your-own-book",
+    "title": "2  Workshop plan",
+    "section": "2.9 Start working on your own book!",
+    "text": "2.9 Start working on your own book!\nStart working on your own book in the remaining time we have together.\nSee the next chapter on Quarto features and book conventions for inspiration / example code for the kind of features you can use."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Bartlett, J., & Charles, S. (2022). Power to the\nPeople: A Beginner’s\nTutorial to Power Analysis using\njamovi. Meta-Psychology, 6. https://doi.org/10.15626/MP.2021.3078"
+  },
+  {
+    "objectID": "book_conventions.html#useful-features",
+    "href": "book_conventions.html#useful-features",
+    "title": "3  Quarto features and book conventions",
+    "section": "3.3 Useful features",
+    "text": "3.3 Useful features\n\n3.3.1 Markdown\nQuarto still uses Markdown for formatting, so you can see this part of the Quarto guide for Markdown Basics.\n\n3.3.1.1 Headers\nThe book template table of contents goes by default to level 3 headers (but you can go to level 6 headers if you really want), so keep in mind what will be a logical nesting of headers, sub-headers etc. You add a hash for each level of header:\n\n# Level 1 header\n\n## Level 2 header\n\n### Level 3 header\n\n\n\n3.3.1.2 Text formatting\nYou make text italics by surrounding it with one star (*italics*), or bold by surrounding it with two stars (**bold**).\nIf you want to give text code formatting, you can add back ticks around it.\n\n`example code`\n\nproduces:\nexample code.\nIf you want to add bullet points, you can use - or *:\n\n- Bullet point 1\n\n- Bullet point 2\n\n- Bullet point 3\n\n\nBullet point 1\nBullet point 2\nBullet point 3\n\nThe same applies to numbered lists:\n\n1. List 1\n\n2. List 2\n\n3. List 3\n\n\nList 1\nList 2\nList 3\n\nOr even sub-lists with a little indent:\n\n1. List 1\n\n    1. Sublist 1\n    \n    2. Sublist 2\n\n2. List 2\n\n\nList 1\n\nSublist 1\nSublist 2\n\nList 2\n\n\n\n3.3.1.3 Links\nYou can add hyperlinks with the form:\n\n[hyperlinks](https://quarto.org/docs/authoring/markdown-basics.html#links-images)\n\nwhere the writing in square brackets is the text, and the link goes in the round brackets. By default, these link within the current page which I find infuriating. So, you can add a little html code to open a new tab with the link:\n\n[hyperlinks](https://quarto.org/docs/authoring/markdown-basics.html#links-images){target=\"_blank\"}\n\n\n\n3.3.1.4 Images\nThere are different ways to add images, where the Markdown version uses a similar format to links which I will demonstrate through this duck:\n\n![This is a duck.](images/Duck.png)\n\n\n\n\nThis is a duck. If Helena is reading this, yes it has a creative commons licence.\n\n\nThere are some cool new Quarto features making it easy to combine multiple images. For example, we can add two ducks and specify we want them in two columns.\n\n::: {#fig-duck layout-ncol=2}\n![](images/images/Duck.png)\n![](images/images/Duck.png)\nDuck 1 (left) and Duck 2 (right). \n:::\n\n\n\n\n\n\n\n\n\n\n\nFigure 3.1: Duck 1 (left) and Duck 2 (right).\n\n\nYou can also reference figures to add little hyperlinks and automatically number them. The title after the hash must start with fig to be registered as a figure, and you can also add tbl to number tables separately.\nFigure 3.1 showed two ducks side by side. You do not even need to type Figure: @fig-duck.\nYou can also use knitr to add figures, and using code chunks has some new handy features using tags. They work in a similar way to code options, but make it easier to add longer captions etc, as shown in Figure 3.2.\n```{r}\n#| label: fig-img-duck\n#| fig.cap: \"This is a longer caption about our beloved duck.\"\n#| fig-alt: \"You can also add alt text to images.\"\n\nknitr::include_graphics(\"images/Duck.png\")\n```\n\n\n\n\n\nFigure 3.2: This is a longer caption about our beloved duck.\n\n\n\n\n\n\n\n3.3.2 Code chunks\nIf you are making a book to show code, there are a couple of features that might be useful.\nAdding code chunks will by default show both the code and output:\n```{r}\nrnorm(n = 5, mean = 10, sd = 2)\n```\n\nrnorm(n = 5, mean = 10, sd = 2)\n\n[1]  9.972081 11.608599 12.240400 13.025259  9.140076\n\n\nThere are several features you can edit by adding different options. For example, if you do not want to show the code, you can set echo=FALSE after the r {r echo=FALSE}:\n\n\n[1] 11.072437 10.380520  4.827543 10.960016  8.564084\n\n\nIf you want to demonstrate code but not execute it - such as to demonstrate inaccurate code, you can set eval=FALSE after the r {r eval=FALSE}:\n\nrnorm(n = 5, mean = 10, sd = 2)\n\n\n\n3.3.3 Callout blocks\nMy personal favourite features, you can highlight content with callout blocks. These range from notes that people might find interesting, to warnings that something could go mortally wrong.\n\n::: {.callout-note}\nThese are notes.\n:::\n\n\n\n\n\n\n\nNote\n\n\n\nThese are notes.\n\n\nYou can change the title by using hashes within the callout. They count as real headers in the Quarto outline. So, if you use one hash, it looks like a level one header which deeply disturbs me, so I like to use four hashes to make more sense in the chapter structure.\n\n::: {.callout-note}\n#### Look at my interesting title\nThese are notes.\n:::\n\n\n\n\n\n\n\nLook at my interesting title\n\n\n\nThese are notes.\n\n\nYou can also make the box collapse by default, which can be handy to hide solutions or obscure tangents.\n\n::: {.callout-note collapse=true}\n#### Please look at me\nSecret secret notes. \n:::\n\n\n\n\n\n\n\nPlease look at me\n\n\n\n\n\nSecret secret notes.\n\n\n\nOther types of callout blocks include:\n\nWarning\n\n\n::: {.callout-warning}\nThese are notes.\n:::\n\n\n\n\n\n\n\nWarning\n\n\n\nThese are warnings.\n\n\n\nImportant\n\n\n::: {.callout-important}\nThis is something important\n:::\n\n\n\n\n\n\n\nImportant\n\n\n\nThis is something important\n\n\n\nTip\n\n\n::: {.callout-tip}\nHere is a handy tip. \n:::\n\n\n\n\n\n\n\nTip\n\n\n\nHere is a handy tip.\n\n\n\nAnd, a caution\n\n\n::: {.callout-caution}\nHere is a caution about something.\n:::\n\n\n\n\n\n\n\nCaution\n\n\n\nHere is a caution about something.\n\n\n\n\n3.3.4 References\nIf you want to add proper references instead of just hyperlinks, you need a .bib file from a reference manager.\nThe .bib file should be in the include folder (unless you point it somewhere else) and you can specify it in the _quarto.yml file through the bibliography entry:\n\nbibliography: include/references.bib\n\n\n\n\n\n\n\nHow do I download and edit a .bib file?\n\n\n\nI use Zotero as a reference manager and its super easy to download a .bib file for a project you are working on. Downloading one entry is a little annoying as you need to export it as BibTex and copy from the file it produces, but if you create a folder to store everything for the book, you can just export the folder each time you add new entries (right click &gt;&gt; export collection &gt;&gt; BibTex format and OK).\nIf you do have the single entry, you can open the .bib file within RStudio and copy the entry in. It will look something like this:\n\n@article{bartlett_power_2022,\n    title = {Power to the {People}: {A} {Beginner}’s {Tutorial} to {Power} {Analysis} using jamovi},\n    volume = {6}\n    ...}\n\nwhich stores all the information for the .csl to pull out and cite/reference as needed.\n\n\nTo cite, you need the code at the start of the bib entry. For example, @bartlett_power_2022 produces Bartlett & Charles (2022) and the full reference will be added to the references chapter.\nDepending on the citation style you want, there are different codes, such as adding it in parentheses [@bartlett_power_2022] (Bartlett & Charles, 2022). For a full list of options, you can check out the Quarto citation guide.\nBy default, the book template has APA style for referencing, but if you need a different referencing style, you can add and specify a different .csl file.\n\ncsl: include/apa.csl\n\n\n\n\n\n\n\nHow do I specify a .csl file?\n\n\n\n.csl stands for citation style language and you can download one from the Zotero style repository. For example, you could search for vancouver, click on the link, and it will download a new .csl file you can add to your repository.\n\n\n\n\n3.3.5 webexercises interactive questions\nThe book template automatically includes the webexercises package which can add interactive questions for self-tests. This is great for students checking their understanding through MCQs or adding easy to check answers like numbers.\n\n3.3.5.1 MCQs\nYou can add questions through inline code, or by first specifying them in an R code block if it makes it easier to edit longer text.\nFor example, this workshop is:\n\n Life changing Boring Mediocre OK\n\n\n`r longmcq(c(answer = \"Life changing\", \"Boring\", \"Mediocre\", \"OK\"))` \n\n\n\n3.3.5.2 Single answer\nYou can ask simple single answers that are easy to evaluate:\n\nOn a scale of 1 (very dissatisfied) - 7 (very satisfied), how pleased are you with this workshop? \n\n\n`r fitb(7)`\n\n\n\n3.3.5.3 True or false\nIf you want an even simpler response, you can ask true or false.\n\nAfter the workload, I am going to make my own book: TRUEFALSE\n\n\n`r torf(TRUE)`\n\n\n\n\n3.3.6 Adding a glossary\n\n\n\n\nBartlett, J., & Charles, S. (2022). Power to the People: A Beginner’s Tutorial to Power Analysis using jamovi. Meta-Psychology, 6. https://doi.org/10.15626/MP.2021.3078"
+  }
+]

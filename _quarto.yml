@@ -10,12 +10,17 @@ book:
     - workshop_prep.qmd
     - workshop_guide.qmd
     - book_conventions.qmd
+    - references.qmd
 
-bibliography: references.bib
+bibliography: include/references.bib
+
+csl: include/apa.csl
 
 format:
   html:
     theme: cosmo
+    css:   include/webex.css
+    include-after-body: include/webex.js
   pdf:
     documentclass: scrreprt
 

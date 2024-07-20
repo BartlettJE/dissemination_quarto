@@ -1,32 +1,44 @@
 {
     "sources": [
         {
-            "DOI": "10.1093/comjnl/27.2.97",
-            "ISSN": "0010-4620",
-            "URL": "https://doi.org/10.1093/comjnl/27.2.97",
-            "author": [
-                {
-                    "family": "Knuth",
-                    "given": "Donald E."
-                }
-            ],
-            "container-title": "Comput. J.",
-            "id": "knuth84",
-            "issue": "2",
-            "issued": {
+            "DOI": "10.15626/MP.2021.3078",
+            "ISSN": "2003-2714",
+            "URL": "https://open.lnu.se/index.php/metapsychology/article/view/3078",
+            "abstract": "Authors have highlighted for decades that sample size justification through power analysis is the exception rather than the rule. Even when authors do report a power analysis, there is often no justification for the smallest effect size of interest, or they do not provide enough information for the analysis to be reproducible. We argue one potential reason for these omissions is the lack of a truly accessible introduction to the key concepts and decisions behind power analysis. In this tutorial targeted at complete beginners, we demonstrate a priori and sensitivity power analysis using jamovi for two independent samples and two dependent samples. Respectively, these power analyses allow you to ask the questions: “How many participants do I need to detect a given effect size?”, and “What effect sizes can I detect with a given sample size?”. We emphasise how power analysis is most effective as a reflective process during the planning phase of research to balance your inferential goals with your resources. By the end of the tutorial, you will be able to understand the fundamental concepts behind power analysis and extend them to more advanced statistical models.",
+            "accessed": {
                 "date-parts": [
                     [
-                        1984,
-                        5
+                        2022,
+                        11,
+                        8
                     ]
                 ]
             },
-            "page": "97-111",
-            "publisher": "Oxford University Press, Inc.",
-            "publisher-place": "USA",
-            "title": "Literate programming",
+            "author": [
+                {
+                    "family": "Bartlett",
+                    "given": "James"
+                },
+                {
+                    "family": "Charles",
+                    "given": "Sarah"
+                }
+            ],
+            "container-title": "Meta-Psychology",
+            "id": "bartlett_power_2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022,
+                        11
+                    ]
+                ]
+            },
+            "keyword": "effect size, Power analysis, tutorial, a priori, jamovi, sensitivity",
+            "title": "Power to the People: A Beginner’s Tutorial to Power Analysis using jamovi",
+            "title-short": "Power to the People",
             "type": "article-journal",
-            "volume": "27"
+            "volume": "6"
         }
     ],
     "project_biblios": [

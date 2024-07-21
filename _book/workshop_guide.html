@@ -277,8 +277,7 @@ Tip
 <div class="callout-body-container callout-body">
 <p>If you are converting a previous book to the new template, there is a handy little function <code>rmd2qmd</code>. This copies .Rmd files and renames them to .qmd. The function looks like this</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rmd2qmd</span>(<span class="at">from_path =</span> <span class="st">""</span>, <span class="co"># file path where your .Rmd files are</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">to_path =</span> <span class="st">""</span>) <span class="co"># file path where your .qmd files shoul go</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rmd2qmd</span>(<span class="at">from_path =</span> <span class="st">""</span>, <span class="co"># file path where your .Rmd files are</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>where you specify a file path to access the old .Rmd files and a file path to where you want the new .qmd files saving. Keep your working directory in mind as you will probably be starting from your book folder at this point. I usually save my old .Rmd files in a folder within the new book directory, then save the new .qmd files to the new book main directory.</p>
 </div>
@@ -316,9 +315,23 @@ Caution
 </section>
 <section id="creating-a-github-repository" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="creating-a-github-repository"><span class="header-section-number">2.4</span> Creating a github repository</h2>
-<p>You can either start with this point by creating a repository from scratch with a new folder, or creating a repository from an existing folder without a git component.</p>
+<p>Once you have a working barebones version of your book ready to go, its time to associate your book folder with a github repository and start some version control.</p>
+<p>In future, you could actually start with this part. You can create a new folder and create a repository for you to then use the <code>create_book()</code> function to add the book file to.</p>
+<p>However, we started by creating the book first, so we need to create a repository for an existing folder without a git component.</p>
 <p>Publish repository to github</p>
-<p>DO NOT create in OneDrive</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Seriously, do not create github repositories within OneDrive
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As a reminder, please <strong>do not</strong> use a folder within OneDrive for your github repository.</p>
+</div>
+</div>
 </section>
 <section id="tour-of-github" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="tour-of-github"><span class="header-section-number">2.5</span> Tour of github</h2>

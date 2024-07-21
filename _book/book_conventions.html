@@ -201,7 +201,8 @@ div.csl-indent {
   <li><a href="#callout-blocks" id="toc-callout-blocks" class="nav-link" data-scroll-target="#callout-blocks"><span class="header-section-number">3.3.3</span> Callout blocks</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">3.3.4</span> References</a></li>
   <li><a href="#webexercises-interactive-questions" id="toc-webexercises-interactive-questions" class="nav-link" data-scroll-target="#webexercises-interactive-questions"><span class="header-section-number">3.3.5</span> <code>webexercises</code> interactive questions</a></li>
-  <li><a href="#adding-a-glossary" id="toc-adding-a-glossary" class="nav-link" data-scroll-target="#adding-a-glossary"><span class="header-section-number">3.3.6</span> Adding a glossary</a></li>
+  <li><a href="#embedding-files-to-download" id="toc-embedding-files-to-download" class="nav-link" data-scroll-target="#embedding-files-to-download"><span class="header-section-number">3.3.6</span> Embedding files to download</a></li>
+  <li><a href="#adding-a-glossary" id="toc-adding-a-glossary" class="nav-link" data-scroll-target="#adding-a-glossary"><span class="header-section-number">3.3.7</span> Adding a glossary</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -383,13 +384,13 @@ div.csl-indent {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">5</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  8.946836 10.860272  7.958059  9.714747  9.176071</code></pre>
+<pre><code>[1]  8.125386  9.844129  7.490401 10.558418 10.487313</code></pre>
 </div>
 </div>
 <p>There are several features you can edit by adding different options. For example, if you do not want to show the code, you can set <code>echo=FALSE</code> after the r <code>{r echo=FALSE}</code>:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 10.608932  9.721777  8.444870  5.747149  8.636767</code></pre>
+<pre><code>[1]  8.967568  9.094528  9.512234 11.379372 12.250515</code></pre>
 </div>
 </div>
 <p>If you want to demonstrate code but not execute it - such as to demonstrate inaccurate code, you can set <code>eval=FALSE</code> after the r <code>{r eval=FALSE}</code>:</p>
@@ -602,8 +603,8 @@ How do I specify a .csl file?
 <h4 data-number="3.3.5.1" class="anchored" data-anchor-id="mcqs"><span class="header-section-number">3.3.5.1</span> MCQs</h4>
 <p>You can add questions through inline code, or by first specifying them in an R code block if it makes it easier to edit longer text.</p>
 <p>For example, this workshop is:</p>
-<div id="radio_UEGCCHMFUC" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_UEGCCHMFUC" value="answer"> <span>Life changing</span></label><label><input type="radio" autocomplete="off" name="radio_UEGCCHMFUC" value=""> <span>Boring</span></label><label><input type="radio" autocomplete="off" name="radio_UEGCCHMFUC" value=""> <span>Mediocre</span></label><label><input type="radio" autocomplete="off" name="radio_UEGCCHMFUC" value=""> <span>OK</span></label>
+<div id="radio_IZKYCQKJDI" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_IZKYCQKJDI" value="answer"> <span>Life changing</span></label><label><input type="radio" autocomplete="off" name="radio_IZKYCQKJDI" value=""> <span>Boring</span></label><label><input type="radio" autocomplete="off" name="radio_IZKYCQKJDI" value=""> <span>Mediocre</span></label><label><input type="radio" autocomplete="off" name="radio_IZKYCQKJDI" value=""> <span>OK</span></label>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">r longmcq(c(answer = "Life changing", "Boring", "Mediocre", "OK"))</span><span class="st">`</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -630,8 +631,12 @@ How do I specify a .csl file?
 </div>
 </section>
 </section>
-<section id="adding-a-glossary" class="level3" data-number="3.3.6">
-<h3 data-number="3.3.6" class="anchored" data-anchor-id="adding-a-glossary"><span class="header-section-number">3.3.6</span> Adding a glossary</h3>
+<section id="embedding-files-to-download" class="level3" data-number="3.3.6">
+<h3 data-number="3.3.6" class="anchored" data-anchor-id="embedding-files-to-download"><span class="header-section-number">3.3.6</span> Embedding files to download</h3>
+<p>E.g., data, .Rmd, .docx</p>
+</section>
+<section id="adding-a-glossary" class="level3" data-number="3.3.7">
+<h3 data-number="3.3.7" class="anchored" data-anchor-id="adding-a-glossary"><span class="header-section-number">3.3.7</span> Adding a glossary</h3>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">

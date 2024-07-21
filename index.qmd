@@ -11,3 +11,13 @@ When you are writing your book independently, it's useful to look at the code be
 All of these books are designed to teach data skills as they demonstrate and render code well, but you can use them for any materials using Markdown features. For example, I host the [course information for RM1](https://bartlettje.github.io/RM1_Resources/){target="_blank"} using the book template.
 
 Once you knit them and push any changes to github, you get a url to link to them like any website. This is great for sharing with students as its free and simple to access, and its great for you and demonstrating impact as you share your work with others.
+
+**Intended Learning Outcomes (ILOs)**
+
+By the end of the workshop, you will be able to: 
+
+- Create an online book using the `booktem` R package in RStudio. 
+
+- Use the basic functions of git/github to commit changes and host the book using github pages. 
+
+- Create features suited to your audience such as Markdown formatting, code chunks, referencing, glossaries, and interactive questions. 

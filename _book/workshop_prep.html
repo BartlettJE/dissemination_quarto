@@ -218,7 +218,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li><p>Install the <code>booktem</code> R package.</p></li>
 <li><p>In RStudio, use the <code>create_book()</code> function to create a new project in your working directory containing the initial template files.</p></li>
-<li><p>Edit the basic details of your book, like the title and author(s).</p></li>
+<li><p>Edit the basic details of your book, like the title, author(s), and description.</p></li>
 <li><p>Create a new github repository for your book folder.</p></li>
 <li><p>Push the initial repository so the code is available on github.</p></li>
 <li><p>Activate github pages to render the book online via a URL.</p></li>
@@ -237,7 +237,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="download-r-and-rstudio" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="download-r-and-rstudio"><span class="header-section-number">1.2</span> Download R and RStudio</h2>
-<p>If you are new to R/RStudio, you will need to install both pieces of software which is <em>normally</em> pretty straightforward. You might find this <a href="https://www.youtube.com/watch?v=lVKMsaWju8w" target="_blank">YouTube video here</a> useful if you are stuck.</p>
+<p>If you are new to R/RStudio, you will need to install both pieces of software which is <em>normally</em> pretty straightforward. You might find this <a href="https://youtu.be/YrEe2TLr3MI?si=oweIE55Ul77ZoZwz" target="_blank">YouTube video here</a> useful.</p>
 <p>If you are a more experienced R/RStudio user, just make sure you update your version of R/RStudio as the <code>booktem</code> package will only work for recent versions as Posit are rapidly developing Quarto. I am currently using R version 4.3.2 (2023-10-31) and RStudio 2023.6.2.561, but the more recent the better.</p>
 <section id="installing-base-r" class="level3" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="installing-base-r"><span class="header-section-number">1.2.1</span> Installing Base R</h3>
@@ -248,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="installing-rstudio" class="level3" data-number="1.2.2">
 <h3 data-number="1.2.2" class="anchored" data-anchor-id="installing-rstudio"><span class="header-section-number">1.2.2</span> Installing RStudio</h3>
-<p>Go to <a href="https://www.rstudio.com/products/rstudio/download/#download" target="_blank">rstudio.com</a> and download the RStudio Desktop (Open Source License) version for your operating system under the list titled <strong>Installers for Supported Platforms</strong>.</p>
+<p>Go to <a href="https://www.rstudio.com/products/rstudio/download/#download" target="_blank">rstudio.com</a> and download the RStudio Desktop version for your operating system. It should recognise your operating system and allow you to download via the blue Download button, but you can look for previous versions if you need one.</p>
 </section>
 <section id="install-the-booktem-r-package" class="level3" data-number="1.2.3">
 <h3 data-number="1.2.3" class="anchored" data-anchor-id="install-the-booktem-r-package"><span class="header-section-number">1.2.3</span> Install the <code>booktem</code> R package</h3>
@@ -256,14 +256,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"debruine/booktem"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>If you are new to R/RStudio, you probably have no user packages installed, so you will get a prompt to allow <code>booktem</code> to install the other R packages it depends on to work. This might take a few minutes, so go and enjoy a hot drink.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
+<p>If you are new to R/RStudio, you probably have no user packages installed, so you will get a prompt to allow <code>booktem</code> to install the other R packages it depends on to work. This might take a few minutes, so go and enjoy yourself a hot drink.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning
+Caution
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -289,7 +289,7 @@ Apply for education membership
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The standard version of github should meet all your needs, but by working at a university you are eligible to apply for an education membership. If you are interested you can find out more on the <a href="https://github.com/education" target="_blank">github education site</a>.</p>
+<p>The standard version of github should meet all your needs, but by working at a university you are eligible to apply for an education membership. If you are interested you can find out more on the <a href="https://github.com/education/teachers" target="_blank">github education site</a> for teachers. For example, with an education profile, you can get unlimited private repositories.</p>
 </div>
 </div>
 </section>

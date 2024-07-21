@@ -365,7 +365,7 @@ If you want an even simpler response, you can ask true or false.
 `r torf(TRUE)`
 ```
 
-### Embedding files to download 
+### Embedding files to download
 
 E.g., data, .Rmd, .docx
 

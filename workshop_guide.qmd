@@ -4,24 +4,91 @@ To follow along in the workshop if you fall behind, we will complete the followi
 
 ## Example book
 
-For an example of the new book template, we will explore the new [Fundamentals of Quantitative Analysis](https://bartlettje.github.io/quant-fun-v3/){target="_blank"} book. I have edited the first two chapters to use new Quarto features, so they can provide inspiration for what you can do with the book template. 
+For an example of the new book template, we will explore the new [Fundamentals of Quantitative Analysis](https://bartlettje.github.io/quant-fun-v3/){target="_blank"} book. I have edited the first two chapters to use new Quarto features, so they can provide inspiration for what you can do with the book template.
 
 ## Creating the book template
 
-If you have not followed the [preparation instructions](#workshop_prep) yet, you need to download the package from Lisa's github. Posit are rapidly developing Quarto, so make sure you have a relatively new version of R and RStudio. 
+If you have not followed the [preparation instructions](#workshop_prep) yet, you need R/RStudio installed to your computer, the `booktem` package installed from Lisa's github, and git/github desktop installed on your computer. I will be demonstrating how to use github desktop rather than the command line. 
+
+The first step is thinking about where you want your book folder stored on your computer, where all the files will live. I have a folder within `Documents` called `git_repos` where I store all my git repositories away from OneDrive (see below). You do not need to create a folder for the book itself as the function will do that for you, but you need somewhere for that folder to live. 
+
+::: callout-warning
+#### Do not create github repositories within OneDrive
+
+We have not reached the github step yet, but as you think about where you want your folder for the book, please **do not** use a folder within OneDrive. Sometimes it works, but most of the time is causes chaos as OneDrive is trying to track changes, github is trying to track changes, which ends in them fighting over file permissions.
+:::
+
+Once you have a folder your book can live in, set your working directory to this folder, for example from the top menu `Session >> set working directory >> Choose directory` and navigate to this folder. 
+
+Once RStudio knows where you want your working directory, you can create the book using the following code in the console and editing accordingly before you run the code. Do not worry though, you can edit all of these later, but this will create the initial version.  
 
 ```{r eval=FALSE}
-devtools::install_github("debruine/booktem")
+# We first need to load the booktem library, assuming its installed properly
+library(booktem)
+
+create_book(path = "", # If you set your working directory, you should not need to edit this
+            title = "My book title", # The main title of your book
+            authors = list( # You need a new line for any additional author, or delete the author 2 line if you're solo
+              c("Author 1 first name", "Author 1 last name", "Author 1 ORCiD"),
+              c("Author 2 first name", "Author 2 last name", "Author 2 ORCiD"))
+            )
 ```
 
+Once you press run, you should get a bunch of progress messages. Once its finished, your book will open in a new session. Congratulations, you have a book skeleton to work with! 
 
 ## Tour of the Quarto book template
 
+1. _quarto.yml
+
+::: callout-note
+#### What is a .yml file?
+
+.yml files express different options and must follow a specific format. 
+:::
+
+2. index.qmd
+
+3. `include/` folder 
+
+4. Chapter files
+
+::: callout-tip
+If you are converting a previous book to the new template, there is a handy little function `rmd2qmd`. This copies .Rmd files and renames them to .qmd. The function looks like this 
+
+```{r eval=FALSE}
+rmd2qmd(from_path = "", # file path where your .Rmd files are
+```
+
+where you specify a file path to access the old .Rmd files and a file path to where you want the new .qmd files saving. Keep your working directory in mind as you will probably be starting from your book folder at this point. I usually save my old .Rmd files in a folder within the new book directory, then save the new .qmd files to the new book main directory. 
+:::
+
+5. Rendering files
+
+::: callout-tip
+The single best part of Quarto and the new book template is you can keep rendering and checking what your work looks like in the flesh. Previously, you had to render the whole book to check how it rendered, but now you can keep updating the browser to see what your changes look like. 
+:::
+
+::: callout-caution
+If you introduce an error, you will get an error and red box on the screen to highlight Quarto cannot render the book. If you look in the Background Jobs tab in the console below, you should get an error message for the source of the problem if you are unsure what you did wrong. 
+
+After an error, you will need press Render again rather than just refreshing the browser. 
+:::
+
 ## Creating a github repository
 
-You can either start with this point by creating a repository from scratch with a new folder, or creating a repository from an existing folder without a git component.
+Once you have a working barebones version of your book ready to go, its time to associate your book folder with a github repository and start some version control. 
+
+In future, you could actually start with this part. You can create a new folder and create a repository for you to then use the `create_book()` function to add the book file to. 
+
+However, we started by creating the book first, so we need to create a repository for an existing folder without a git component.
 
 Publish repository to github
+
+::: callout-warning
+#### Seriously, do not create github repositories within OneDrive
+
+As a reminder, please **do not** use a folder within OneDrive for your github repository.
+:::
 
 ## Tour of github
 
@@ -51,4 +118,4 @@ Reverting changes
 
 Start working on your own book in the remaining time we have together.
 
-See the next chapter on [Quarto features and book conventions](#quarto_features) for inspiration / example code for the kind of features you can use. 
+See the next chapter on [Quarto features and book conventions](#quarto_features) for inspiration / example code for the kind of features you can use.

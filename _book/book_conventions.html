@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>PsyTeachR Book Template Workshop - 3&nbsp; Quarto features and book conventions</title>
+<title>PsyTeachR Book Template Workshop - 3&nbsp; Worked examples for Quarto and booktem features</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -127,7 +127,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./book_conventions.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quarto features and book conventions</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./book_conventions.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Worked examples for Quarto and booktem features</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -173,7 +173,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./book_conventions.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quarto features and book conventions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Worked examples for Quarto and booktem features</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -211,7 +211,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="quarto_features" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quarto features and book conventions</span></span></h1>
+<h1 class="title"><span id="quarto_features" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Worked examples for Quarto and booktem features</span></span></h1>
 </div>
 
 
@@ -226,7 +226,7 @@ div.csl-indent {
 
 </header>
 
-<p>As you work on your own book, you might find the following features and conventions useful for inspiration.</p>
+<p>As you work on your own book, you might find the following features useful for inspiration.</p>
 <section id="quarto-guide" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="quarto-guide"><span class="header-section-number">3.1</span> Quarto guide</h2>
 <p>To check different features of Quarto, you can see an <a href="https://quarto.org/docs/guide/" target="_blank">extensive user guide</a> online.</p>
@@ -383,13 +383,13 @@ div.csl-indent {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">5</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  9.972081 11.608599 12.240400 13.025259  9.140076</code></pre>
+<pre><code>[1]  8.946836 10.860272  7.958059  9.714747  9.176071</code></pre>
 </div>
 </div>
 <p>There are several features you can edit by adding different options. For example, if you do not want to show the code, you can set <code>echo=FALSE</code> after the r <code>{r echo=FALSE}</code>:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 11.072437 10.380520  4.827543 10.960016  8.564084</code></pre>
+<pre><code>[1] 10.608932  9.721777  8.444870  5.747149  8.636767</code></pre>
 </div>
 </div>
 <p>If you want to demonstrate code but not execute it - such as to demonstrate inaccurate code, you can set <code>eval=FALSE</code> after the r <code>{r eval=FALSE}</code>:</p>
@@ -602,8 +602,8 @@ How do I specify a .csl file?
 <h4 data-number="3.3.5.1" class="anchored" data-anchor-id="mcqs"><span class="header-section-number">3.3.5.1</span> MCQs</h4>
 <p>You can add questions through inline code, or by first specifying them in an R code block if it makes it easier to edit longer text.</p>
 <p>For example, this workshop is:</p>
-<div id="radio_LEAEIYGBDO" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_LEAEIYGBDO" value="answer"> <span>Life changing</span></label><label><input type="radio" autocomplete="off" name="radio_LEAEIYGBDO" value=""> <span>Boring</span></label><label><input type="radio" autocomplete="off" name="radio_LEAEIYGBDO" value=""> <span>Mediocre</span></label><label><input type="radio" autocomplete="off" name="radio_LEAEIYGBDO" value=""> <span>OK</span></label>
+<div id="radio_UEGCCHMFUC" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_UEGCCHMFUC" value="answer"> <span>Life changing</span></label><label><input type="radio" autocomplete="off" name="radio_UEGCCHMFUC" value=""> <span>Boring</span></label><label><input type="radio" autocomplete="off" name="radio_UEGCCHMFUC" value=""> <span>Mediocre</span></label><label><input type="radio" autocomplete="off" name="radio_UEGCCHMFUC" value=""> <span>OK</span></label>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">r longmcq(c(answer = "Life changing", "Boring", "Mediocre", "OK"))</span><span class="st">`</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

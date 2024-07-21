@@ -1,33 +1,32 @@
-# Quarto features and book conventions {#quarto_features}
+# Worked examples for Quarto and booktem features {#quarto_features}
 
 ```{r echo=FALSE}
 library(webexercises)
 ```
 
-
-As you work on your own book, you might find the following features and conventions useful for inspiration.
+As you work on your own book, you might find the following features useful for inspiration.
 
 ## Quarto guide
 
-To check different features of Quarto, you can see an [extensive user guide](https://quarto.org/docs/guide/){target="_blank"} online. 
+To check different features of Quarto, you can see an [extensive user guide](https://quarto.org/docs/guide/){target="_blank"} online.
 
-## Worked examples 
+## Worked examples
 
-If you look through these books for inspiration, you can check the code to see how they do it. 
+If you look through these books for inspiration, you can check the code to see how they do it.
 
 Dr Wil Toivo and I are rewriting the [Fundamentals of Quantitative Analysis](https://bartlettje.github.io/quant-fun-v3/){target="_blank"} book and you can see our [github repository](https://github.com/BartlettJE/quant-fun-v3){target="_blank"}.
 
-You can also see the [Applied Data Skills](https://psyteachr.github.io/ads-v3/){target="_blank"} book developed by Dr Emily Nordmann and Prof Lisa DeBruine, along with their [github repository](https://github.com/PsyTeachR/ads-v3){target="_blank"}. 
+You can also see the [Applied Data Skills](https://psyteachr.github.io/ads-v3/){target="_blank"} book developed by Dr Emily Nordmann and Prof Lisa DeBruine, along with their [github repository](https://github.com/PsyTeachR/ads-v3){target="_blank"}.
 
 ## Useful features
 
-### Markdown 
+### Markdown
 
-Quarto still uses Markdown for formatting, so you can see this part of the [Quarto guide for Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html){target="_blank"}. 
+Quarto still uses Markdown for formatting, so you can see this part of the [Quarto guide for Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html){target="_blank"}.
 
 #### Headers
 
-The book template table of contents goes by default to level 3 headers (but you can go to level 6 headers if you *really* want), so keep in mind what will be a logical nesting of headers, sub-headers etc. You add a hash for each level of header: 
+The book template table of contents goes by default to level 3 headers (but you can go to level 6 headers if you *really* want), so keep in mind what will be a logical nesting of headers, sub-headers etc. You add a hash for each level of header:
 
 ```{r}
 # Level 1 header
@@ -37,21 +36,21 @@ The book template table of contents goes by default to level 3 headers (but you 
 ### Level 3 header
 ```
 
-#### Text formatting 
+#### Text formatting
 
 You make text *italics* by surrounding it with one star (`*italics*`), or **bold** by surrounding it with two stars (`**bold**`).
 
-If you want to give text code formatting, you can add back ticks around it. 
+If you want to give text code formatting, you can add back ticks around it.
 
 ```{r eval=FALSE}
 `example code`
 ```
 
-produces: 
+produces:
 
-`example code`. 
+`example code`.
 
-If you want to add bullet points, you can use `-` or `*`: 
+If you want to add bullet points, you can use `-` or `*`:
 
 ```{r eval=FALSE}
 - Bullet point 1
@@ -61,11 +60,11 @@ If you want to add bullet points, you can use `-` or `*`:
 - Bullet point 3
 ```
 
-- Bullet point 1
+-   Bullet point 1
 
-- Bullet point 2
+-   Bullet point 2
 
-- Bullet point 3
+-   Bullet point 3
 
 The same applies to numbered lists:
 
@@ -77,11 +76,11 @@ The same applies to numbered lists:
 3. List 3
 ```
 
-1. List 1
+1.  List 1
 
-2. List 2
+2.  List 2
 
-3. List 3
+3.  List 3
 
 Or even sub-lists with a little indent:
 
@@ -95,13 +94,13 @@ Or even sub-lists with a little indent:
 2. List 2
 ```
 
-1. List 1
+1.  List 1
 
-    1. Sublist 1
-    
-    2. Sublist 2
+    1.  Sublist 1
 
-2. List 2
+    2.  Sublist 2
+
+2.  List 2
 
 #### Links
 
@@ -111,7 +110,7 @@ You can add [hyperlinks](https://quarto.org/docs/authoring/markdown-basics.html#
 [hyperlinks](https://quarto.org/docs/authoring/markdown-basics.html#links-images)
 ```
 
-where the writing in square brackets is the text, and the link goes in the round brackets. By default, these link within the current page which I find infuriating. So, you can add a little html code to open a new tab with the link: 
+where the writing in square brackets is the text, and the link goes in the round brackets. By default, these link within the current page which I find infuriating. So, you can add a little html code to open a new tab with the link:
 
 ```{r eval=FALSE}
 [hyperlinks](https://quarto.org/docs/authoring/markdown-basics.html#links-images){target="_blank"}
@@ -127,7 +126,7 @@ There are different ways to add images, where the Markdown version uses a simila
 
 ![This is a duck. If Helena is reading this, yes it has a creative commons licence.](images/Duck.png)
 
-There are some cool new Quarto features making it easy to combine multiple images. For example, we can add two ducks and specify we want them in two columns. 
+There are some cool new Quarto features making it easy to combine multiple images. For example, we can add two ducks and specify we want them in two columns.
 
 ```{r eval=FALSE}
 ::: {#fig-duck layout-ncol=2}
@@ -137,20 +136,19 @@ Duck 1 (left) and Duck 2 (right).
 :::
 ```
 
-::: {#fig-duck layout-ncol=2}
-
+::: {#fig-duck layout-ncol="2"}
 ![](images/Duck.png)
 
 ![](images/Duck.png)
 
-Duck 1 (left) and Duck 2 (right). 
+Duck 1 (left) and Duck 2 (right).
 :::
 
-You can also reference figures to add little hyperlinks and automatically number them. The title after the hash must start with `fig` to be registered as a figure, and you can also add `tbl` to number tables separately. 
+You can also reference figures to add little hyperlinks and automatically number them. The title after the hash must start with `fig` to be registered as a figure, and you can also add `tbl` to number tables separately.
 
-@fig-duck showed two ducks side by side. You do not even need to type Figure: `@fig-duck`. 
+@fig-duck showed two ducks side by side. You do not even need to type Figure: `@fig-duck`.
 
-You can also use `knitr` to add figures, and using code chunks has some new handy features using tags. They work in a similar way to code options, but make it easier to add longer captions etc, as shown in @fig-img-duck. 
+You can also use `knitr` to add figures, and using code chunks has some new handy features using tags. They work in a similar way to code options, but make it easier to add longer captions etc, as shown in @fig-img-duck.
 
 ```{{r}}
 #| label: fig-img-duck
@@ -170,9 +168,9 @@ knitr::include_graphics("images/Duck.png")
 
 ### Code chunks
 
-If you are making a book to show code, there are a couple of features that might be useful. 
+If you are making a book to show code, there are a couple of features that might be useful.
 
-Adding code chunks will by default show both the code and output: 
+Adding code chunks will by default show both the code and output:
 
 ```{{r}}
 rnorm(n = 5, mean = 10, sd = 2)
@@ -196,7 +194,7 @@ rnorm(n = 5, mean = 10, sd = 2)
 
 ### Callout blocks
 
-My personal favourite features, you can highlight content with callout blocks. These range from notes that people might find interesting, to warnings that something could go mortally wrong. 
+My personal favourite features, you can highlight content with callout blocks. These range from notes that people might find interesting, to warnings that something could go mortally wrong.
 
 ```{r eval=FALSE}
 ::: {.callout-note}
@@ -204,11 +202,11 @@ These are notes.
 :::
 ```
 
-::: {.callout-note}
+::: callout-note
 These are notes.
 :::
 
-You can change the title by using hashes within the callout. They count as real headers in the Quarto outline. So, if you use one hash, it looks like a level one header which deeply disturbs me, so I like to use four hashes to make more sense in the chapter structure. 
+You can change the title by using hashes within the callout. They count as real headers in the Quarto outline. So, if you use one hash, it looks like a level one header which deeply disturbs me, so I like to use four hashes to make more sense in the chapter structure.
 
 ```{r eval=FALSE}
 ::: {.callout-note}
@@ -217,12 +215,13 @@ These are notes.
 :::
 ```
 
-::: {.callout-note}
+::: callout-note
 #### Look at my interesting title
+
 These are notes.
 :::
 
-You can also make the box collapse by default, which can be handy to hide solutions or obscure tangents. 
+You can also make the box collapse by default, which can be handy to hide solutions or obscure tangents.
 
 ```{r eval=FALSE}
 ::: {.callout-note collapse=true}
@@ -231,14 +230,15 @@ Secret secret notes.
 :::
 ```
 
-::: {.callout-note collapse=true}
+::: {.callout-note collapse="true"}
 #### Please look at me
-Secret secret notes. 
+
+Secret secret notes.
 :::
 
 Other types of callout blocks include:
 
-- Warning
+-   Warning
 
 ```{r eval=FALSE}
 ::: {.callout-warning}
@@ -246,11 +246,11 @@ These are notes.
 :::
 ```
 
-::: {.callout-warning}
+::: callout-warning
 These are warnings.
 :::
 
-- Important
+-   Important
 
 ```{r eval=FALSE}
 ::: {.callout-important}
@@ -258,11 +258,11 @@ This is something important
 :::
 ```
 
-::: {.callout-important}
+::: callout-important
 This is something important
 :::
 
-- Tip
+-   Tip
 
 ```{r eval=FALSE}
 ::: {.callout-tip}
@@ -270,11 +270,11 @@ Here is a handy tip.
 :::
 ```
 
-::: {.callout-tip}
-Here is a handy tip. 
+::: callout-tip
+Here is a handy tip.
 :::
 
-- And, a caution
+-   And, a caution
 
 ```{r eval=FALSE}
 ::: {.callout-caution}
@@ -282,25 +282,26 @@ Here is a caution about something.
 :::
 ```
 
-::: {.callout-caution}
+::: callout-caution
 Here is a caution about something.
 :::
 
-### References 
+### References
 
-If you want to add proper references instead of just hyperlinks, you need a .bib file from a reference manager. 
+If you want to add proper references instead of just hyperlinks, you need a .bib file from a reference manager.
 
-The .bib file should be in the include folder (unless you point it somewhere else) and you can specify it in the `_quarto.yml` file through the bibliography entry: 
+The .bib file should be in the include folder (unless you point it somewhere else) and you can specify it in the `_quarto.yml` file through the bibliography entry:
 
 ```{r eval=FALSE}
 bibliography: include/references.bib
 ```
 
-::: {.callout-tip}
-#### How do I download and edit a .bib file? 
-I use Zotero as a reference manager and its super easy to download a .bib file for a project you are working on. Downloading one entry is a little annoying as you need to export it as BibTex and copy from the file it produces, but if you create a folder to store everything for the book, you can just export the folder each time you add new entries (`right click >> export collection >> BibTex format and OK`). 
+::: callout-tip
+#### How do I download and edit a .bib file?
 
-If you do have the single entry, you can open the .bib file within RStudio and copy the entry in. It will look something like this: 
+I use Zotero as a reference manager and its super easy to download a .bib file for a project you are working on. Downloading one entry is a little annoying as you need to export it as BibTex and copy from the file it produces, but if you create a folder to store everything for the book, you can just export the folder each time you add new entries (`right click >> export collection >> BibTex format and OK`).
+
+If you do have the single entry, you can open the .bib file within RStudio and copy the entry in. It will look something like this:
 
 ```{r eval=FALSE}
 @article{bartlett_power_2022,
@@ -309,12 +310,12 @@ If you do have the single entry, you can open the .bib file within RStudio and c
 	...}
 ```
 
-which stores all the information for the `.csl` to pull out and cite/reference as needed. 
+which stores all the information for the `.csl` to pull out and cite/reference as needed.
 :::
 
-To cite, you need the code at the start of the bib entry. For example,  `@bartlett_power_2022` produces @bartlett_power_2022 and the full reference will be added to the references chapter. 
+To cite, you need the code at the start of the bib entry. For example, `@bartlett_power_2022` produces @bartlett_power_2022 and the full reference will be added to the references chapter.
 
-Depending on the citation style you want, there are different codes, such as adding it in parentheses `[@bartlett_power_2022]` [@bartlett_power_2022]. For a full list of options, you can check out the [Quarto citation guide](https://quarto.org/docs/authoring/citations.html){target="_blank"}. 
+Depending on the citation style you want, there are different codes, such as adding it in parentheses `[@bartlett_power_2022]` [@bartlett_power_2022]. For a full list of options, you can check out the [Quarto citation guide](https://quarto.org/docs/authoring/citations.html){target="_blank"}.
 
 By default, the book template has APA style for referencing, but if you need a different referencing style, you can add and specify a different .csl file.
 
@@ -322,20 +323,21 @@ By default, the book template has APA style for referencing, but if you need a d
 csl: include/apa.csl
 ```
 
-::: {.callout-tip}
-#### How do I specify a .csl file? 
-`.csl` stands for citation style language and you can download one from the [Zotero style repository](https://www.zotero.org/styles){target="_blank"}. For example, you could search for vancouver, click on the link, and it will download a new .csl file you can add to your repository. 
+::: callout-tip
+#### How do I specify a .csl file?
+
+`.csl` stands for citation style language and you can download one from the [Zotero style repository](https://www.zotero.org/styles){target="_blank"}. For example, you could search for vancouver, click on the link, and it will download a new .csl file you can add to your repository.
 :::
 
 ### `webexercises` interactive questions
 
-The book template automatically includes the `webexercises` package which can add interactive questions for self-tests. This is great for students checking their understanding through MCQs or adding easy to check answers like numbers. 
+The book template automatically includes the `webexercises` package which can add interactive questions for self-tests. This is great for students checking their understanding through MCQs or adding easy to check answers like numbers.
 
 #### MCQs
 
-You can add questions through inline code, or by first specifying them in an R code block if it makes it easier to edit longer text. 
+You can add questions through inline code, or by first specifying them in an R code block if it makes it easier to edit longer text.
 
-For example, this workshop is: 
+For example, this workshop is:
 
 `r longmcq(c(answer = "Life changing", "Boring", "Mediocre", "OK"))`
 
@@ -345,9 +347,9 @@ For example, this workshop is:
 
 #### Single answer
 
-You can ask simple single answers that are easy to evaluate: 
+You can ask simple single answers that are easy to evaluate:
 
-- On a scale of 1 (very dissatisfied) - 7 (very satisfied), how pleased are you with this workshop? `r fitb(7)`
+-   On a scale of 1 (very dissatisfied) - 7 (very satisfied), how pleased are you with this workshop? `r fitb(7)`
 
 ```{r eval=FALSE}
 `r fitb(7)`
@@ -355,13 +357,16 @@ You can ask simple single answers that are easy to evaluate:
 
 #### True or false
 
-If you want an even simpler response, you can ask true or false. 
+If you want an even simpler response, you can ask true or false.
 
-- After the workload, I am going to make my own book: `r torf(TRUE)`
+-   After the workload, I am going to make my own book: `r torf(TRUE)`
 
 ```{r eval=FALSE}
 `r torf(TRUE)`
 ```
 
-### Adding a glossary
+### Embedding files to download 
 
+E.g., data, .Rmd, .docx
+
+### Adding a glossary

@@ -42,6 +42,6 @@
         }
     ],
     "project_biblios": [
-        "references.bib"
+        "include/references.bib"
     ]
 }

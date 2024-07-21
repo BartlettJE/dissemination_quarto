@@ -36,6 +36,10 @@ The book template table of contents goes by default to level 3 headers (but you 
 ### Level 3 header
 ```
 
+#### Internal hyperlinks
+
+Point to other chapters / sections. 
+
 #### Text formatting
 
 You make text *italics* by surrounding it with one star (`*italics*`), or **bold** by surrounding it with two stars (`**bold**`).

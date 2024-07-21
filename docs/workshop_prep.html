@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -62,6 +96,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="include/webex.css">
 </head>
 
 <body class="nav-sidebar floating">
@@ -119,7 +154,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./book_conventions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quarto features and book conventions</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Worked examples for Quarto and booktem features</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
   </div>
 </li>
     </ul>
@@ -132,13 +173,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#book-workflow" id="toc-book-workflow" class="nav-link active" data-scroll-target="#book-workflow"><span class="header-section-number">1.1</span> Book workflow</a>
+  <li><a href="#creating-an-online-book-workflow" id="toc-creating-an-online-book-workflow" class="nav-link active" data-scroll-target="#creating-an-online-book-workflow"><span class="header-section-number">1.1</span> Creating an online book workflow</a>
   <ul class="collapse">
   <li><a href="#creating-the-book" id="toc-creating-the-book" class="nav-link" data-scroll-target="#creating-the-book"><span class="header-section-number">1.1.1</span> Creating the book</a></li>
   <li><a href="#editing-the-book" id="toc-editing-the-book" class="nav-link" data-scroll-target="#editing-the-book"><span class="header-section-number">1.1.2</span> Editing the book</a></li>
   </ul></li>
-  <li><a href="#download-r-and-rstudio" id="toc-download-r-and-rstudio" class="nav-link" data-scroll-target="#download-r-and-rstudio"><span class="header-section-number">1.2</span> Download R and RStudio</a></li>
-  <li><a href="#download-git-and-github" id="toc-download-git-and-github" class="nav-link" data-scroll-target="#download-git-and-github"><span class="header-section-number">1.3</span> Download git and github</a></li>
+  <li><a href="#download-r-and-rstudio" id="toc-download-r-and-rstudio" class="nav-link" data-scroll-target="#download-r-and-rstudio"><span class="header-section-number">1.2</span> Download R and RStudio</a>
+  <ul class="collapse">
+  <li><a href="#installing-base-r" id="toc-installing-base-r" class="nav-link" data-scroll-target="#installing-base-r"><span class="header-section-number">1.2.1</span> Installing Base R</a></li>
+  <li><a href="#installing-rstudio" id="toc-installing-rstudio" class="nav-link" data-scroll-target="#installing-rstudio"><span class="header-section-number">1.2.2</span> Installing RStudio</a></li>
+  <li><a href="#install-the-booktem-r-package" id="toc-install-the-booktem-r-package" class="nav-link" data-scroll-target="#install-the-booktem-r-package"><span class="header-section-number">1.2.3</span> Install the <code>booktem</code> R package</a></li>
+  </ul></li>
+  <li><a href="#download-git-and-github-desktop" id="toc-download-git-and-github-desktop" class="nav-link" data-scroll-target="#download-git-and-github-desktop"><span class="header-section-number">1.3</span> Download git and github desktop</a></li>
   <li><a href="#finished" id="toc-finished" class="nav-link" data-scroll-target="#finished"><span class="header-section-number">1.4</span> Finished</a></li>
   </ul>
 </nav>
@@ -148,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preparation before the workshop</span></h1>
+<h1 class="title"><span id="workshop_prep" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preparation before the workshop</span></span></h1>
 </div>
 
 
@@ -163,41 +209,304 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Before we can get to the fun stuff, you will need to download a few pieces of software to your computer.</p>
-<section id="book-workflow" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="book-workflow"><span class="header-section-number">1.1</span> Book workflow</h2>
-<p>For an overview to show why you need the following the pieces of software, the workflow for creating and editing the book is:</p>
+<p>Before we can get to the fun stuff, you will need to download a few pieces of software to your computer to focus on creating in the workshop. If you have any problems, just message me on Teams.</p>
+<section id="creating-an-online-book-workflow" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="creating-an-online-book-workflow"><span class="header-section-number">1.1</span> Creating an online book workflow</h2>
+<p>For an overview to show why you need the following the pieces of software, you will follow this workflow to create and edit the book.</p>
 <section id="creating-the-book" class="level3" data-number="1.1.1">
 <h3 data-number="1.1.1" class="anchored" data-anchor-id="creating-the-book"><span class="header-section-number">1.1.1</span> Creating the book</h3>
 <ol type="1">
-<li></li>
+<li><p>Install the <code>booktem</code> R package.</p></li>
+<li><p>In RStudio, use the <code>create_book()</code> function to create a new project in your working directory containing the initial template files.</p></li>
+<li><p>Edit the basic details of your book, like the title, author(s), and description.</p></li>
+<li><p>Create a new github repository for your book folder.</p></li>
+<li><p>Push the initial repository so the code is available on github.</p></li>
+<li><p>Activate github pages to render the book online via a URL.</p></li>
 </ol>
 </section>
 <section id="editing-the-book" class="level3" data-number="1.1.2">
 <h3 data-number="1.1.2" class="anchored" data-anchor-id="editing-the-book"><span class="header-section-number">1.1.2</span> Editing the book</h3>
 <ol type="1">
-<li></li>
+<li><p>Open the book .Rproj file to start working on the book in RStudio.</p></li>
+<li><p>Edit or add chapter files in RStudio, specifying their order in the <code>_quarto.yml</code> file.</p></li>
+<li><p>Render individual chapter files as you work on them. Render <code>index.qmd</code> when you want to update all the chapters, or render them one by one to ensure all new changes are available.</p></li>
+<li><p>Add commits at key points using git/github to mark milestones with useful commit messages.</p></li>
+<li><p>When you want the book updating, push the changes to be available on github and your book URL after a short delay.</p></li>
 </ol>
 </section>
 </section>
 <section id="download-r-and-rstudio" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="download-r-and-rstudio"><span class="header-section-number">1.2</span> Download R and RStudio</h2>
+<p>If you are new to R/RStudio, you will need to install both pieces of software which is <em>normally</em> pretty straightforward. You might find this <a href="https://youtu.be/YrEe2TLr3MI?si=oweIE55Ul77ZoZwz" target="_blank">YouTube video here</a> useful.</p>
+<p>If you are a more experienced R/RStudio user, just make sure you update your version of R/RStudio as the <code>booktem</code> package will only work for recent versions as Posit are rapidly developing Quarto. I am currently using R version 4.3.2 (2023-10-31) and RStudio 2023.6.2.561, but the more recent the better.</p>
+<section id="installing-base-r" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="installing-base-r"><span class="header-section-number">1.2.1</span> Installing Base R</h3>
+<p><a href="https://cran.rstudio.com/" target="_blank">Install base R</a>. Choose the download link for your operating system (Linux, Mac OS X, or Windows).</p>
+<p>If you have a Mac, install the latest release from the newest <code>R-x.x.x.pkg</code> link (or a legacy version if you have an older operating system). After you install R, you should also install <a href="http://xquartz.macosforge.org/" target="_blank">XQuartz</a> to be able to use some visualisation packages.</p>
+<p>If you are installing the Windows version, choose the “<a href="https://cran.rstudio.com/bin/windows/base/">base</a>” subdirectory and click on the download link at the top of the page. After you install R, you should also install <a href="https://cran.rstudio.com/bin/windows/Rtools/" target="_blank">RTools</a> and use the “recommended” version highlighted near the top of the list.</p>
+<p>If you are using Linux, choose your specific operating system and follow the installation instructions. If you use Linux, you probably do not need help from me for installing software and I will probably not know how to help you as I have never used Linux.</p>
 </section>
-<section id="download-git-and-github" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="download-git-and-github"><span class="header-section-number">1.3</span> Download git and github</h2>
-<p>Potentially the most unfamiliar element of this process will be working with git and github. If you have not used it before, git is a version control system which tracks file changes on your computer. github is an online system which uses git to host those changes and make your code available online.</p>
-<p>There is an <a href="https://github.com/git-guides/install-git" target="_blank">installation guide</a> on github, but we have access to a fantastic resource developed by our colleagues in Mathematics and Statistics. They developed an online course on <a href="https://moodle.gla.ac.uk/course/view.php?id=41115" target="_blank">Moodle</a> introducing staff and students to git and github. You will need the enrollment code <strong>git_psych_24</strong> to access the course.</p>
-<p>There are 7 units in total, but for the purposes of this workshop, I would consider 1 and 2 as essential for downloading git/github and using it as a single user to track changes. Reaching this point will be super helpful for following on as easy as possible in the workshop.</p>
+<section id="installing-rstudio" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="installing-rstudio"><span class="header-section-number">1.2.2</span> Installing RStudio</h3>
+<p>Go to <a href="https://www.rstudio.com/products/rstudio/download/#download" target="_blank">rstudio.com</a> and download the RStudio Desktop version for your operating system. It should recognise your operating system and allow you to download via the blue Download button, but you can look for previous versions if you need one.</p>
+</section>
+<section id="install-the-booktem-r-package" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="install-the-booktem-r-package"><span class="header-section-number">1.2.3</span> Install the <code>booktem</code> R package</h3>
+<p>The PsyTeachR book template is contained within a package hosted on Lisa’s github called <code>booktem</code>. To install the package, run the following code in the Console of RStudio:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"debruine/booktem"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you are new to R/RStudio, you probably have no user packages installed, so you will get a prompt to allow <code>booktem</code> to install the other R packages it depends on to work. This might take a few minutes, so go and enjoy yourself a hot drink.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>One of these messages might say something like “do you want to compile packages where there is a binary version” and give you several options to select. You will only be able to select 1 if you have Rtools downloaded on a Windows computer as you need developer tools to do this. Macs should not need any additional software to compile binary packages. These binary versions are normally a little more recent, so its useful to install them if possible.</p>
+</div>
+</div>
+<p>If you are a more experienced R/RStudio user, you might be prompted to update your R packages that <code>booktem</code> depends on. Obviously use your judgement if you are in a place to update your packages, but the book template might not work with older packages.</p>
+</section>
+</section>
+<section id="download-git-and-github-desktop" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="download-git-and-github-desktop"><span class="header-section-number">1.3</span> Download git and github desktop</h2>
+<p>Potentially the most unfamiliar element of this process will be working with git and github. If you have not used it before, git is a version control system which tracks file changes on your computer (like OneDrive but for code). github is an online system which uses git to host those changes and make your code available online. There is a graphical user interface called github desktop which I use and will demonstrate. If you want to use the command line version of git/github, you probably do not need me to show you how.</p>
+<p>There is an <a href="https://github.com/git-guides/install-git" target="_blank">installation guide</a> on github, but we have access to a fantastic resource developed by our colleagues in Mathematics and Statistics. They developed an accessible online course on <a href="https://moodle.gla.ac.uk/course/view.php?id=41115" target="_blank">Moodle</a> introducing staff and students to version control using git and github. You will need the enrollment code <strong>git_psych_24</strong> to access the course.</p>
+<p>There are 7 units in total which do not take very long, but for the purposes of this workshop, I would consider 1 and 2 as <strong>essential</strong> for downloading git/github desktop and using it as a single user to track changes. Reaching this point will be super helpful for following along in the workshop as the terms will be more familiar to you like repositories, commits, and pushing changes.</p>
 <p>If you have time, completing unit 3 will give you everything you need if you are only using it on your own. If you plan on writing the book in a team, units 4 and 5 cover being a group project user, then 6 and 7 for advanced features.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Apply for education membership
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The standard version of github should meet all your needs, but by working at a university you are eligible to apply for an education membership. If you are interested you can find out more on the <a href="https://github.com/education/teachers" target="_blank">github education site</a> for teachers. For example, with an education profile, you can get unlimited private repositories.</p>
+</div>
+</div>
 </section>
 <section id="finished" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="finished"><span class="header-section-number">1.4</span> Finished</h2>
-<p>You are ready to make a book in the workshop!</p>
+<p>You are ready to make a book in the workshop! See you all on the 1st of August.</p>
 
 
 </section>
 
 </main> <!-- /main -->
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -26,7 +26,7 @@ Once RStudio knows where you want your working directory, you can create the boo
 # We first need to load the booktem library, assuming its installed properly
 library(booktem)
 
-create_book(path = "", # If you set your working directory, you should not need to edit this
+create_book(path = "your_book_file_name", # If you set your working directory, you should not need to add the full path
             title = "My book title", # The main title of your book
             authors = list( # You need a new line for any additional author, or delete the author 2 line if you're solo
               c("Author 1 first name", "Author 1 last name", "Author 1 ORCiD"),
@@ -34,35 +34,70 @@ create_book(path = "", # If you set your working directory, you should not need 
             )
 ```
 
-Once you press run, you should get a bunch of progress messages. Once its finished, your book will open in a new session. Congratulations, you have a book skeleton to work with!
+Once you press run, you should get a bunch of progress messages from `Setting up project...`. Once its finished, your book will open in a new session and you will see the rendered version appear in your default internet browser.
+
+Congratulations, you have a book skeleton to work with!
 
 ## Tour of the Quarto book template
 
-1.  \_quarto.yml
+1.  `\_quarto.yml`
+
+We will start by exploring the `\_quarto.yml` file where you can edit all the details for your book, like the title, description, author(s), and the licence. In the new Quarto book template, this is also how you control the order of chapters.
 
 ::: callout-note
 #### What is a .yml file?
 
-.yml files express different options and must follow a specific format.
+YAML / .yml are configuration files for programs which must follow specific formatting conventions.
 :::
+
+Within the .yml file, I will highlight key features in: project, book, bibliography, csl, and format. 
 
 2.  index.qmd
 
-3.  `include/` folder
+Index will be the opening page for the link to your book, so this will typically include an overview of what your book contains, who to contact for problems/questions etc. 
 
-4.  Chapter files
+3.  `R/` folder
+
+The `R/` folder is where you can save bits of R code that your book relies on. There is some code in here that Lisa has worked on to help with certain functionality, like how the glossary looks. 
+
+4.  `include/` folder
+
+The `include/` folder is a similar idea to `R/`. It has a bunch of files the book uses for formatting and any chapters would be able to access stuff here. For example, a .bib file for your references and a .csl file for the style of your references. 
+
+5.  `docs/` folder
+
+The `docs/` folder is where the rendered .html versions of your book will update to. The process behind creating books in Quarto is writing them in Markdown, then Markdown is converted to .html. When we add the book to github pages, this is the folder you point it to for how to present the book online. 
+
+6.  Licence
+
+By default, `booktem` gives the books a CC-BY-SA-4.0 licence. This is a Creative Commons licence which states people can adapt your materials but must provide you with credit. You can learn more about different types of [Creative Commons licences online](https://creativecommons.org/){target="_blank"}. If you want to state a different licence depending on your materials, you can update the text in the Licence file and in the .yml. 
+
+7.  Chapter files
+
+By default, you get an example index.qmd and one chapter .qmd for an example. The example chapter has a bunch of advice on what to edit and features like I will demonstrate, but you can delete this text or create your own files to start writing chapters. 
+
+You will need one level 1 header (`# Chapter title`) to start the file, and that will be the name of your chapter at the top of the page and in the table of contents. 
+
+::: callout-warning
+Make sure you only use one level 1 header per chapter. If you try and add multiple within one file, it will think they are separate chapters and try and split them when it renders, making it look weird. 
+:::
+
+Once you start adding multiple chapters, remember to update the .yml file for the order you want them in your book. 
 
 ::: callout-tip
 If you are converting a previous book to the new template, there is a handy little function `rmd2qmd`. This copies .Rmd files and renames them to .qmd. The function looks like this
 
 ```{r eval=FALSE}
-rmd2qmd(from_path = "", # file path where your .Rmd files are
+rmd2qmd(from_path = "",  # file path where your .Rmd files are
+        to_path = "./") # file path where you want your new .qmd files to go
 ```
 
 where you specify a file path to access the old .Rmd files and a file path to where you want the new .qmd files saving. Keep your working directory in mind as you will probably be starting from your book folder at this point. I usually save my old .Rmd files in a folder within the new book directory, then save the new .qmd files to the new book main directory.
 :::
 
 5.  Rendering files
+
+Once you have finished editing or you want to check how it looks, you need to click Render for Quarto to process the code and turn it into something pretty. Once you click Render once, you can open it up in the browser and keep checking as you make edits. When you want it to rerender, click Reload the page and it will show your new edits. 
 
 ::: callout-tip
 The single best part of Quarto and the new book template is you can keep rendering and checking what your work looks like in the flesh. Previously, you had to render the whole book to check how it rendered, but now you can keep updating the browser to see what your changes look like.
@@ -73,6 +108,8 @@ If you introduce an error, you will get an error and red box on the screen to hi
 
 After an error, you will need press Render again rather than just refreshing the browser.
 :::
+
+These are the key components to make your book. Until this point, these edits all exist on your own computer. But now it is time to track your code using github and make your book accessible online via github pages. 
 
 ## Creating a github repository
 
@@ -119,3 +156,5 @@ Reverting changes
 Start working on your own book in the remaining time we have together.
 
 See the next chapter on [Quarto features and book conventions](#quarto_features) for inspiration / example code for the kind of features you can use.
+
+Do not forget to make your own hex sticker for different logos for extra panache!

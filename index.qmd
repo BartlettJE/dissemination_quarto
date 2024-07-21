@@ -14,10 +14,10 @@ Once you knit them and push any changes to github, you get a url to link to them
 
 **Intended Learning Outcomes (ILOs)**
 
-By the end of the workshop, you will be able to: 
+By the end of the workshop, you will be able to:
 
-- Create an online book using the `booktem` R package in RStudio. 
+-   Create an online book using the `booktem` R package in RStudio.
 
-- Use the basic functions of git/github to commit changes and host the book using github pages. 
+-   Use the basic functions of git/github to commit changes and host the book using github pages.
 
-- Create features suited to your audience such as Markdown formatting, code chunks, referencing, glossaries, and interactive questions. 
+-   Create features suited to your audience such as Markdown formatting, code chunks, referencing, glossaries, and interactive questions.

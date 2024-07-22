@@ -20,7 +20,9 @@ csl: include/apa.csl
 format:
   html:
     theme: cosmo
-    css:   include/webex.css
+    css:   
+      - include/webex.css
+      - include/glossary.css
     include-after-body: include/webex.js
   pdf:
     documentclass: scrreprt

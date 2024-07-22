@@ -1,6 +1,6 @@
 # Worked examples for Quarto and booktem features {#quarto_features}
 
-```{r echo=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(webexercises)
 library(glossary)
 ```
@@ -119,13 +119,13 @@ where the writing in square brackets is the text, and the link goes in the round
 
 #### Internal hyperlinks
 
-If you want to reference a chapter or section of your book, you can create internal hyperlinks through curly brackets and a hash. For example, if I wanted to point you back to the [Workshop Plan](#workshop_plan) chapter, you first need to add a tag on the chapter heading: 
+If you want to reference a chapter or section of your book, you can create internal hyperlinks through curly brackets and a hash. For example, if I wanted to point you back to the [Workshop Plan](#workshop_plan) chapter, you first need to add a tag on the chapter heading:
 
 ```{r eval=FALSE}
 # Workshop plan {#workshop_plan}
 ```
 
-You can then use the tag to create a link with a similar format to URL hyperlinks: 
+You can then use the tag to create a link with a similar format to URL hyperlinks:
 
 ```{r eval=FALSE}
 ...back to the [Workshop Plan](#workshop_plan) chapter
@@ -382,9 +382,9 @@ If you want an even simpler response, you can ask true or false.
 
 ### Embedding files to download
 
-Using a similar format to creating hyperlinks, you can embed files for people to download and use in the chapter. This can be really useful for student activities as you can give them a data set to follow along to your tutorials with. 
+Using a similar format to creating hyperlinks, you can embed files for people to download and use in the chapter. This can be really useful for student activities as you can give them a data set to follow along to your tutorials with.
 
-First, you need to add a file within your book directory. If you have loads of data or files across your book, you might want a separate folder (I call mine `data` or `supporting`), but I have put a simple .csv in the `include/` folder. 
+First, you need to add a file within your book directory. If you have loads of data or files across your book, you might want a separate folder (I call mine `data` or `supporting`), but I have put a simple .csv in the `include/` folder.
 
 If you click on [.csv file](include/test_data.csv){target="_blank"}, it will download to your browser or people might need to right click and "save link as". It follows the same format as hyperlinks:
 
@@ -394,10 +394,10 @@ click on [.csv file](include/test_data.csv)
 
 ### Adding a glossary
 
-Another cool feature that Lisa created is adding a glossary of terms. `glossary` is its own R package, but by default `booktem` includes it. You have two options, you can either add your own definitions as you go along, or if you are teaching data skills, you can use the [PsyTeachR glossary](https://psyteachr.github.io/glossary/){target="_blank"}. 
+Another cool feature that Lisa created is adding a glossary of terms. `glossary` is its own R package, but by default `booktem` includes it. You have two options, you can either add your own definitions as you go along, or if you are teaching data skills, you can use the [PsyTeachR glossary](https://psyteachr.github.io/glossary/){target="_blank"}.
 
 ::: callout-important
-You still need to add definitions for anything that is not included in the PsyTeachR glossary. If you try and render and the item does not exist, you will get an error and you will need to manually add the definition within the inline code. 
+You still need to add definitions for anything that is not included in the PsyTeachR glossary. If you try and render and the item does not exist, you will get an error and you will need to manually add the definition within the inline code.
 :::
 
 There are two main components to creating a glossary. First, you need to add glossary items as you work through your chapter using inline code. For example, I might want to define what a `r glossary("glossary", def = "An alphabetical list of words with explanations.")` is:
@@ -408,7 +408,7 @@ There are two main components to creating a glossary. First, you need to add glo
 
 If you hover or cover on the text, you will see the definition appear. There are different settings for this, so make sure you check the `glossary` documentation.
 
-At the end of each chapter, you can then include a glossary table which shows all the words you used in the chapter. Just make sure you add `echo=FALSE` to the code chunk, so that the function does not appear. 
+At the end of each chapter, you can then include a glossary table which shows all the words you used in the chapter. Just make sure you add `echo=FALSE` to the code chunk, so that the function does not appear.
 
 ```{{r}}
 glossary_table()
@@ -418,6 +418,6 @@ glossary_table()
 glossary_table()
 ```
 
-The behaviour of glossary table and whether you use all your own definitions or point to the PsyTeachR glossary is controlled by some R code in the `booktem` files. It will be easier to point out in the workshop, but you are looking for `R/my_setup.R`. 
+The behaviour of glossary table and whether you use all your own definitions or point to the PsyTeachR glossary is controlled by some R code in the `booktem` files. It will be easier to point out in the workshop, but you are looking for `R/my_setup.R`.
 
-You can add definitions as you go along with inline code, or you can create and edit a .yml file for your terms if you would prefer to edit that way. See the [glossary documentation](https://debruine.github.io/glossary/articles/glossary.html){target="_blank"} for more information. 
+You can add definitions as you go along with inline code, or you can create and edit a .yml file for your terms if you would prefer to edit that way. See the [glossary documentation](https://debruine.github.io/glossary/articles/glossary.html){target="_blank"} for more information.

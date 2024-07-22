@@ -178,11 +178,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#creating-the-book-template" id="toc-creating-the-book-template" class="nav-link" data-scroll-target="#creating-the-book-template"><span class="header-section-number">2.2</span> Creating the book template</a></li>
   <li><a href="#tour-of-the-quarto-book-template" id="toc-tour-of-the-quarto-book-template" class="nav-link" data-scroll-target="#tour-of-the-quarto-book-template"><span class="header-section-number">2.3</span> Tour of the Quarto book template</a></li>
   <li><a href="#creating-a-github-repository" id="toc-creating-a-github-repository" class="nav-link" data-scroll-target="#creating-a-github-repository"><span class="header-section-number">2.4</span> Creating a github repository</a></li>
-  <li><a href="#tour-of-github" id="toc-tour-of-github" class="nav-link" data-scroll-target="#tour-of-github"><span class="header-section-number">2.5</span> Tour of github</a></li>
-  <li><a href="#publish-to-github-pages" id="toc-publish-to-github-pages" class="nav-link" data-scroll-target="#publish-to-github-pages"><span class="header-section-number">2.6</span> Publish to github pages</a></li>
-  <li><a href="#commiting-and-pushing-changes" id="toc-commiting-and-pushing-changes" class="nav-link" data-scroll-target="#commiting-and-pushing-changes"><span class="header-section-number">2.7</span> Commiting and pushing changes</a></li>
-  <li><a href="#collaborating-on-github" id="toc-collaborating-on-github" class="nav-link" data-scroll-target="#collaborating-on-github"><span class="header-section-number">2.8</span> Collaborating on github?</a></li>
-  <li><a href="#start-working-on-your-own-book" id="toc-start-working-on-your-own-book" class="nav-link" data-scroll-target="#start-working-on-your-own-book"><span class="header-section-number">2.9</span> Start working on your own book!</a></li>
+  <li><a href="#navigating-github-and-github-pages" id="toc-navigating-github-and-github-pages" class="nav-link" data-scroll-target="#navigating-github-and-github-pages"><span class="header-section-number">2.5</span> Navigating github and github pages</a>
+  <ul class="collapse">
+  <li><a href="#publish-to-github-pages" id="toc-publish-to-github-pages" class="nav-link" data-scroll-target="#publish-to-github-pages"><span class="header-section-number">2.5.1</span> Publish to github pages</a></li>
+  </ul></li>
+  <li><a href="#commiting-and-pushing-changes" id="toc-commiting-and-pushing-changes" class="nav-link" data-scroll-target="#commiting-and-pushing-changes"><span class="header-section-number">2.6</span> Commiting and pushing changes</a></li>
+  <li><a href="#start-working-on-your-own-book" id="toc-start-working-on-your-own-book" class="nav-link" data-scroll-target="#start-working-on-your-own-book"><span class="header-section-number">2.7</span> Start working on your own book!</a></li>
   </ul>
 </nav>
     </div>
@@ -241,15 +242,15 @@ Do not create github repositories within OneDrive
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>              <span class="fu">c</span>(<span class="st">"Author 2 first name"</span>, <span class="st">"Author 2 last name"</span>, <span class="st">"Author 2 ORCiD"</span>))</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Once you press run, you should get a bunch of progress messages from <code>Setting up project...</code>. Once its finished, your book will open in a new session and you will see the rendered version appear in your default internet browser.</p>
+<p>Once you press run, you should get a bunch of progress messages from <code>Setting up project...</code>. Once it’s finished, your book will open in a new session and you will see the rendered version appear in your default internet browser.</p>
 <p>Congratulations, you have a book skeleton to work with!</p>
 </section>
 <section id="tour-of-the-quarto-book-template" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="tour-of-the-quarto-book-template"><span class="header-section-number">2.3</span> Tour of the Quarto book template</h2>
 <ol type="1">
-<li><code>\_quarto.yml</code></li>
+<li><code>_quarto.yml</code></li>
 </ol>
-<p>We will start by exploring the <code>\_quarto.yml</code> file where you can edit all the details for your book, like the title, description, author(s), and the licence. In the new Quarto book template, this is also how you control the order of chapters.</p>
+<p>We will start by exploring the <code>_quarto.yml</code> file where you can edit all the details for your book, like the title, description, author(s), and the licence. In the new Quarto book template, this is also how you control the order of chapters.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -279,11 +280,11 @@ What is a .yml file?
 <ol start="5" type="1">
 <li><code>docs/</code> folder</li>
 </ol>
-<p>The <code>docs/</code> folder is where the rendered .html versions of your book will update to. The process behind creating books in Quarto is writing them in Markdown, then Markdown is converted to .html. When we add the book to github pages, this is the folder you point it to for how to present the book online.</p>
+<p>The <code>docs/</code> folder is where the rendered .html versions of your book will update to. The process behind creating books in Quarto is writing them in Markdown, then Markdown is converted to .html. When we add the book to github pages, this is the folder you point it to as the source for how it appears as a webpage.</p>
 <ol start="6" type="1">
 <li>Licence</li>
 </ol>
-<p>By default, <code>booktem</code> gives the books a CC-BY-SA-4.0 licence. This is a Creative Commons licence which states people can adapt your materials but must provide you with credit. You can learn more about different types of <a href="https://creativecommons.org/" target="_blank">Creative Commons licences online</a>. If you want to state a different licence depending on your materials, you can update the text in the Licence file and in the .yml.</p>
+<p>By default, <code>booktem</code> gives the books a CC-BY-SA-4.0 licence. This is a Creative Commons licence which states people can adapt your materials but they must provide you with credit. You can learn more about different types of <a href="https://creativecommons.org/" target="_blank">Creative Commons licences online</a>. If you want to state a different licence depending on your materials, you can update the text in the Licence file and in the .yml.</p>
 <ol start="7" type="1">
 <li>Chapter files</li>
 </ol>
@@ -316,12 +317,12 @@ Tip
 <p>If you are converting a previous book to the new template, there is a handy little function <code>rmd2qmd</code>. This copies .Rmd files and renames them to .qmd. The function looks like this</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rmd2qmd</span>(<span class="at">from_path =</span> <span class="st">""</span>,  <span class="co"># file path where your .Rmd files are</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">to_path =</span> <span class="st">"./"</span>) <span class="co"># file path where you want your new .qmd files to go</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">to_path =</span> <span class="st">""</span>) <span class="co"># file path where you want your new .qmd files to go</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>where you specify a file path to access the old .Rmd files and a file path to where you want the new .qmd files saving. Keep your working directory in mind as you will probably be starting from your book folder at this point. I usually save my old .Rmd files in a folder within the new book directory, then save the new .qmd files to the new book main directory.</p>
 </div>
 </div>
-<ol start="5" type="1">
+<ol start="8" type="1">
 <li>Rendering files</li>
 </ol>
 <p>Once you have finished editing or you want to check how it looks, you need to click Render for Quarto to process the code and turn it into something pretty. Once you click Render once, you can open it up in the browser and keep checking as you make edits. When you want it to rerender, click Reload the page and it will show your new edits.</p>
@@ -356,10 +357,10 @@ Caution
 </section>
 <section id="creating-a-github-repository" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="creating-a-github-repository"><span class="header-section-number">2.4</span> Creating a github repository</h2>
-<p>Once you have a working barebones version of your book ready to go, its time to associate your book folder with a github repository and start some version control.</p>
+<p>Once you have a working barebones version of your book ready to go, it’s time to associate your book folder with a github repository and start some version control. If you want another resource, you can see the <a href="https://docs.github.com/en/desktop/overview/creating-your-first-repository-using-github-desktop" target="_blank">github documentation online</a>.</p>
 <p>In future, you could actually start with this part. You can create a new folder and create a repository for you to then use the <code>create_book()</code> function to add the book file to.</p>
 <p>However, we started by creating the book first, so we need to create a repository for an existing folder without a git component.</p>
-<p>Publish repository to github</p>
+<p>In the github desktop application, click <code>add &gt;&gt; Create a New Repository</code> and complete the details.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -373,29 +374,118 @@ Seriously, do not create github repositories within OneDrive
 <p>As a reminder, please <strong>do not</strong> use a folder within OneDrive for your github repository.</p>
 </div>
 </div>
+<ul>
+<li><p>Name: This will be the name of your repository on github, so call it something short but sensible.</p></li>
+<li><p>Local path: Click Choose… and navigate to your book folder. You want the path to be the main folder your book lives in.</p></li>
+</ul>
+<p>The other fields you can edit later, so click Create Repository when you are ready.</p>
+<p>Your newly minted repository should be showing as the Current Repository. This exists on your computer, but it is still not available online. You need to click Publish repository, and that will push all of your files to github and be available online.</p>
 </section>
-<section id="tour-of-github" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="tour-of-github"><span class="header-section-number">2.5</span> Tour of github</h2>
+<section id="navigating-github-and-github-pages" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="navigating-github-and-github-pages"><span class="header-section-number">2.5</span> Navigating github and github pages</h2>
+<p>Now your files are available online, navigate to your github account online and find your new repository.</p>
+<p>I will provide a little overview in the workshop of key things to look out for and what each tab contains.</p>
+<p>If you are only interested in using github to work on a book, the key tabs are Code and Settings. In Code, you will see all your files you published. These will all be the same as what you created on your computer. This is the idea behind version control and storing all your code/files like OneDrive.</p>
+<p>In Settings, this is where you can edit things about your repository. If you plan on working on your book in a team, you can add collaborators by adding their github profile. They will then receive an email saying you have invited them to collaborate on their github repository. After they accept, they can pull the repository and start working on it too.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Working collaboratively is one of the main motivations behind git and github, but it can be tricky if you are unfamiliar with more advanced features like merging and clashes. Before you start editing the same repository with someone, I <em>heavily</em> recommend completing units 4 and 5 of the <a href="#github_prep">version control Moodle course</a> provided by Maths and Stats.</p>
+</div>
+</div>
+<p>Within Settings is the key section we need to get your book available online.</p>
+<section id="publish-to-github-pages" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="publish-to-github-pages"><span class="header-section-number">2.5.1</span> Publish to github pages</h3>
+<p>In Settings, navigate to Pages within Code and automation. Under Build and deployment, this will be set to none by default. You must click the drop down, choose Main and select /docs. You will remember /docs is where we store all the html versions of the book files, so you are pointing Github pages here as the source for your book.</p>
+<p>When you press Save, this will start building your book. It will not be available immediately and will take a few minutes. When it is ready, at the top of the page, it will say “Your site is live at…” with your new URL you can click on and open. In the Actions tab, it will also show as a green tick when it has finished building.</p>
+<p>Congratulations! After seeing your rendered book for the first time, this is the second most satisfying part as you can see everything is working.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Add shortcuts to your book
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Once the site is live, I recommend adding the link to two places. First, save it as a browser shortcut so you can quickly access it outside of github. Second, return to the Code tab. Click the cog icon next to Above on the right side and tick to add your website from github pages. This will show the URL to your book on the Code tab for easy access from here.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Customise the URL
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By default, the URL to your book will be your github username + .github.io + your repository name. If you want to get fancy, you can add a custom domain from within Settings and Pages if you have bought one.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you try and push a change that contains an error and your book does not render, you will get a red cross in Actions saying your book did not build and you will receive an email warning you about it too. Just go back to the book files in RStudio and fix any errors you are getting before you push the updates again.</p>
+</div>
+</div>
 </section>
-<section id="publish-to-github-pages" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="publish-to-github-pages"><span class="header-section-number">2.6</span> Publish to github pages</h2>
-<p>Settings &gt;&gt; Pages. Set to none by default. Need to choose Main and /docs to point Github pages to where it needs to look for the rendered html files.</p>
-<p>Wait for actions to show as green tick.</p>
-<p>Check back and at the top of the page, it should give you the url for the page link.</p>
-<p>Save to browser shortcut, add to repo about for a quick link.</p>
-<p>Tip: By default, its set to your github username .github.io and your repository name. If you want to get fancy, you can add a custom domain.</p>
-<p>Actions and what to look out for if it does not build.</p>
 </section>
-<section id="commiting-and-pushing-changes" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="commiting-and-pushing-changes"><span class="header-section-number">2.7</span> Commiting and pushing changes</h2>
-<p>Commit messages and future you</p>
-<p>Reverting changes</p>
+<section id="commiting-and-pushing-changes" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="commiting-and-pushing-changes"><span class="header-section-number">2.6</span> Commiting and pushing changes</h2>
+<p>At this point, you have everything you need for the book workflow. As you work on your book, you will go through the workflow of:</p>
+<ol type="1">
+<li><p>Open .RProj and edit your book in RStudio, either by editing your past progress or adding new files.</p></li>
+<li><p>When you hit a milestone you want to record, in github desktop tick all file changes or specific files, add a commit message (and longer description if necessary).</p></li>
+<li><p>If you are continuing to work on the book, keeping editing and committing.</p></li>
+<li><p>When you are ready to push changes to github and github pages, push your commits.</p></li>
+</ol>
+<p>Before we have time to start working on your newly minted books, I will end on a couple of warnings and tips.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Remember just committing changes will do nothing to your github repository and book link. You need to push those committed changes for them to be available on github and used to build the book in github pages. It takes a few minutes to rebuild, so do not worry if you do not immediately see the changes.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Reverting changes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>One of the main features I use way too infrequently is reverting changes when something goes wrong. The idea behind version control is you save your work at specific milestones, where you can add commit messages than describe key changes you make. If you make a change that breaks something since your last commit, you can revert the changes to a previous version. To do this, go to github desktop, click History, and you will see all your commit history. Identify the last commit you want to revert to, right click on it, and select Revert Changes in Commit.</p>
+</div>
+</div>
 </section>
-<section id="collaborating-on-github" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="collaborating-on-github"><span class="header-section-number">2.8</span> Collaborating on github?</h2>
-</section>
-<section id="start-working-on-your-own-book" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="start-working-on-your-own-book"><span class="header-section-number">2.9</span> Start working on your own book!</h2>
+<section id="start-working-on-your-own-book" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="start-working-on-your-own-book"><span class="header-section-number">2.7</span> Start working on your own book!</h2>
 <p>Start working on your own book in the remaining time we have together.</p>
 <p>See the next chapter on <a href="book_conventions.html">Quarto features and book conventions</a> for inspiration / example code for the kind of features you can use.</p>
 <p>Do not forget to make your own hex sticker for different logos for extra panache!</p>

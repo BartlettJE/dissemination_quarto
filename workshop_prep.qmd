@@ -50,7 +50,7 @@ If you are using Linux, choose your specific operating system and follow the ins
 
 ### Installing RStudio
 
-Go to [rstudio.com](https://www.rstudio.com/products/rstudio/download/#download){target="_blank"} and download the RStudio Desktop version for your operating system. It should recognise your operating system and allow you to download via the blue Download button, but you can look for previous versions if you need one. 
+Go to [rstudio.com](https://www.rstudio.com/products/rstudio/download/#download){target="_blank"} and download the RStudio Desktop version for your operating system. It should recognise your operating system and allow you to download via the blue Download button, but you can look for previous versions if you need one.
 
 ### Install the `booktem` R package
 
@@ -68,7 +68,7 @@ One of these messages might say something like "do you want to compile packages 
 
 If you are a more experienced R/RStudio user, you might be prompted to update your R packages that `booktem` depends on. Obviously use your judgement if you are in a place to update your packages, but the book template might not work with older packages.
 
-## Download git and github desktop
+## Download git and github desktop {#github_prep}
 
 Potentially the most unfamiliar element of this process will be working with git and github. If you have not used it before, git is a version control system which tracks file changes on your computer (like OneDrive but for code). github is an online system which uses git to host those changes and make your code available online. There is a graphical user interface called github desktop which I use and will demonstrate. If you want to use the command line version of git/github, you probably do not need me to show you how.
 

@@ -16,7 +16,7 @@ For an overview to show why you need the following the pieces of software, you w
 
 4.  Create a new github repository for your book folder.
 
-5.  Push the initial repository so the code is available on github.
+5.  Publish the initial repository so the code is available on github.
 
 6.  Activate github pages to render the book online via a URL.
 
@@ -72,7 +72,7 @@ If you are a more experienced R/RStudio user, you might be prompted to update yo
 
 Potentially the most unfamiliar element of this process will be working with git and github. If you have not used it before, git is a version control system which tracks file changes on your computer (like OneDrive but for code). github is an online system which uses git to host those changes and make your code available online. There is a graphical user interface called github desktop which I use and will demonstrate. If you want to use the command line version of git/github, you probably do not need me to show you how.
 
-There is an [installation guide](https://github.com/git-guides/install-git){target="_blank"} on github, but we have access to a fantastic resource developed by our colleagues in Mathematics and Statistics. They developed an accessible online course on [Moodle](https://moodle.gla.ac.uk/course/view.php?id=41115){target="_blank"} introducing staff and students to version control using git and github. You will need the enrollment code **git_psych_24** to access the course.
+There is an [installation guide](https://github.com/git-guides/install-git){target="_blank"} on github, but we have access to a fantastic resource developed by our colleagues in Mathematics and Statistics. They developed an accessible online course on [Moodle](https://moodle.gla.ac.uk/course/view.php?id=41115){target="_blank"} introducing staff and students to version control using git and github. You will need the enrollment code **git_psych_24** to access the course. If you use it, please consider completing their feedback form on the Moodle page so they can improve the resource in future.
 
 There are 7 units in total which do not take very long, but for the purposes of this workshop, I would consider 1 and 2 as **essential** for downloading git/github desktop and using it as a single user to track changes. Reaching this point will be super helpful for following along in the workshop as the terms will be more familiar to you like repositories, commits, and pushing changes.
 

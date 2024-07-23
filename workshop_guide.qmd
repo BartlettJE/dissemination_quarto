@@ -15,7 +15,7 @@ The first step is thinking about where you want your book folder stored on your 
 ::: callout-warning
 #### Do not create github repositories within OneDrive
 
-We have not reached the github step yet, but as you think about where you want your folder for the book, please **do not** use a folder within OneDrive. Sometimes it works, but most of the time is causes chaos as OneDrive is trying to track changes, github is trying to track changes, which ends in them fighting over file permissions.
+We have not reached the github step yet, but as you think about where you want your folder for the book, please **do not** use a folder within OneDrive. Sometimes it works, but most of the time it causes chaos as OneDrive is trying to track changes, github is trying to track changes, which ends in them fighting over file permissions.
 :::
 
 Once you have a folder your book can live in, open RStudio and set your working directory to this folder, for example from the top menu `Session >> set working directory >> Choose directory` and navigate to this folder.
@@ -106,7 +106,7 @@ The single best part of Quarto and the new book template is you can keep renderi
 ::: callout-caution
 If you introduce an error, you will get an error and red box on the screen to highlight Quarto cannot render the book. If you look in the Background Jobs tab in the console below, you should get an error message for the source of the problem if you are unsure what you did wrong.
 
-After an error, you will need press Render again rather than just refreshing the browser.
+After an error, you will need to press Render again rather than just refreshing the browser.
 :::
 
 These are the key components to make your book. Until this point, these edits all exist on your own computer. But now it is time to track your code using github and make your book accessible online via github pages.
@@ -115,11 +115,9 @@ These are the key components to make your book. Until this point, these edits al
 
 Once you have a working barebones version of your book ready to go, it's time to associate your book folder with a github repository and start some version control. If you want another resource, you can see the [github documentation online](https://docs.github.com/en/desktop/overview/creating-your-first-repository-using-github-desktop){target="_blank"}.
 
-In future, you could actually start with this part. You can create a new folder and create a repository for you to then use the `create_book()` function to add the book file to.
+In future, you could actually start with this part. You can create a new folder, create a repository using this new folder, and then use the `create_book()` function to add the book file to. However, we started by creating the book first, so we need to create a repository for an existing folder without a git component.
 
-However, we started by creating the book first, so we need to create a repository for an existing folder without a git component.
-
-In the github desktop application, click `add >> Create a New Repository` and complete the details. 
+In the github desktop application, click `add >> Create a New Repository` and complete the details.
 
 ::: callout-warning
 #### Seriously, do not create github repositories within OneDrive
@@ -127,42 +125,42 @@ In the github desktop application, click `add >> Create a New Repository` and co
 As a reminder, please **do not** use a folder within OneDrive for your github repository.
 :::
 
-- Name: This will be the name of your repository on github, so call it something short but sensible. 
+-   Name: This will be the name of your repository on github, so call it something short but sensible.
 
-- Local path: Click Choose... and navigate to your book folder. You want the path to be the main folder your book lives in. 
+-   Local path: Click Choose... and navigate to your book folder. You want the path to be the main folder your book lives in.
 
-The other fields you can edit later, so click Create Repository when you are ready. 
+The other fields you can edit later, so click Create Repository when you are ready.
 
-Your newly minted repository should be showing as the Current Repository. This exists on your computer, but it is still not available online. You need to click Publish repository, and that will push all of your files to github and be available online. 
+Your newly minted repository should be showing as the Current Repository. This exists on your computer, but it is still not available online. You need to click Publish repository, and that will push all of your files to github and be available online.
 
 ## Navigating github and github pages
 
-Now your files are available online, navigate to your github account online and find your new repository. 
+Now your files are available online, navigate to your github account and find your new repository.
 
-I will provide a little overview in the workshop of key things to look out for and what each tab contains. 
+I will provide a little overview in the workshop of key things to look out for and what each tab contains.
 
-If you are only interested in using github to work on a book, the key tabs are Code and Settings. In Code, you will see all your files you published. These will all be the same as what you created on your computer. This is the idea behind version control and storing all your code/files like OneDrive. 
+If you are only interested in using github to work on a book, the key tabs are Code and Settings. In Code, you will see all your files you published. These will all be the same as what you created on your computer. This is the idea behind version control and storing all your code/files like OneDrive.
 
-In Settings, this is where you can edit things about your repository. If you plan on working on your book in a team, you can add collaborators by adding their github profile. They will then receive an email saying you have invited them to collaborate on their github repository. After they accept, they can pull the repository and start working on it too. 
+In Settings, this is where you can edit things about your repository. If you plan on working on your book in a team, you can add collaborators by adding their github profile. They will then receive an email saying you have invited them to collaborate on their github repository. After they accept, they can pull the repository and start working on it too.
 
 ::: callout-warning
-Working collaboratively is one of the main motivations behind git and github, but it can be tricky if you are unfamiliar with more advanced features like merging and clashes. Before you start editing the same repository with someone, I *heavily* recommend completing units 4 and 5 of the [version control Moodle course](#github_prep) provided by Maths and Stats.  
+Working collaboratively is one of the main motivations behind git and github, but it can be tricky if you are unfamiliar with more advanced features like merging and clashes. Before you start editing the same repository with someone, I *heavily* recommend completing units 4 and 5 of the [version control Moodle course](#github_prep) provided by Maths and Stats.
 :::
 
-Within Settings is the key section we need to get your book available online. 
+Within Settings is the key section we need to get your book available online.
 
 ### Publish to github pages
 
-In Settings, navigate to Pages within Code and automation. Under Build and deployment, this will be set to none by default. You must click the drop down, choose Main and select /docs. You will remember /docs is where we store all the html versions of the book files, so you are pointing Github pages here as the source for your book. 
+In Settings, navigate to Pages within Code and automation. Under Build and deployment, this will be set to none by default. You must click the drop down, choose Main and select /docs. You will remember /docs is where we store all the html versions of the book files, so you are pointing Github pages here as the source for your book.
 
-When you press Save, this will start building your book. It will not be available immediately and will take a few minutes. When it is ready, at the top of the page, it will say "Your site is live at..." with your new URL you can click on and open.  In the Actions tab, it will also show as a green tick when it has finished building.
+When you press Save, this will start building your book. It will not be available immediately and will take a few minutes. When it is ready, at the top of the page, it will say "Your site is live at..." with your new URL you can click on and open. In the Actions tab, it will also show as a green tick when it has finished building.
 
-Congratulations! After seeing your rendered book for the first time, this is the second most satisfying part as you can see everything is working. 
+Congratulations! After seeing your rendered book for the first time, this is the second most satisfying part as you can see everything is working.
 
 ::: callout-tip
 #### Add shortcuts to your book
 
-Once the site is live, I recommend adding the link to two places. First, save it as a browser shortcut so you can quickly access it outside of github. Second, return to the Code tab. Click the cog icon next to Above on the right side and tick to add your website from github pages. This will show the URL to your book on the Code tab for easy access from here. 
+Once the site is live, I recommend adding the link to two places. First, save it as a browser shortcut so you can quickly access it outside of github. Second, return to the Code tab. Click the cog icon next to Above on the right side and tick to add your website from github pages. This will show the URL to your book on the Code tab for easy access from here.
 :::
 
 ::: callout-tip
@@ -172,31 +170,31 @@ By default, the URL to your book will be your github username + .github.io + you
 :::
 
 ::: callout-warning
-If you try and push a change that contains an error and your book does not render, you will get a red cross in Actions saying your book did not build and you will receive an email warning you about it too. Just go back to the book files in RStudio and fix any errors you are getting before you push the updates again. 
+If you try and push a change that contains an error and your book does not render, you will get a red cross in Actions saying your book did not build and you will receive an email warning you about it too. Just go back to the book files in RStudio and fix any errors you are getting before you push the updates again.
 :::
 
 ## Commiting and pushing changes
 
 At this point, you have everything you need for the book workflow. As you work on your book, you will go through the workflow of:
 
-1. Open .RProj and edit your book in RStudio, either by editing your past progress or adding new files. 
+1.  Open .RProj and edit your book in RStudio, either by editing your past progress or adding new files.
 
-2. When you hit a milestone you want to record, in github desktop tick all file changes or specific files, add a commit message (and longer description if necessary). 
+2.  When you hit a milestone you want to record, in github desktop tick all file changes or specific files, and add a commit message (and longer description if necessary).
 
-3. If you are continuing to work on the book, keeping editing and committing. 
+3.  If you are continuing to work on the book, keeping editing and committing.
 
-4. When you are ready to push changes to github and github pages, push your commits.
+4.  When you are ready to push changes to github and github pages, push your commits.
 
-Before we have time to start working on your newly minted books, I will end on a couple of warnings and tips. 
+Before we have time to start working on your newly minted books, I will end on a couple of warnings and tips.
 
 ::: callout-caution
-Remember just committing changes will do nothing to your github repository and book link. You need to push those committed changes for them to be available on github and used to build the book in github pages. It takes a few minutes to rebuild, so do not worry if you do not immediately see the changes. 
+Remember just committing changes will do nothing to your github repository and book link. You need to push those committed changes for them to be available on github and used to build the book in github pages. It takes a few minutes to rebuild, so do not worry if you do not immediately see the changes.
 :::
 
 ::: callout-tip
 #### Reverting changes
 
-One of the main features I use way too infrequently is reverting changes when something goes wrong. The idea behind version control is you save your work at specific milestones, where you can add commit messages than describe key changes you make. If you make a change that breaks something since your last commit, you can revert the changes to a previous version. To do this, go to github desktop, click History, and you will see all your commit history. Identify the last commit you want to revert to, right click on it, and select Revert Changes in Commit. 
+One of the main features I use way too infrequently is reverting changes when something goes wrong. The idea behind version control is you save your work at specific milestones, where you can add commit messages that describe key changes you make. If you make a change that breaks something since your last commit, you can revert the changes to a previous version. To do this, go to github desktop, click History, and you will see all your commit history. Identify the last commit you want to revert to, right click on it, and select Revert Changes in Commit.
 :::
 
 ## Start working on your own book!

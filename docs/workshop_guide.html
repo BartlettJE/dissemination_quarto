@@ -226,7 +226,7 @@ Do not create github repositories within OneDrive
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We have not reached the github step yet, but as you think about where you want your folder for the book, please <strong>do not</strong> use a folder within OneDrive. Sometimes it works, but most of the time is causes chaos as OneDrive is trying to track changes, github is trying to track changes, which ends in them fighting over file permissions.</p>
+<p>We have not reached the github step yet, but as you think about where you want your folder for the book, please <strong>do not</strong> use a folder within OneDrive. Sometimes it works, but most of the time it causes chaos as OneDrive is trying to track changes, github is trying to track changes, which ends in them fighting over file permissions.</p>
 </div>
 </div>
 <p>Once you have a folder your book can live in, open RStudio and set your working directory to this folder, for example from the top menu <code>Session &gt;&gt; set working directory &gt;&gt; Choose directory</code> and navigate to this folder.</p>
@@ -350,7 +350,7 @@ Caution
 </div>
 <div class="callout-body-container callout-body">
 <p>If you introduce an error, you will get an error and red box on the screen to highlight Quarto cannot render the book. If you look in the Background Jobs tab in the console below, you should get an error message for the source of the problem if you are unsure what you did wrong.</p>
-<p>After an error, you will need press Render again rather than just refreshing the browser.</p>
+<p>After an error, you will need to press Render again rather than just refreshing the browser.</p>
 </div>
 </div>
 <p>These are the key components to make your book. Until this point, these edits all exist on your own computer. But now it is time to track your code using github and make your book accessible online via github pages.</p>
@@ -358,8 +358,7 @@ Caution
 <section id="creating-a-github-repository" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="creating-a-github-repository"><span class="header-section-number">2.4</span> Creating a github repository</h2>
 <p>Once you have a working barebones version of your book ready to go, it’s time to associate your book folder with a github repository and start some version control. If you want another resource, you can see the <a href="https://docs.github.com/en/desktop/overview/creating-your-first-repository-using-github-desktop" target="_blank">github documentation online</a>.</p>
-<p>In future, you could actually start with this part. You can create a new folder and create a repository for you to then use the <code>create_book()</code> function to add the book file to.</p>
-<p>However, we started by creating the book first, so we need to create a repository for an existing folder without a git component.</p>
+<p>In future, you could actually start with this part. You can create a new folder, create a repository using this new folder, and then use the <code>create_book()</code> function to add the book file to. However, we started by creating the book first, so we need to create a repository for an existing folder without a git component.</p>
 <p>In the github desktop application, click <code>add &gt;&gt; Create a New Repository</code> and complete the details.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -383,7 +382,7 @@ Seriously, do not create github repositories within OneDrive
 </section>
 <section id="navigating-github-and-github-pages" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="navigating-github-and-github-pages"><span class="header-section-number">2.5</span> Navigating github and github pages</h2>
-<p>Now your files are available online, navigate to your github account online and find your new repository.</p>
+<p>Now your files are available online, navigate to your github account and find your new repository.</p>
 <p>I will provide a little overview in the workshop of key things to look out for and what each tab contains.</p>
 <p>If you are only interested in using github to work on a book, the key tabs are Code and Settings. In Code, you will see all your files you published. These will all be the same as what you created on your computer. This is the idea behind version control and storing all your code/files like OneDrive.</p>
 <p>In Settings, this is where you can edit things about your repository. If you plan on working on your book in a team, you can add collaborators by adding their github profile. They will then receive an email saying you have invited them to collaborate on their github repository. After they accept, they can pull the repository and start working on it too.</p>
@@ -397,7 +396,7 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Working collaboratively is one of the main motivations behind git and github, but it can be tricky if you are unfamiliar with more advanced features like merging and clashes. Before you start editing the same repository with someone, I <em>heavily</em> recommend completing units 4 and 5 of the <a href="#github_prep">version control Moodle course</a> provided by Maths and Stats.</p>
+<p>Working collaboratively is one of the main motivations behind git and github, but it can be tricky if you are unfamiliar with more advanced features like merging and clashes. Before you start editing the same repository with someone, I <em>heavily</em> recommend completing units 4 and 5 of the <a href="workshop_prep.html#github_prep">version control Moodle course</a> provided by Maths and Stats.</p>
 </div>
 </div>
 <p>Within Settings is the key section we need to get your book available online.</p>
@@ -452,7 +451,7 @@ Warning
 <p>At this point, you have everything you need for the book workflow. As you work on your book, you will go through the workflow of:</p>
 <ol type="1">
 <li><p>Open .RProj and edit your book in RStudio, either by editing your past progress or adding new files.</p></li>
-<li><p>When you hit a milestone you want to record, in github desktop tick all file changes or specific files, add a commit message (and longer description if necessary).</p></li>
+<li><p>When you hit a milestone you want to record, in github desktop tick all file changes or specific files, and add a commit message (and longer description if necessary).</p></li>
 <li><p>If you are continuing to work on the book, keeping editing and committing.</p></li>
 <li><p>When you are ready to push changes to github and github pages, push your commits.</p></li>
 </ol>
@@ -480,7 +479,7 @@ Reverting changes
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>One of the main features I use way too infrequently is reverting changes when something goes wrong. The idea behind version control is you save your work at specific milestones, where you can add commit messages than describe key changes you make. If you make a change that breaks something since your last commit, you can revert the changes to a previous version. To do this, go to github desktop, click History, and you will see all your commit history. Identify the last commit you want to revert to, right click on it, and select Revert Changes in Commit.</p>
+<p>One of the main features I use way too infrequently is reverting changes when something goes wrong. The idea behind version control is you save your work at specific milestones, where you can add commit messages that describe key changes you make. If you make a change that breaks something since your last commit, you can revert the changes to a previous version. To do this, go to github desktop, click History, and you will see all your commit history. Identify the last commit you want to revert to, right click on it, and select Revert Changes in Commit.</p>
 </div>
 </div>
 </section>
@@ -488,7 +487,7 @@ Reverting changes
 <h2 data-number="2.7" class="anchored" data-anchor-id="start-working-on-your-own-book"><span class="header-section-number">2.7</span> Start working on your own book!</h2>
 <p>Start working on your own book in the remaining time we have together.</p>
 <p>See the next chapter on <a href="book_conventions.html">Quarto features and book conventions</a> for inspiration / example code for the kind of features you can use.</p>
-<p>Do not forget to make your own hex sticker for different logos for extra panache!</p>
+<p>Do not forget to make your own hex sticker for for extra panache!</p>
 
 
 </section>

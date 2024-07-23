@@ -257,7 +257,7 @@ Other types of callout blocks include:
 
 ```{r eval=FALSE}
 ::: {.callout-warning}
-These are notes.
+These are warnings.
 :::
 ```
 
@@ -269,12 +269,12 @@ These are warnings.
 
 ```{r eval=FALSE}
 ::: {.callout-important}
-This is something important
+This is something important.
 :::
 ```
 
 ::: callout-important
-This is something important
+This is something important.
 :::
 
 -   Tip
@@ -332,7 +332,7 @@ To cite, you need the code at the start of the bib entry. For example, `@bartlet
 
 Depending on the citation style you want, there are different codes, such as adding it in parentheses `[@bartlett_power_2022]` [@bartlett_power_2022]. For a full list of options, you can check out the [Quarto citation guide](https://quarto.org/docs/authoring/citations.html){target="_blank"}.
 
-By default, the book template has APA style for referencing, but if you need a different referencing style, you can add and specify a different .csl file.
+By default, the book template has APA style for referencing, but if you need a different referencing style, you can add and specify a different .csl file within `_quarto.yml`.
 
 ```{r eval=FALSE}
 csl: include/apa.csl
@@ -341,7 +341,7 @@ csl: include/apa.csl
 ::: callout-tip
 #### How do I specify a .csl file?
 
-`.csl` stands for citation style language and you can download one from the [Zotero style repository](https://www.zotero.org/styles){target="_blank"}. For example, you could search for vancouver, click on the link, and it will download a new .csl file you can add to your repository.
+`.csl` stands for citation style language and you can download one from the [Zotero style repository](https://www.zotero.org/styles){target="_blank"}. For example, you could search for vancouver, click on the link, and it will download a new .csl file you can add to your repository within `include/`.
 :::
 
 ### `webexercises` interactive questions
@@ -406,7 +406,7 @@ There are two main components to creating a glossary. First, you need to add glo
 `r glossary("glossary", def = "An alphabetical list of words with explanations.")`
 ```
 
-If you hover or cover on the text, you will see the definition appear. There are different settings for this, so make sure you check the `glossary` documentation.
+If you hover or click on the text, you will see the definition appear. There are different settings for this, so make sure you check the [glossary documentation](https://debruine.github.io/glossary/articles/glossary.html){target="_blank"}.
 
 At the end of each chapter, you can then include a glossary table which shows all the words you used in the chapter. Just make sure you add `echo=FALSE` to the code chunk, so that the function does not appear.
 
@@ -414,10 +414,12 @@ At the end of each chapter, you can then include a glossary table which shows al
 glossary_table()
 ```
 
+This produces:
+
 ```{r, echo=FALSE}
 glossary_table()
 ```
 
 The behaviour of glossary table and whether you use all your own definitions or point to the PsyTeachR glossary is controlled by some R code in the `booktem` files. It will be easier to point out in the workshop, but you are looking for `R/my_setup.R`.
 
-You can add definitions as you go along with inline code, or you can create and edit a .yml file for your terms if you would prefer to edit that way. See the [glossary documentation](https://debruine.github.io/glossary/articles/glossary.html){target="_blank"} for more information.
+You can add definitions as you go along with inline code, or you can create and edit a .yml file for your terms if you would prefer to edit that way. See the `glossary` documentation for more information.

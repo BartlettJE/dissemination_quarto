@@ -2,7 +2,7 @@
 
 In this informal workshop, I will walk through the steps to use the new PsyTeachR book template `booktem` to create online books. This uses Quarto - a new version of R Markdown - to combine code with text. You can create a very simple Quarto book within R Studio as standard (I wrote this workshop guide using it) but the PsyTeachR template has more complete settings, placeholders, and conventions for our typical needs.
 
-If you are unfamiliar with the PsyTeachR suite of books, you can see the website collection here: [https://psyteachr.github.io/](https://psyteachr.github.io/){target="_blank"}.
+If you are unfamiliar with the PsyTeachR suite of books, you can see the collection here: [https://psyteachr.github.io/](https://psyteachr.github.io/){target="_blank"}.
 
 Some of these examples use the old R Markdown version, so you can see an example of the new Quarto template in the [Applied Data Skills](https://psyteachr.github.io/ads-v3/){target="_blank"} book developed by Dr Emily Nordmann and Prof Lisa DeBruine (who also develops the PsyTeachR book template).
 

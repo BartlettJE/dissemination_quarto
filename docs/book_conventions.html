@@ -399,13 +399,13 @@ div.csl-indent {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">5</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 12.512123 10.243568 10.966448  9.952036  4.795112</code></pre>
+<pre><code>[1]  8.310296  9.038222 11.907906 13.092259  9.610131</code></pre>
 </div>
 </div>
 <p>There are several features you can edit by adding different options. For example, if you do not want to show the code, you can set <code>echo=FALSE</code> after the r <code>{r echo=FALSE}</code>:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 11.083864  7.893707 12.622663  9.236564  6.772296</code></pre>
+<pre><code>[1] 10.090911  8.433246 10.211772  5.036753 13.441599</code></pre>
 </div>
 </div>
 <p>If you want to demonstrate code but not execute it - such as to demonstrate inaccurate code, you can set <code>eval=FALSE</code> after the r <code>{r eval=FALSE}</code>:</p>
@@ -483,7 +483,7 @@ Please look at me
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {.callout<span class="sc">-</span>warning}</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>These are notes.</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>These are warnings.</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -504,7 +504,7 @@ Warning
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {.callout<span class="sc">-</span>important}</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>This is something important</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>This is something important.</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -517,7 +517,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>This is something important</p>
+<p>This is something important.</p>
 </div>
 </div>
 <ul>
@@ -593,7 +593,7 @@ How do I download and edit a .bib file?
 </div>
 <p>To cite, you need the code at the start of the bib entry. For example, <code>@bartlett_power_2022</code> produces <span class="citation" data-cites="bartlett_power_2022">Bartlett &amp; Charles (<a href="references.html#ref-bartlett_power_2022" role="doc-biblioref">2022</a>)</span> and the full reference will be added to the references chapter.</p>
 <p>Depending on the citation style you want, there are different codes, such as adding it in parentheses <code>[@bartlett_power_2022]</code> <span class="citation" data-cites="bartlett_power_2022">(<a href="references.html#ref-bartlett_power_2022" role="doc-biblioref">Bartlett &amp; Charles, 2022</a>)</span>. For a full list of options, you can check out the <a href="https://quarto.org/docs/authoring/citations.html" target="_blank">Quarto citation guide</a>.</p>
-<p>By default, the book template has APA style for referencing, but if you need a different referencing style, you can add and specify a different .csl file.</p>
+<p>By default, the book template has APA style for referencing, but if you need a different referencing style, you can add and specify a different .csl file within <code>_quarto.yml</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>csl<span class="sc">:</span> include<span class="sc">/</span>apa.csl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -607,7 +607,7 @@ How do I specify a .csl file?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>.csl</code> stands for citation style language and you can download one from the <a href="https://www.zotero.org/styles" target="_blank">Zotero style repository</a>. For example, you could search for vancouver, click on the link, and it will download a new .csl file you can add to your repository.</p>
+<p><code>.csl</code> stands for citation style language and you can download one from the <a href="https://www.zotero.org/styles" target="_blank">Zotero style repository</a>. For example, you could search for vancouver, click on the link, and it will download a new .csl file you can add to your repository within <code>include/</code>.</p>
 </div>
 </div>
 </section>
@@ -618,8 +618,8 @@ How do I specify a .csl file?
 <h4 data-number="3.3.5.1" class="anchored" data-anchor-id="mcqs"><span class="header-section-number">3.3.5.1</span> MCQs</h4>
 <p>You can add questions through inline code, or by first specifying them in an R code block if it makes it easier to edit longer text.</p>
 <p>For example, this workshop is:</p>
-<div id="radio_KFGVWFVZEG" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_KFGVWFVZEG" value="answer"> <span>Life changing</span></label><label><input type="radio" autocomplete="off" name="radio_KFGVWFVZEG" value=""> <span>Boring</span></label><label><input type="radio" autocomplete="off" name="radio_KFGVWFVZEG" value=""> <span>Mediocre</span></label><label><input type="radio" autocomplete="off" name="radio_KFGVWFVZEG" value=""> <span>OK</span></label>
+<div id="radio_BHKKVTQWZC" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_BHKKVTQWZC" value="answer"> <span>Life changing</span></label><label><input type="radio" autocomplete="off" name="radio_BHKKVTQWZC" value=""> <span>Boring</span></label><label><input type="radio" autocomplete="off" name="radio_BHKKVTQWZC" value=""> <span>Mediocre</span></label><label><input type="radio" autocomplete="off" name="radio_BHKKVTQWZC" value=""> <span>OK</span></label>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">r longmcq(c(answer = "Life changing", "Boring", "Mediocre", "OK"))</span><span class="st">`</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -675,11 +675,12 @@ Important
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">r glossary("glossary", def = "An alphabetical list of words with explanations.")</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>If you hover or cover on the text, you will see the definition appear. There are different settings for this, so make sure you check the <code>glossary</code> documentation.</p>
+<p>If you hover or click on the text, you will see the definition appear. There are different settings for this, so make sure you check the <a href="https://debruine.github.io/glossary/articles/glossary.html" target="_blank">glossary documentation</a>.</p>
 <p>At the end of each chapter, you can then include a glossary table which shows all the words you used in the chapter. Just make sure you add <code>echo=FALSE</code> to the code chunk, so that the function does not appear.</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glossary_table</span>()</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This produces:</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small" data-quarto-postprocess="true">
@@ -701,7 +702,7 @@ Important
 </div>
 </div>
 <p>The behaviour of glossary table and whether you use all your own definitions or point to the PsyTeachR glossary is controlled by some R code in the <code>booktem</code> files. It will be easier to point out in the workshop, but you are looking for <code>R/my_setup.R</code>.</p>
-<p>You can add definitions as you go along with inline code, or you can create and edit a .yml file for your terms if you would prefer to edit that way. See the <a href="https://debruine.github.io/glossary/articles/glossary.html" target="_blank">glossary documentation</a> for more information.</p>
+<p>You can add definitions as you go along with inline code, or you can create and edit a .yml file for your terms if you would prefer to edit that way. See the <code>glossary</code> documentation for more information.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">

@@ -38,6 +38,11 @@ If you are new to R/RStudio, you will need to install both pieces of software wh
 
 If you are a more experienced R/RStudio user, just make sure you update your version of R/RStudio as the `booktem` package will only work for recent versions as Posit are rapidly developing Quarto. I am currently using `r R.version.string` and RStudio 2023.6.2.561, but the more recent the better.
 
+
+::: callout-important
+From what I can tell by testing it out, it does not work with the online server version of RStudio. I could not get it to download the `booktem` package and I am not sure how well it works with github, so you will need a local installation. 
+:::
+
 ### Installing Base R
 
 [Install base R](https://cran.rstudio.com/){target="_blank"}. Choose the download link for your operating system (Linux, Mac OS X, or Windows).

@@ -37,6 +37,14 @@ The book template table of contents goes by default to level 3 headers (but you 
 ### Level 3 header
 ```
 
+##### [Header extra formatting]{style="color: #EBA347; text-transform: uppercase;"}
+
+If you want to get super fancy Dr Gaby Mahrholz worked this out for how to change the colour of headers. You can essentially add css code to add extra formatting. For example, to create this orange header above, you add css code in curly brackets: 
+
+```{r eval=FALSE}
+##### [Header extra formatting]{style="color: #EBA347; text-transform: uppercase;"}
+```
+
 #### Text formatting
 
 You make text *italics* by surrounding it with one star (`*italics*`), or **bold** by surrounding it with two stars (`**bold**`).
@@ -206,6 +214,22 @@ If you want to demonstrate code but not execute it - such as to demonstrate inac
 ```{r eval=FALSE}
 rnorm(n = 5, mean = 10, sd = 2)
 ```
+
+I spent maybe an hour disappearing into a rabbit hole to find an elegant way of allowing people to copy and paste a whole code chunk - chunk code and all - that you might find it useful. The solution was on this [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/verbatim-code-chunks.html){target="_blank"} by Xie et al. for verbatim code chunks. Essentially, I wanted to make it easy for students to copy and paste code chunks I give them, to make it easier to create problem solving activities. 
+
+You need to wrap your text/code/code chunks in a markdown verbatim chunk which produces this: 
+
+````{verbatim, lang = "markdown"}
+
+`r city` is a city in Scotland. 
+
+```{r}
+city <- "Glasgow"
+```
+
+````
+
+It does not work to demonstrate this inside another chunk, so if you want to include it, see the link or check my code in the quant fundamentals book. 
 
 ### Callout blocks
 

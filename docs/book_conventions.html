@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -58,6 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -100,7 +101,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -109,13 +116,16 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
-
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
 <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
 
 <link rel="stylesheet" href="include/webex.css">
@@ -128,13 +138,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./book_conventions.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Worked examples for Quarto and booktem features</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./book_conventions.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Worked examples for Quarto and booktem features</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -143,7 +153,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">PsyTeachR Book Template Workshop</a> 
@@ -189,7 +199,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -229,7 +239,9 @@ div.csl-indent {
   </div>
   
 
+
 </header>
+
 
 <p>As you work on your own book, you might find the following features useful for inspiration.</p>
 <section id="quarto-guide" class="level2" data-number="3.1">
@@ -257,23 +269,30 @@ div.csl-indent {
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="do">### Level 3 header</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<section id="header-extra-formatting" class="level5" data-number="3.3.1.1.1">
+<h5 data-number="3.3.1.1.1" class="anchored" data-anchor-id="header-extra-formatting"><span class="header-section-number">3.3.1.1.1</span> <span style="color: #EBA347; text-transform: uppercase;">Header extra formatting</span></h5>
+<p>If you want to get super fancy Dr Gaby Mahrholz worked this out for how to change the colour of headers. You can essentially add css code to add extra formatting. For example, to create this orange header above, you add css code in curly brackets:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">##### [Header extra formatting]{style="color: #EBA347; text-transform: uppercase;"}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 </section>
 <section id="text-formatting" class="level4" data-number="3.3.1.2">
 <h4 data-number="3.3.1.2" class="anchored" data-anchor-id="text-formatting"><span class="header-section-number">3.3.1.2</span> Text formatting</h4>
 <p>You make text <em>italics</em> by surrounding it with one star (<code>*italics*</code>), or <strong>bold</strong> by surrounding it with two stars (<code>**bold**</code>).</p>
 <p>If you want to give text code formatting, you can add back ticks around it.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">example code</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">example code</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>produces:</p>
 <p><code>example code</code>.</p>
 <p>If you want to add bullet points, you can use <code>-</code> or <code>*</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> Bullet point <span class="dv">1</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> Bullet point <span class="dv">2</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> Bullet point <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> Bullet point <span class="dv">1</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> Bullet point <span class="dv">2</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> Bullet point <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><p>Bullet point 1</p></li>
@@ -282,11 +301,11 @@ div.csl-indent {
 </ul>
 <p>The same applies to numbered lists:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fl">1.</span> List <span class="dv">1</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fl">2.</span> List <span class="dv">2</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fl">3.</span> List <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fl">1.</span> List <span class="dv">1</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fl">2.</span> List <span class="dv">2</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fl">3.</span> List <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol type="1">
 <li><p>List 1</p></li>
@@ -295,13 +314,13 @@ div.csl-indent {
 </ol>
 <p>Or even sub-lists with a little indent:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fl">1.</span> List <span class="dv">1</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fl">1.</span> Sublist <span class="dv">1</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fl">2.</span> Sublist <span class="dv">2</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fl">2.</span> List <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fl">1.</span> List <span class="dv">1</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fl">1.</span> Sublist <span class="dv">1</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="fl">2.</span> Sublist <span class="dv">2</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fl">2.</span> List <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol type="1">
 <li><p>List 1</p>
@@ -316,47 +335,48 @@ div.csl-indent {
 <h4 data-number="3.3.1.3" class="anchored" data-anchor-id="links"><span class="header-section-number">3.3.1.3</span> Links</h4>
 <p>You can add <a href="https://quarto.org/docs/authoring/markdown-basics.html#links-images" target="_blank">hyperlinks</a> with the form:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>[hyperlinks](https<span class="sc">:</span><span class="er">//</span>quarto.org<span class="sc">/</span>docs<span class="sc">/</span>authoring<span class="sc">/</span>markdown<span class="sc">-</span>basics.html<span class="co">#links-images)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>[hyperlinks](https<span class="sc">:</span><span class="er">//</span>quarto.org<span class="sc">/</span>docs<span class="sc">/</span>authoring<span class="sc">/</span>markdown<span class="sc">-</span>basics.html<span class="co">#links-images)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>where the writing in square brackets is the text, and the link goes in the round brackets. By default, these link within the current page which I find infuriating. So, you can add a little html code to open a new tab with the link:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>[hyperlinks](https<span class="sc">:</span><span class="er">//</span>quarto.org<span class="sc">/</span>docs<span class="sc">/</span>authoring<span class="sc">/</span>markdown<span class="sc">-</span>basics.html<span class="co">#links-images){target="_blank"}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>[hyperlinks](https<span class="sc">:</span><span class="er">//</span>quarto.org<span class="sc">/</span>docs<span class="sc">/</span>authoring<span class="sc">/</span>markdown<span class="sc">-</span>basics.html<span class="co">#links-images){target="_blank"}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="internal-hyperlinks" class="level4" data-number="3.3.1.4">
 <h4 data-number="3.3.1.4" class="anchored" data-anchor-id="internal-hyperlinks"><span class="header-section-number">3.3.1.4</span> Internal hyperlinks</h4>
 <p>If you want to reference a chapter or section of your book, you can create internal hyperlinks through curly brackets and a hash. For example, if I wanted to point you back to the <a href="workshop_guide.html">Workshop Plan</a> chapter, you first need to add a tag on the chapter heading:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Workshop plan {#workshop_plan}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Workshop plan {#workshop_plan}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can then use the tag to create a link with a similar format to URL hyperlinks:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>...back to the [Workshop Plan](<span class="co">#workshop_plan) chapter</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>...back to the [Workshop Plan](<span class="co">#workshop_plan) chapter</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="images" class="level4" data-number="3.3.1.5">
 <h4 data-number="3.3.1.5" class="anchored" data-anchor-id="images"><span class="header-section-number">3.3.1.5</span> Images</h4>
 <p>There are different ways to add images, where the Markdown version uses a similar format to links which I will demonstrate through this duck:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>[This is a duck.](images<span class="sc">/</span>Duck.png)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>[This is a duck.](images<span class="sc">/</span>Duck.png)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/Duck.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">This is a duck. If Helena is reading this, yes it has a creative commons licence.</figcaption>
+<figcaption>This is a duck. If Helena is reading this, yes it has a creative commons licence.</figcaption>
 </figure>
 </div>
 <p>There are some cool new Quarto features making it easy to combine multiple images. For example, we can add two ducks and specify we want them in two columns.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {<span class="co">#fig-duck layout-ncol=2}</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>[](images<span class="sc">/</span>images<span class="sc">/</span>Duck.png)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>[](images<span class="sc">/</span>images<span class="sc">/</span>Duck.png)</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>Duck <span class="dv">1</span> (left) and Duck <span class="dv">2</span> (right). </span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {<span class="co">#fig-duck layout-ncol=2}</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>[](images<span class="sc">/</span>images<span class="sc">/</span>Duck.png)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>[](images<span class="sc">/</span>images<span class="sc">/</span>Duck.png)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>Duck <span class="dv">1</span> (left) and Duck <span class="dv">2</span> (right). </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="fig-duck" class="quarto-layout-panel">
-<figure class="figure">
-<div class="quarto-layout-row quarto-layout-valign-top">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-duck-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="images/Duck.png" class="img-fluid figure-img"></p>
 </div>
@@ -364,25 +384,32 @@ div.csl-indent {
 <p><img src="images/Duck.png" class="img-fluid figure-img"></p>
 </div>
 </div>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3.1: Duck 1 (left) and Duck 2 (right).</figcaption><p></p>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-duck-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: Duck 1 (left) and Duck 2 (right).
+</figcaption>
 </figure>
 </div>
 <p>You can also reference figures to add little hyperlinks and automatically number them. The title after the hash must start with <code>fig</code> to be registered as a figure, and you can also add <code>tbl</code> to number tables separately.</p>
-<p><a href="#fig-duck">Figure&nbsp;<span>3.1</span></a> showed two ducks side by side. You do not even need to type Figure: <code>@fig-duck</code>.</p>
-<p>You can also use <code>knitr</code> to add figures, and using code chunks has some new handy features using tags. They work in a similar way to code options, but make it easier to add longer captions etc, as shown in <a href="#fig-img-duck">Figure&nbsp;<span>3.2</span></a>.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-img-duck</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig.cap: "This is a longer caption about our beloved duck."</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-alt: "You can also add alt text to images."</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"images/Duck.png"</span>)</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="#fig-duck" class="quarto-xref">Figure&nbsp;<span>3.1</span></a> showed two ducks side by side. You do not even need to type Figure: <code>@fig-duck</code>.</p>
+<p>You can also use <code>knitr</code> to add figures, and using code chunks has some new handy features using tags. They work in a similar way to code options, but make it easier to add longer captions etc, as shown in <a href="#fig-img-duck" class="quarto-xref">Figure&nbsp;<span>3.2</span></a>.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-img-duck</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig.cap: "This is a longer caption about our beloved duck."</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-alt: "You can also add alt text to images."</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="in">knitr::include_graphics("images/Duck.png")</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-img-duck" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="images/Duck.png" class="img-fluid figure-img" alt="You can also add alt text to images." width="454"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.2: This is a longer caption about our beloved duck.</figcaption>
+<div id="fig-img-duck" class="quarto-figure quarto-figure-center quarto-float anchored" alt="You can also add alt text to images.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-img-duck-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/Duck.png" class="img-fluid figure-img" alt="You can also add alt text to images.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-img-duck-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.2: This is a longer caption about our beloved duck.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -393,33 +420,42 @@ div.csl-indent {
 <h3 data-number="3.3.2" class="anchored" data-anchor-id="code-chunks"><span class="header-section-number">3.3.2</span> Code chunks</h3>
 <p>If you are making a book to show code, there are a couple of features that might be useful.</p>
 <p>Adding code chunks will by default show both the code and output:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">5</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="in">rnorm(n = 5, mean = 10, sd = 2)</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">5</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">5</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  8.310296  9.038222 11.907906 13.092259  9.610131</code></pre>
+<pre><code>[1]  8.705339  8.960337 10.406693 10.068577 10.987172</code></pre>
 </div>
 </div>
 <p>There are several features you can edit by adding different options. For example, if you do not want to show the code, you can set <code>echo=FALSE</code> after the r <code>{r echo=FALSE}</code>:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 10.090911  8.433246 10.211772  5.036753 13.441599</code></pre>
+<pre><code>[1] 11.97414 11.24457 10.43147 11.49562 11.02486</code></pre>
 </div>
 </div>
 <p>If you want to demonstrate code but not execute it - such as to demonstrate inaccurate code, you can set <code>eval=FALSE</code> after the r <code>{r eval=FALSE}</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">5</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">5</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>I spent maybe an hour disappearing into a rabbit hole to find an elegant way of allowing people to copy and paste a whole code chunk - chunk code and all - that you might find it useful. The solution was on this <a href="https://bookdown.org/yihui/rmarkdown-cookbook/verbatim-code-chunks.html" target="_blank">R Markdown Cookbook</a> by Xie et al.&nbsp;for verbatim code chunks. Essentially, I wanted to make it easy for students to copy and paste code chunks I give them, to make it easier to create problem solving activities.</p>
+<p>You need to wrap your text/code/code chunks in a markdown verbatim chunk which produces this:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="in">`r city`</span> is a city in Scotland. </span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="in">city &lt;- "Glasgow"</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It does not work to demonstrate this inside another chunk, so if you want to include it, see the link or check my code in the quant fundamentals book.</p>
 </section>
 <section id="callout-blocks" class="level3" data-number="3.3.3">
 <h3 data-number="3.3.3" class="anchored" data-anchor-id="callout-blocks"><span class="header-section-number">3.3.3</span> Callout blocks</h3>
 <p>My personal favourite features, you can highlight content with callout blocks. These range from notes that people might find interesting, to warnings that something could go mortally wrong.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {.callout<span class="sc">-</span>note}</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>These are notes.</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {.callout<span class="sc">-</span>note}</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>These are notes.</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -436,10 +472,10 @@ Note
 </div>
 <p>You can change the title by using hashes within the callout. They count as real headers in the Quarto outline. So, if you use one hash, it looks like a level one header which deeply disturbs me, so I like to use four hashes to make more sense in the chapter structure.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {.callout<span class="sc">-</span>note}</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="do">#### Look at my interesting title</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>These are notes.</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {.callout<span class="sc">-</span>note}</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="do">#### Look at my interesting title</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>These are notes.</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -456,10 +492,10 @@ Look at my interesting title
 </div>
 <p>You can also make the box collapse by default, which can be handy to hide solutions or obscure tangents.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {.callout<span class="sc">-</span>note collapse<span class="ot">=</span>true}</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="do">#### Please look at me</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>Secret secret notes. </span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {.callout<span class="sc">-</span>note collapse<span class="ot">=</span>true}</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="do">#### Please look at me</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>Secret secret notes. </span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -482,9 +518,9 @@ Please look at me
 <li>Warning</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {.callout<span class="sc">-</span>warning}</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>These are warnings.</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {.callout<span class="sc">-</span>warning}</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>These are warnings.</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -503,9 +539,9 @@ Warning
 <li>Important</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {.callout<span class="sc">-</span>important}</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>This is something important.</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {.callout<span class="sc">-</span>important}</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>This is something important.</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -524,9 +560,9 @@ Important
 <li>Tip</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {.callout<span class="sc">-</span>tip}</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>Here is a handy tip. </span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {.callout<span class="sc">-</span>tip}</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>Here is a handy tip. </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -545,9 +581,9 @@ Tip
 <li>And, a caution</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {.callout<span class="sc">-</span>caution}</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>Here is a caution about something.</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span> {.callout<span class="sc">-</span>caution}</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>Here is a caution about something.</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="sc">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -568,7 +604,7 @@ Caution
 <p>If you want to add proper references instead of just hyperlinks, you need a .bib file from a reference manager.</p>
 <p>The .bib file should be in the include folder (unless you point it somewhere else) and you can specify it in the <code>_quarto.yml</code> file through the bibliography entry:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>bibliography<span class="sc">:</span> include<span class="sc">/</span>references.bib</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>bibliography<span class="sc">:</span> include<span class="sc">/</span>references.bib</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -583,10 +619,10 @@ How do I download and edit a .bib file?
 <p>I use Zotero as a reference manager and its super easy to download a .bib file for a project you are working on. Downloading one entry is a little annoying as you need to export it as BibTex and copy from the file it produces, but if you create a folder to store everything for the book, you can just export the folder each time you add new entries (<code>right click &gt;&gt; export collection &gt;&gt; BibTex format and OK</code>).</p>
 <p>If you do have the single entry, you can open the .bib file within RStudio and copy the entry in. It will look something like this:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="sc">@</span>article{bartlett_power_2022,</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    title <span class="ot">=</span> {Power to the {People}<span class="sc">:</span> {A} {Beginner}’s {Tutorial} to {Power} {Analysis} using jamovi},</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    volume <span class="ot">=</span> {<span class="dv">6</span>}</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    ...}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="sc">@</span>article{bartlett_power_2022,</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    title <span class="ot">=</span> {Power to the {People}<span class="sc">:</span> {A} {Beginner}’s {Tutorial} to {Power} {Analysis} using jamovi},</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    volume <span class="ot">=</span> {<span class="dv">6</span>}</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    ...}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>which stores all the information for the <code>.csl</code> to pull out and cite/reference as needed.</p>
 </div>
@@ -595,7 +631,7 @@ How do I download and edit a .bib file?
 <p>Depending on the citation style you want, there are different codes, such as adding it in parentheses <code>[@bartlett_power_2022]</code> <span class="citation" data-cites="bartlett_power_2022">(<a href="references.html#ref-bartlett_power_2022" role="doc-biblioref">Bartlett &amp; Charles, 2022</a>)</span>. For a full list of options, you can check out the <a href="https://quarto.org/docs/authoring/citations.html" target="_blank">Quarto citation guide</a>.</p>
 <p>By default, the book template has APA style for referencing, but if you need a different referencing style, you can add and specify a different .csl file within <code>_quarto.yml</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>csl<span class="sc">:</span> include<span class="sc">/</span>apa.csl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>csl<span class="sc">:</span> include<span class="sc">/</span>apa.csl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -618,11 +654,11 @@ How do I specify a .csl file?
 <h4 data-number="3.3.5.1" class="anchored" data-anchor-id="mcqs"><span class="header-section-number">3.3.5.1</span> MCQs</h4>
 <p>You can add questions through inline code, or by first specifying them in an R code block if it makes it easier to edit longer text.</p>
 <p>For example, this workshop is:</p>
-<div id="radio_BHKKVTQWZC" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_BHKKVTQWZC" value="answer"> <span>Life changing</span></label><label><input type="radio" autocomplete="off" name="radio_BHKKVTQWZC" value=""> <span>Boring</span></label><label><input type="radio" autocomplete="off" name="radio_BHKKVTQWZC" value=""> <span>Mediocre</span></label><label><input type="radio" autocomplete="off" name="radio_BHKKVTQWZC" value=""> <span>OK</span></label>
+<div id="radio_JIRMIHETCI" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_JIRMIHETCI" value="answer"> <span>Life changing</span></label><label><input type="radio" autocomplete="off" name="radio_JIRMIHETCI" value=""> <span>Boring</span></label><label><input type="radio" autocomplete="off" name="radio_JIRMIHETCI" value=""> <span>Mediocre</span></label><label><input type="radio" autocomplete="off" name="radio_JIRMIHETCI" value=""> <span>OK</span></label>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">r longmcq(c(answer = "Life changing", "Boring", "Mediocre", "OK"))</span><span class="st">`</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">r longmcq(c(answer = "Life changing", "Boring", "Mediocre", "OK"))</span><span class="st">`</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="single-answer" class="level4" data-number="3.3.5.2">
@@ -632,7 +668,7 @@ How do I specify a .csl file?
 <li>On a scale of 1 (very dissatisfied) - 7 (very satisfied), how pleased are you with this workshop? <input class="webex-solveme nospaces" size="1" data-answer="[&quot;7&quot;]"></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">r fitb(7)</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">r fitb(7)</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="true-or-false" class="level4" data-number="3.3.5.3">
@@ -642,7 +678,7 @@ How do I specify a .csl file?
 <li>After the workshop, I am going to make my own book: <select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value="">FALSE</option></select></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">r torf(TRUE)</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">r torf(TRUE)</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -652,7 +688,7 @@ How do I specify a .csl file?
 <p>First, you need to add a file within your book directory. If you have loads of data or files across your book, you might want a separate folder (I call mine <code>data</code> or <code>supporting</code>), but I have put a simple .csv in the <code>include/</code> folder.</p>
 <p>If you click on <a href="include/test_data.csv" target="_blank">.csv file</a>, it will download to your browser or people might need to right click and “save link as”. It follows the same format as hyperlinks:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>click on [.csv file](include<span class="sc">/</span>test_data.csv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>click on [.csv file](include<span class="sc">/</span>test_data.csv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="adding-a-glossary" class="level3" data-number="3.3.7">
@@ -673,17 +709,17 @@ Important
 </div>
 <p>There are two main components to creating a glossary. First, you need to add glossary items as you work through your chapter using inline code. For example, I might want to define what a <a class="glossary">glossary<span class="def">An alphabetical list of words with explanations.</span></a> is:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">r glossary("glossary", def = "An alphabetical list of words with explanations.")</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">r glossary("glossary", def = "An alphabetical list of words with explanations.")</span><span class="st">`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If you hover or click on the text, you will see the definition appear. There are different settings for this, so make sure you check the <a href="https://debruine.github.io/glossary/articles/glossary.html" target="_blank">glossary documentation</a>.</p>
 <p>At the end of each chapter, you can then include a glossary table which shows all the words you used in the chapter. Just make sure you add <code>echo=FALSE</code> to the code chunk, so that the function does not appear.</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glossary_table</span>()</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="in">glossary_table()</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This produces:</p>
 <div class="cell">
 <div class="cell-output-display">
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
@@ -705,7 +741,7 @@ Important
 <p>You can add definitions as you go along with inline code, or you can create and edit a .yml file for your terms if you would prefer to edit that way. See the <code>glossary</code> documentation for more information.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
 <div id="ref-bartlett_power_2022" class="csl-entry" role="listitem">
 Bartlett, J., &amp; Charles, S. (2022). Power to the <span>People</span>: <span>A</span> <span>Beginner</span>’s <span>Tutorial</span> to <span>Power</span> <span>Analysis</span> using jamovi. <em>Meta-Psychology</em>, <em>6</em>. <a href="https://doi.org/10.15626/MP.2021.3078">https://doi.org/10.15626/MP.2021.3078</a>
 </div>
@@ -716,210 +752,416 @@ Bartlett, J., &amp; Charles, S. (2022). Power to the <span>People</span>: <span>
 </main> <!-- /main -->
 <script>
 
+
+
 /* update total correct if #webex-total_correct exists */
+
 update_total_correct = function() {
+
   console.log("webex: update total_correct");
 
+
+
   var t = document.getElementsByClassName("webex-total_correct");
+
   for (var i = 0; i < t.length; i++) {
+
     p = t[i].parentElement;
+
     var correct = p.getElementsByClassName("webex-correct").length;
+
     var solvemes = p.getElementsByClassName("webex-solveme").length;
+
     var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+
     var selects = p.getElementsByClassName("webex-select").length;
 
+
+
     t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+
   }
+
 }
+
+
 
 /* webex-solution button toggling function */
+
 b_func = function() {
+
   console.log("webex: toggle hide");
 
+
+
   var cl = this.parentElement.classList;
+
   if (cl.contains('open')) {
+
     cl.remove("open");
+
   } else {
+
     cl.add("open");
+
   }
+
 }
+
+
 
 /* check answers */
+
 check_func = function() {
+
   console.log("webex: check answers");
 
+
+
   var cl = this.parentElement.classList;
+
   if (cl.contains('unchecked')) {
+
     cl.remove("unchecked");
+
     this.innerHTML = "Hide Answers";
+
   } else {
+
     cl.add("unchecked");
+
     this.innerHTML = "Show Answers";
+
   }
+
 }
+
+
 
 /* function for checking solveme answers */
+
 solveme_func = function(e) {
+
   console.log("webex: check solveme");
 
+
+
   var real_answers = JSON.parse(this.dataset.answer);
+
   var my_answer = this.value;
+
   var cl = this.classList;
+
   if (cl.contains("ignorecase")) {
+
     my_answer = my_answer.toLowerCase();
+
   }
+
   if (cl.contains("nospaces")) {
+
     my_answer = my_answer.replace(/ /g, "")
+
   }
+
+
 
   if (my_answer == "") {
+
     cl.remove("webex-correct");
+
     cl.remove("webex-incorrect");
+
   } else if (real_answers.includes(my_answer)) {
+
     cl.add("webex-correct");
+
     cl.remove("webex-incorrect");
+
   } else {
+
     cl.add("webex-incorrect");
+
     cl.remove("webex-correct");
+
   }
+
+
 
   // match numeric answers within a specified tolerance
+
   if(this.dataset.tol > 0){
+
     var tol = JSON.parse(this.dataset.tol);
+
     var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+
     if (matches.reduce((a, b) => a + b, 0) > 0) {
+
       cl.add("webex-correct");
+
     } else {
+
       cl.remove("webex-correct");
+
     }
+
   }
+
+
 
   // added regex bit
+
   if (cl.contains("regex")){
+
     answer_regex = RegExp(real_answers.join("|"))
+
     if (answer_regex.test(my_answer)) {
+
       cl.add("webex-correct");
+
     }
+
   }
 
+
+
   update_total_correct();
+
 }
 
+
+
 /* function for checking select answers */
+
 select_func = function(e) {
+
   console.log("webex: check select");
+
+
 
   var cl = this.classList
 
+
+
   /* add style */
+
   cl.remove("webex-incorrect");
+
   cl.remove("webex-correct");
+
   if (this.value == "answer") {
+
     cl.add("webex-correct");
+
   } else if (this.value != "blank") {
+
     cl.add("webex-incorrect");
+
   }
 
+
+
   update_total_correct();
+
 }
+
+
 
 /* function for checking radiogroups answers */
+
 radiogroups_func = function(e) {
+
   console.log("webex: check radiogroups");
 
+
+
   var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+
   var cl = checked_button.parentElement.classList;
+
   var labels = checked_button.parentElement.parentElement.children;
 
+
+
   /* get rid of styles */
+
   for (i = 0; i < labels.length; i++) {
+
     labels[i].classList.remove("webex-incorrect");
+
     labels[i].classList.remove("webex-correct");
+
   }
+
+
 
   /* add style */
+
   if (checked_button.value == "answer") {
+
     cl.add("webex-correct");
+
   } else {
+
     cl.add("webex-incorrect");
+
   }
 
+
+
   update_total_correct();
+
 }
+
+
 
 window.onload = function() {
+
   console.log("webex onload");
+
   /* set up solution buttons */
+
   var buttons = document.getElementsByTagName("button");
 
+
+
   for (var i = 0; i < buttons.length; i++) {
+
     if (buttons[i].parentElement.classList.contains('webex-solution')) {
+
       buttons[i].onclick = b_func;
+
     }
+
   }
+
+
 
   var check_sections = document.getElementsByClassName("webex-check");
+
   console.log("check:", check_sections.length);
+
   for (var i = 0; i < check_sections.length; i++) {
+
     check_sections[i].classList.add("unchecked");
 
+
+
     let btn = document.createElement("button");
+
     btn.innerHTML = "Show Answers";
+
     btn.classList.add("webex-check-button");
+
     btn.onclick = check_func;
+
     check_sections[i].appendChild(btn);
 
+
+
     let spn = document.createElement("span");
+
     spn.classList.add("webex-total_correct");
+
     check_sections[i].appendChild(spn);
+
   }
+
+
 
   /* set up webex-solveme inputs */
+
   var solveme = document.getElementsByClassName("webex-solveme");
 
+
+
   for (var i = 0; i < solveme.length; i++) {
+
     /* make sure input boxes don't auto-anything */
+
     solveme[i].setAttribute("autocomplete","off");
+
     solveme[i].setAttribute("autocorrect", "off");
+
     solveme[i].setAttribute("autocapitalize", "off");
+
     solveme[i].setAttribute("spellcheck", "false");
+
     solveme[i].value = "";
 
+
+
     /* adjust answer for ignorecase or nospaces */
+
     var cl = solveme[i].classList;
+
     var real_answer = solveme[i].dataset.answer;
+
     if (cl.contains("ignorecase")) {
+
       real_answer = real_answer.toLowerCase();
+
     }
+
     if (cl.contains("nospaces")) {
+
       real_answer = real_answer.replace(/ /g, "");
+
     }
+
     solveme[i].dataset.answer = real_answer;
 
+
+
     /* attach checking function */
+
     solveme[i].onkeyup = solveme_func;
+
     solveme[i].onchange = solveme_func;
 
+
+
     solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+
   }
+
+
 
   /* set up radiogroups */
+
   var radiogroups = document.getElementsByClassName("webex-radiogroup");
+
   for (var i = 0; i < radiogroups.length; i++) {
+
     radiogroups[i].onchange = radiogroups_func;
+
   }
+
+
 
   /* set up selects */
+
   var selects = document.getElementsByClassName("webex-select");
+
   for (var i = 0; i < selects.length; i++) {
+
     selects[i].onchange = select_func;
+
     selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+
   }
 
+
+
   update_total_correct();
+
 }
 
+
+
 </script>
+
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -999,10 +1241,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1012,8 +1271,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1025,7 +1293,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1069,6 +1460,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1094,6 +1486,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1155,17 +1573,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./workshop_guide.html" class="pagination-link">
+      <a href="./workshop_guide.html" class="pagination-link" aria-label="Workshop plan">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Workshop plan</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link">
+      <a href="./references.html" class="pagination-link" aria-label="References">
         <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

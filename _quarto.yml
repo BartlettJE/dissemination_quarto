@@ -6,6 +6,8 @@ book:
   title: "PsyTeachR Book Template Workshop"
   author: "James Bartlett"
   date: "07/19/2024"
+  downloads:
+    - pdf
   chapters:
     - index.qmd
     - workshop_prep.qmd

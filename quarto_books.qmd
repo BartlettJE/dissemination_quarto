@@ -1,14 +1,14 @@
-# Workshop plan {#workshop_plan}
+# Quarto books {#quarto_books}
 
-To follow along in the workshop if you fall behind, we will complete the following steps.
+In this chapter, you will see how to use the PsyTeachR book template developed by Prof. Lisa DeBruine. This template is what we use for all the data skills resources in the School of Psychology and Neuroscience. This has some nice features compared to the standard Quarto book template, such as supporting webexercises for interactive questions and including a glossary.
 
 ## Example book
 
-For an example of the new book template, we will explore the new [Fundamentals of Quantitative Analysis](https://bartlettje.github.io/quant-fun-v3/){target="_blank"} book. I have edited the first two chapters to use new Quarto features, so they can provide inspiration for what you can do with the book template.
+For an example of the PsyTeachR book template, you can explore the [Fundamentals of Quantitative Analysis](https://psyteachr.github.io/quant-fun-v3/){target="_blank"} book. If there is a feature you like, you can see the [source code on github](https://github.com/PsyTeachR/quant-fun-v3){target="_blank"} to adapt to your needs.
 
 ## Creating the book template
 
-If you have not followed the [preparation instructions](#workshop_prep) yet, you need R/RStudio installed to your computer, the `booktem` package installed from Lisa's github, and git/github desktop installed on your computer. I will be demonstrating how to use github desktop rather than the command line.
+If you have not followed the [preparation instructions](#workshop_prep) yet, you need R/RStudio installed to your computer, the `booktem` package installed from Lisa's github, and git/github desktop installed on your computer. I will be demonstrating how to use github desktop rather than the command line, as git could easily be it's own workshop.
 
 The first step is thinking about where you want your book folder stored on your computer, where all the files will live. I have a folder within `Documents` called `git_repos` where I store all my git repositories away from OneDrive (see below). You do not need to create a folder for the book itself as the function will do that for you, but you need somewhere for that folder to live.
 
@@ -42,7 +42,7 @@ Congratulations, you have a book skeleton to work with!
 
 1.  `_quarto.yml`
 
-We will start by exploring the `_quarto.yml` file where you can edit all the details for your book, like the title, description, author(s), and the licence. In the new Quarto book template, this is also how you control the order of chapters.
+We will start by exploring the `_quarto.yml` file where you can edit all the details for your book, like the title, description, author(s), and the licence. In Quarto books, this is also how you control the order of chapters.
 
 ::: callout-note
 #### What is a .yml file?
@@ -203,4 +203,4 @@ Start working on your own book in the remaining time we have together.
 
 See the next chapter on [Quarto features and book conventions](#quarto_features) for inspiration / example code for the kind of features you can use.
 
-Do not forget to make your own hex sticker for for extra panache!
+Do not forget to make your own hex sticker for extra panache!

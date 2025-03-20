@@ -3,16 +3,27 @@ project:
   output-dir: docs
 
 book:
-  title: "PsyTeachR Book Template Workshop"
+  title: "Dissemination using Quarto and Github Pages"
   author: "James Bartlett"
-  date: "07/19/2024"
+  date: "03/20/2025"
   downloads:
     - pdf
   chapters:
     - index.qmd
     - workshop_prep.qmd
-    - workshop_guide.qmd
-    - book_conventions.qmd
+    - part: "Writing Books"
+      chapters:
+        - quarto_books.qmd
+        - psyteachr_template.qmd
+    - part: "Sharing Presentations"
+      chapters:
+        - quarto_presentations.qmd
+    - part: "Creating Websites"
+      chapters:
+        - quarto_websites.qmd
+    - part: "General Quarto Resources"
+      chapters:
+        - quarto_features.qmd
     - references.qmd
 
 bibliography: include/references.bib

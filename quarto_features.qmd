@@ -1,4 +1,4 @@
-# Worked examples for Quarto and booktem features {#quarto_features}
+# Useful Quarto and booktem features {#quarto_features}
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(webexercises)

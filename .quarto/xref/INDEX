@@ -19,5 +19,20 @@
   },
   "book_conventions.qmd": {
     "book_conventions.html": "fe17ab25"
+  },
+  "quarto_books.qmd": {
+    "quarto_books.html": "dd37a687"
+  },
+  "psyteachr_template.qmd": {
+    "psyteachr_template.html": "cfc42e07"
+  },
+  "quarto_presentations.qmd": {
+    "quarto_presentations.html": "50728e79"
+  },
+  "quarto_websites.qmd": {
+    "quarto_websites.html": "f1b00b31"
+  },
+  "quarto_features.qmd": {
+    "quarto_features.html": "ac934b56"
   }
 }

@@ -1,32 +1,39 @@
 # Preparation before the workshop {#workshop_prep}
 
-Before we can get to the fun stuff, you will need to download a few pieces of software to your computer to focus on creating in the workshop. If you have any problems, just message me on Teams.
+Before we can get to the fun stuff, you will need to download a few pieces of software to focus on creating in the workshop.
 
-## Creating an online book workflow
+## The workflow of Quarto and github pages
 
-For an overview to show why you need the following the pieces of software, you will follow this workflow to create and edit the book.
+For an overview to show why you need the following the pieces of software, you will follow this workflow to create and edit your materials. @fig-img-workflow shows the Quarto/github pages workflow you will follow. 
 
-### Creating the book
+```{r img-workflow, echo=FALSE}
+#| label: fig-img-workflow
+#| fig.cap: "A flowchart showing the creation and editing process behind a Quarto output and sharing it using github pages."
+#| fig-alt: "A flowchart showing the creation and editing process behind a Quarto output and sharing it using github pages."
+#| lightbox: TRUE
 
-1.  Install the `booktem` R package.
+knitr::include_graphics("images/workflow.png")
+```
 
-2.  In RStudio, use the `create_book()` function to create a new project in your working directory containing the initial template files.
+### Creating your output 
+
+1.  Create a new project to produce the skeleton of your book/presentation/website.
 
 3.  Edit the basic details of your book, like the title, author(s), and description.
 
-4.  Create a new github repository for your book folder.
+4.  Create a new github repository for your output.
 
 5.  Publish the initial repository so the code is available on github.
 
 6.  Activate github pages to render the book online via a URL.
 
-### Editing the book
+### Editing your output
 
-1.  Open the book .Rproj file to start working on the book in RStudio.
+1.  Open the output .Rproj file to start working on the materials in RStudio.
 
 2.  Edit or add chapter files in RStudio, specifying their order in the `_quarto.yml` file.
 
-3.  Render individual chapter files as you work on them. Render `index.qmd` when you want to update all the chapters, or render them one by one to ensure all new changes are available.
+3.  Render individual chapter/section files as you work on them. Render `index.qmd` when you want to update all the chapters, or render them one by one to ensure all new changes are available.
 
 4.  Add commits at key points using git/github to mark milestones with useful commit messages.
 
@@ -34,14 +41,9 @@ For an overview to show why you need the following the pieces of software, you w
 
 ## Download R and RStudio
 
-If you are new to R/RStudio, you will need to install both pieces of software which is *normally* pretty straightforward. You might find this [YouTube video here](https://youtu.be/YrEe2TLr3MI?si=oweIE55Ul77ZoZwz){target="_blank"} useful.
+If you are new to R/RStudio, you will need to install both pieces of software which is *normally* pretty straightforward. You might find this [YouTube video](https://youtu.be/YrEe2TLr3MI?si=oweIE55Ul77ZoZwz){target="_blank"} useful or the [RSetGo guide](https://psyteachr.github.io/RSetGo/){target="_blank"} we prepared for students in the School of Psychology and Neuroscience.
 
-If you are a more experienced R/RStudio user, just make sure you update your version of R/RStudio as the `booktem` package will only work for recent versions as Posit are rapidly developing Quarto. I am currently using `r R.version.string` and RStudio 2023.6.2.561, but the more recent the better.
-
-
-::: callout-important
-From what I can tell by testing it out, it does not work with the online server version of RStudio. I could not get it to download the `booktem` package and I am not sure how well it works with github, so you will need a local installation. 
-:::
+If you are a more experienced R/RStudio user, just make sure you update your version of RStudio as Posit are rapidly developing Quarto. I am currently using `r R.version.string` and RStudio 2024.09.1+394, but the more recent the better.
 
 ### Installing Base R
 
@@ -51,15 +53,15 @@ If you have a Mac, install the latest release from the newest `R-x.x.x.pkg` link
 
 If you are installing the Windows version, choose the "[base](https://cran.rstudio.com/bin/windows/base/)" subdirectory and click on the download link at the top of the page. After you install R, you should also install [RTools](https://cran.rstudio.com/bin/windows/Rtools/){target="_blank"} and use the "recommended" version highlighted near the top of the list.
 
-If you are using Linux, choose your specific operating system and follow the installation instructions. If you use Linux, you probably do not need help from me for installing software and I will probably not know how to help you as I have never used Linux.
+If you are using Linux, choose your specific operating system and follow the installation instructions. If you use Linux, you probably do not need help from me.
 
 ### Installing RStudio
 
 Go to [rstudio.com](https://www.rstudio.com/products/rstudio/download/#download){target="_blank"} and download the RStudio Desktop version for your operating system. It should recognise your operating system and allow you to download via the blue Download button, but you can look for previous versions if you need one.
 
-### Install the `booktem` R package
+### (optional) Install the `booktem` R package
 
-The PsyTeachR book template is contained within a package hosted on Lisa's github called `booktem`. To install the package, run the following code in the Console of RStudio:
+For one version of a Quarto book, we have a specialised PsyTeachR book template for the School of Psychology and Neuroscience which you can use, but it is contained within a package hosted on Prof. Lisa DeBruine's github called `booktem`. To install the package, run the following code in the Console of RStudio:
 
 ```{r eval=FALSE}
 devtools::install_github("debruine/booktem")
@@ -81,7 +83,7 @@ There is an [installation guide](https://github.com/git-guides/install-git){targ
 
 There are 7 units in total which do not take very long, but for the purposes of this workshop, I would consider 1 and 2 as **essential** for downloading git/github desktop and using it as a single user to track changes. Reaching this point will be super helpful for following along in the workshop as the terms will be more familiar to you like repositories, commits, and pushing changes.
 
-If you have time, completing unit 3 will give you everything you need if you are only using it on your own. If you plan on writing the book in a team, units 4 and 5 cover being a group project user, then 6 and 7 for advanced features.
+If you have time, completing unit 3 will give you everything you need if you are only using it on your own. If you plan on writing materials in a team, units 4 and 5 cover being a group project user, then 6 and 7 for advanced features.
 
 ::: callout-tip
 #### Apply for education membership
@@ -91,4 +93,4 @@ The standard version of github should meet all your needs, but by working at a u
 
 ## Finished
 
-You are ready to make a book in the workshop! See you all on the 1st of August.
+You are ready to make your outputs in the workshop or follow along to the rest of the book here!

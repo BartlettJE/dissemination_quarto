@@ -4,7 +4,7 @@ Before we can get to the fun stuff, you will need to download a few pieces of so
 
 ## The workflow of Quarto and github pages
 
-For an overview to show why you need the following the pieces of software, you will follow this workflow to create and edit your materials. @fig-img-workflow shows the Quarto/github pages workflow you will follow. 
+For an overview to show why you need the following the pieces of software, you will follow this workflow to create and edit your materials. @fig-img-workflow shows the Quarto/github pages workflow you will follow.
 
 ```{r img-workflow, echo=FALSE}
 #| label: fig-img-workflow
@@ -15,17 +15,17 @@ For an overview to show why you need the following the pieces of software, you w
 knitr::include_graphics("images/workflow.png")
 ```
 
-### Creating your output 
+### Creating your output
 
 1.  Create a new project to produce the skeleton of your book/presentation/website.
 
-3.  Edit the basic details of your book, like the title, author(s), and description.
+2.  Edit the basic details of your book, like the title, author(s), and description.
 
-4.  Create a new github repository for your output.
+3.  Create a new github repository for your output.
 
-5.  Publish the initial repository so the code is available on github.
+4.  Publish the initial repository so the code is available on github.
 
-6.  Activate github pages to render the book online via a URL.
+5.  Activate github pages to render the book online via a URL.
 
 ### Editing your output
 

@@ -2,9 +2,9 @@
 
 In this chapter, you will see how to use the PsyTeachR book template developed by Prof. Lisa DeBruine. This template is what we use for all the data skills resources in the School of Psychology and Neuroscience. This has some nice features compared to the standard Quarto book template, such as supporting webexercises for interactive questions and including a glossary.
 
-## Example book
+## Example presentation
 
-For an example of the PsyTeachR book template, you can explore the [Fundamentals of Quantitative Analysis](https://psyteachr.github.io/quant-fun-v3/){target="_blank"} book. If there is a feature you like, you can see the [source code on github](https://github.com/PsyTeachR/quant-fun-v3){target="_blank"} to adapt to your needs.
+For an example of creating Quarto presentations, you can explore a [papaja demonstration](https://github.com/BartlettJE/papaja_demo){target="_blank"} I presented for the research centre I am affilated with. If there is a feature you like, you can see the [source code on github](https://github.com/BartlettJE/papaja_demo){target="_blank"} to adapt to your needs.
 
 ## Creating the book template
 

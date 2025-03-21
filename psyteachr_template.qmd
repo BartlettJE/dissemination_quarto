@@ -1,10 +1,24 @@
-# PsyTeachR book template {#workshop_plan}
+# PsyTeachR book template {#psyteachr_book}
 
-In this chapter, you will see how to use the PsyTeachR book template developed by Prof. Lisa DeBruine. This template is what we use for all the data skills resources in the School of Psychology and Neuroscience. This has some nice features compared to the standard Quarto book template, such as supporting webexercises for interactive questions and including a glossary. 
+In this chapter, you will see how to use the PsyTeachR book template developed by Prof. Lisa DeBruine. This template is what we use for all the data skills resources in the School of Psychology and Neuroscience. This has some nice features compared to the standard Quarto book template, such as supporting webexercises for interactive questions and including a glossary.
 
-## Example book
+**Intended learning outcomes**
 
-For an example of the PsyTeachR book template, you can explore the [Fundamentals of Quantitative Analysis](https://psyteachr.github.io/quant-fun-v3/){target="_blank"} book. If there is a feature you like, you can see the [source code on github](https://github.com/PsyTeachR/quant-fun-v3){target="_blank"} to adapt to your needs.
+By the end of this chapter, you will be able to: 
+
+- Create and edit a Quarto book using the PsyTeachR template. 
+
+- Publish your book using github pages. 
+
+## Example books
+
+For a selection of examples of the PsyTeachR book template, you can explore: 
+
+- The [Fundamentals of Quantitative Analysis](https://psyteachr.github.io/quant-fun-v3/){target="_blank"} book designed for MSc Psychology conversion students. If there is a feature you like, you can see the [source code on github](https://github.com/PsyTeachR/quant-fun-v3){target="_blank"} to adapt to your needs.
+
+- The [Data Skills for Reproducible Research](https://psyteachr.github.io/reprores-v4/){target="_blank"} book designed for MSc Research Methods of Psychological Science and MSc Brain Sciences students. If there is a feature you like, you can see the [source code on github](https://github.com/PsyTeachR/reprores-v4){target="_blank"} to adapt to your needs.
+
+You can see the whole PsyTeachR suite of resources on [our website](https://psyteachr.github.io/){target="_blank"}. 
 
 ## Creating the book template
 

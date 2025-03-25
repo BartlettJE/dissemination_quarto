@@ -12,7 +12,7 @@ PDF_lastmodified <- as.Date(
 )
 ```
 
-The PDF version of this book was last updated on **`r PDF_lastmodified`**.
+The PDF version of this book was last updated on **25th March 2025**.
 
 **Intended Learning Outcomes (ILOs)**
 

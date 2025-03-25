@@ -6,7 +6,35 @@ In this chapter, you will see how to use the PsyTeachR book template developed b
 
 For an example of the PsyTeachR book template, you can explore the [Fundamentals of Quantitative Analysis](https://psyteachr.github.io/quant-fun-v3/){target="_blank"} book. If there is a feature you like, you can see the [source code on github](https://github.com/PsyTeachR/quant-fun-v3){target="_blank"} to adapt to your needs.
 
+For other examples, Solomon Kurz - a psychology researcher who writes about programming / stats - posted on BlueSky about academic websites. The thread has over 40 replies, so you can explore how other people have used Quarto or similar tools:
+
+<blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:vvh2bpvv5h5hmruh36seh7i4/app.bsky.feed.post/3lkqfdfav7k2r" data-bluesky-cid="bafyreihe623nwhpxik3fgpuhdda33gaevtar56v43zhwh7hz7f5vwb6iyy" data-bluesky-embed-color-mode="system">
+
+<p lang="en">
+
+Who has an academic website they’re proud of?
+
+I’m especially interested in websites by grad students, and in websites built with Quarto. I’ll be offering a local workshop on building a website with Quarto, and I’m keen to give my audience examples. #rstats
+
+</p>
+
+— Solomon Kurz (<a href="https://bsky.app/profile/did:plc:vvh2bpvv5h5hmruh36seh7i4?ref_src=embed">@solomonkurz.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:vvh2bpvv5h5hmruh36seh7i4/post/3lkqfdfav7k2r?ref_src=embed">19 March 2025 at 14:27</a>
+
+</blockquote>
+
+```{=html}
+<script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
+```
+
+Alternative/combined solutions:
+
+- https://hugoblox.com/?utm_campaign=poweredby
+
+- https://www.dsquintana.blog/create-an-academic-website-free-easy-2020/
+
 ## Creating the book template
+
+Your main source of information for this output is the [Creating a Website](https://quarto.org/docs/websites/){target="_blank"} section of the Quarto guide. 
 
 If you have not followed the [preparation instructions](#workshop_prep) yet, you need R/RStudio installed to your computer, the `booktem` package installed from Lisa's github, and git/github desktop installed on your computer. I will be demonstrating how to use github desktop rather than the command line, as git could easily be it's own workshop.
 

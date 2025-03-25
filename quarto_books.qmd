@@ -1,20 +1,22 @@
 # Quarto books {#quarto_books}
 
-In this chapter, you will learn how to create and edit the standard version of a Quarto book. This differs to the specific [PsyTeachR template](#psyteachr_book) we cover in the next chapter. If you do not want additional features built in like interactive exercises and a glossary function, you may want a more streamlined version. The editing and rendering process is exactly the same, it is just the creation process and additional features which differ. 
+In this chapter, you will learn how to create and edit the standard version of a Quarto book. This differs to the specific [PsyTeachR template](#psyteachr_book) we cover in the next chapter. If you do not want additional features built in like interactive exercises and a glossary function, you may want a more streamlined version. The editing and rendering process is exactly the same, it is just the creation process and additional features which differ.
 
 **Intended learning outcomes**
 
-By the end of this chapter, you will be able to: 
+By the end of this chapter, you will be able to:
 
-- Create and edit a standard Quarto book using RStudio. 
+-   Create and edit a standard Quarto book using RStudio.
 
-- Publish your book using github pages. 
+-   Publish your book using github pages.
 
 ## Example book
 
 For an example of the standard Quarto version, you can explore this very book on [Dissemination using Quarto and Github Pages](https://bartlettje.github.io/dissemination_quarto/){target="_blank"}! If there is a feature you like, you can see the [source code on github](https://github.com/BartlettJE/dissemination_quarto){target="_blank"} to adapt to your needs.
 
 ## Creating a Quarto book
+
+Your main source of information for this output is the [Creating a Book](https://quarto.org/docs/books/){target="_blank"} section of the Quarto guide. 
 
 If you have not followed the [preparation instructions](#workshop_prep) yet, you need R/RStudio and git/github desktop installed on your computer. I will be demonstrating how to use github desktop rather than the command line, as git could easily be it's own workshop.
 
@@ -26,15 +28,15 @@ The first step is thinking about where you want your book folder stored on your 
 We have not reached the github step yet, but as you think about where you want your folder for the book, please **do not** use a folder within OneDrive. Sometimes it works, but most of the time it causes chaos as OneDrive is trying to track changes, github is trying to track changes, which ends in them fighting over file permissions.
 :::
 
-Once you have decided where your book will live, open RStudio and click `File > New Project... > New Directory > Quarto book`. This will be the process we follow for all the Quarto outputs and you see there are options for a range of documents like websites and blogs. 
+Once you have decided where your book will live, open RStudio and click `File > New Project... > New Directory > Quarto book`. This will be the process we follow for all the Quarto outputs and you see there are options for a range of documents like websites and blogs.
 
 You will see a new window asking for you to specify:
 
-- "Directory name:" - the name of the folder it will create, so keep it short and without spaces. 
+-   "Directory name:" - the name of the folder it will create, so keep it short and without spaces.
 
-- "Create a project in the subdirectory of:" - click browse to navigate to the folder you want your book to live in. Creating the book will create a new folder within this directory, so you do not need to create a folder for the book yourself. 
+-   "Create a project in the subdirectory of:" - click browse to navigate to the folder you want your book to live in. Creating the book will create a new folder within this directory, so you do not need to create a folder for the book yourself.
 
-Click "Create project" and after a couple of seconds, it will open a new project window with the template in. 
+Click "Create project" and after a couple of seconds, it will open a new project window with the template in.
 
 Congratulations, you have a book skeleton to work with!
 
@@ -52,7 +54,7 @@ YAML / .yml are configuration files for programs which must follow specific form
 
 Within the .yml file, I will highlight in the workshop key features such as: project, book, bibliography, csl, and format.
 
-For presenting your book using github pages, edit the `project` from the standard first two lines: 
+For presenting your book using github pages, edit the `project` from the standard first two lines:
 
 ```{r eval=FALSE}
 project:
@@ -67,7 +69,7 @@ project:
   output-dir: docs
 ```
 
-Be careful, indentation is important in .yml files. We do this as by default, it will create a folder called `_book` where the rendered .html files will live. For github pages though, it looks for a folder called `docs`, so this will streamline things later. 
+Be careful, indentation is important in .yml files. We do this as by default, it will create a folder called `_book` where the rendered .html files will live. For github pages though, it looks for a folder called `docs`, so this will streamline things later.
 
 2.  index.qmd
 
@@ -86,7 +88,7 @@ Make sure you only use one level 1 header per chapter. If you try and add multip
 Once you start adding multiple chapters, remember to update the .yml file for the order you want them in your book.
 
 ::: callout-tip
-Depending on what you want to include in your book and how complicated it becomes, you might want to separate chapters into different sections. The indentation can be frustrating, but you can add parts to the `book:` section of the .yml like: 
+Depending on what you want to include in your book and how complicated it becomes, you might want to separate chapters into different sections. The indentation can be frustrating, but you can add parts to the `book:` section of the .yml like:
 
 ```{r, eval=FALSE}
 book:
@@ -98,12 +100,11 @@ book:
         - quarto_books.qmd
         - psyteachr_template.qmd
 ```
-
 :::
 
-4. references.bib
+4.  references.bib
 
-In the .yml, you can specify a BibTeX file (.bib) to add formatted citations and references. The template comes with an example for how a citation and its reference will look. A .bib file stored information for referencing like authors, the journal, the DOI etc. The Quarto file will take this information and present it as a citation. The [Quarto features chapter](#quarto_features) explains how to use a .bib file to format citations and specify a specific citation style. 
+In the .yml, you can specify a BibTeX file (.bib) to add formatted citations and references. The template comes with an example for how a citation and its reference will look. A .bib file stored information for referencing like authors, the journal, the DOI etc. The Quarto file will take this information and present it as a citation. The [Quarto features chapter](#quarto_features) explains how to use a .bib file to format citations and specify a specific citation style.
 
 5.  Rendering files
 
@@ -121,7 +122,7 @@ These are the key components to make your book. Until this point, these edits al
 
 Once you have a working barebones version of your book ready to go, it's time to associate your book folder with a github repository and start some version control. If you want another resource, you can see the [github documentation online](https://docs.github.com/en/desktop/overview/creating-your-first-repository-using-github-desktop){target="_blank"}.
 
-In future, you could actually start with this part. You can create a new folder, create a repository using this new folder, and then specify that folder when you created a project sub directory to add the book file to. However, we started by creating the book first, so we need to create a repository for an existing folder without a git component. When you are used to the process, you can work out which workflow suits you better. 
+In future, you could actually start with this part. You can create a new folder, create a repository using this new folder, and then specify that folder when you created a project sub directory to add the book file to. However, we started by creating the book first, so we need to create a repository for an existing folder without a git component. When you are used to the process, you can work out which workflow suits you better.
 
 In the github desktop application, click `add >> Create a New Repository` and complete the details.
 
@@ -131,7 +132,7 @@ In the github desktop application, click `add >> Create a New Repository` and co
 As a reminder, please **do not** use a folder within OneDrive for your github repository.
 :::
 
--   Name: This will be the name of your repository on github, so call it something short but sensible. It makes sense to call this the same as your book folder wherever possible. 
+-   Name: This will be the name of your repository on github, so call it something short but sensible. It makes sense to call this the same as your book folder wherever possible.
 
 -   Local path: Click Choose... and navigate to your book folder. You want the path to be the main folder your book lives in.
 
@@ -194,7 +195,7 @@ At this point, you have everything you need for the book workflow. As you work o
 Before we have time to start working on your newly minted books, I will end on a couple of warnings and tips.
 
 ::: callout-caution
-Remember just committing changes will do nothing to your github repository and book link. You need to push those committed changes for them to be available on github and used to build the book in github pages. Likewise, editing the .qmd files and committing the changes to github will not change anything without first rendering your chapter/book. You edit the .qmd files but rendering creates the .html files that display as a website. 
+Remember just committing changes will do nothing to your github repository and book link. You need to push those committed changes for them to be available on github and used to build the book in github pages. Likewise, editing the .qmd files and committing the changes to github will not change anything without first rendering your chapter/book. You edit the .qmd files but rendering creates the .html files that display as a website.
 
 It takes a few minutes to rebuild, so do not worry if you do not immediately see the changes.
 :::
@@ -210,4 +211,3 @@ One of the main features I use way too infrequently is reverting changes when so
 Start working on your own book in the remaining time we have together.
 
 See the final chapter on [Useful Quarto and booktem features](#quarto_features) for inspiration / example code for the kind of features you can use.
-

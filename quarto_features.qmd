@@ -131,7 +131,7 @@ You can then use the tag to create a link with a similar format to URL hyperlink
 ...back to the [Workshop Plan](#workshop_plan) chapter
 ```
 
-#### Images
+#### Images {#image_options}
 
 There are different ways to add images, where the Markdown version uses a similar format to links which I will demonstrate through this duck:
 
@@ -300,6 +300,54 @@ Here is a caution about something.
 ::: callout-caution
 Here is a caution about something.
 :::
+
+### Embedding posts or videos
+
+When you write in Markdown language, it renders to a .html page. This means you can add html code directly into your .qmd files and it will render in the final .html page. If you want to embed posts from social media, you can copy the embed post code from something like BlueSky (click the three dots ... below a post and select embed post):
+
+```{r eval=FALSE}
+<blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:lrgnqp3xjombwh5sairhzou3/app.bsky.feed.post/3lao2hdzo622w" data-bluesky-cid="bafyreibzugbnx5b6i33f6bzp5phavf5z66jwcccpv5ztfmf3ojnfhyybra" data-bluesky-embed-color-mode="system"><p lang="en">A little delayed but Wil Toivo and I finally have a complete rewrite of our Fundamentals of Quantitative Analysis book 📖 psyteachr.github.io/quant-fun-v3/
+
+This is our data skills book for MSc conversion students, so they must rapidly get up to speed and complete chapters 1-11 in semester 1.<br><br><a href="https://bsky.app/profile/did:plc:lrgnqp3xjombwh5sairhzou3/post/3lao2hdzo622w?ref_src=embed">[image or embed]</a></p>&mdash; James Bartlett (<a href="https://bsky.app/profile/did:plc:lrgnqp3xjombwh5sairhzou3?ref_src=embed">@bartlettje.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:lrgnqp3xjombwh5sairhzou3/post/3lao2hdzo622w?ref_src=embed">11 November 2024 at 09:55</a></blockquote><script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
+```
+
+Which will produce the following:
+
+<blockquote class="bluesky-embed" data-bluesky-uri="at://did:plc:lrgnqp3xjombwh5sairhzou3/app.bsky.feed.post/3lao2hdzo622w" data-bluesky-cid="bafyreibzugbnx5b6i33f6bzp5phavf5z66jwcccpv5ztfmf3ojnfhyybra" data-bluesky-embed-color-mode="system">
+
+<p lang="en">
+
+A little delayed but Wil Toivo and I finally have a complete rewrite of our Fundamentals of Quantitative Analysis book 📖 psyteachr.github.io/quant-fun-v3/
+
+This is our data skills book for MSc conversion students, so they must rapidly get up to speed and complete chapters 1-11 in semester 1.<br><br><a href="https://bsky.app/profile/did:plc:lrgnqp3xjombwh5sairhzou3/post/3lao2hdzo622w?ref_src=embed">\[image or embed\]</a>
+
+</p>
+
+— James Bartlett (<a href="https://bsky.app/profile/did:plc:lrgnqp3xjombwh5sairhzou3?ref_src=embed">@bartlettje.bsky.social</a>) <a href="https://bsky.app/profile/did:plc:lrgnqp3xjombwh5sairhzou3/post/3lao2hdzo622w?ref_src=embed">11 November 2024 at 09:55</a>
+
+</blockquote>
+
+```{=html}
+<script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
+```
+
+This also works for embedding something like a YouTube video where you can click `Share > Embed` from under a video, and paste the code into your .qmd file.
+
+### Equations using LaTeX
+
+For books, one useful feature might be the support of LaTeX equations if mathematics or statistics is a key component of your material. For example, you can add simple or complex equations within two dollar symbols:
+
+```{r eval=FALSE}
+$$
+E = MC^2
+$$
+```
+
+And it will produce the following:
+
+$$
+E = MC^2
+$$
 
 ### References
 

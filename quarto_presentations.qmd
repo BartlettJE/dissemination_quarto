@@ -1,121 +1,198 @@
 # Reproducible presentations {#quarto_presentations}
 
-In this chapter, you will see how to use the PsyTeachR book template developed by Prof. Lisa DeBruine. This template is what we use for all the data skills resources in the School of Psychology and Neuroscience. This has some nice features compared to the standard Quarto book template, such as supporting webexercises for interactive questions and including a glossary.
+In this chapter, you will learn how to create presentations that you can share with a URL. Your presentation might be purely conceptual where you use words and images, or you might be presenting your research and you want to share reproducible analyses and figures. This is great for exposure as it's better than your name and abstract in a programme, and it's much easier to share a URL link to your presentation which people can repost compared to a PDF.  
 
 ## Example presentation
 
-For an example of creating Quarto presentations, you can explore a [papaja demonstration](https://github.com/BartlettJE/papaja_demo){target="_blank"} I presented for the research centre I am affilated with. If there is a feature you like, you can see the [source code on github](https://github.com/BartlettJE/papaja_demo){target="_blank"} to adapt to your needs.
+For an example of creating Quarto presentations, you can explore a [papaja demonstration](https://bartlettje.github.io/papaja_demo/papaja_slides.html){target="_blank"} I co-presented for a previous data upskilling workshop. If there is a feature you like, you can see the [source code on github](https://github.com/BartlettJE/papaja_demo){target="_blank"} to adapt to your needs.
 
-## Creating the book template
+Prof. Lisa DeBruine has a great website where she shares all her talks and you can see the underlying code in [her github repository](https://github.com/debruine/talks){target="_blank"}. Each folder contains all the files for one talk, so you can see the variation in how to achieve different features. **Note**: Lisa also adds some custom css features (styling for html pages) which we will not really be getting into in this workshop. 
 
-If you have not followed the [preparation instructions](#workshop_prep) yet, you need R/RStudio installed to your computer, the `booktem` package installed from Lisa's github, and git/github desktop installed on your computer. I will be demonstrating how to use github desktop rather than the command line, as git could easily be it's own workshop.
+## Creating a Quarto presentation 
 
-The first step is thinking about where you want your book folder stored on your computer, where all the files will live. I have a folder within `Documents` called `git_repos` where I store all my git repositories away from OneDrive (see below). You do not need to create a folder for the book itself as the function will do that for you, but you need somewhere for that folder to live.
+Your main source of information for this output is the [Revealjs section](https://quarto.org/docs/presentations/revealjs/){target="_blank"} of the Quarto guide. 
+
+The first step is thinking about where you want your presentation folder stored on your computer, where all the files will live. I have a folder within `Documents` called `git_repos` where I store all my git repositories away from OneDrive (see below). 
 
 ::: callout-warning
 #### Do not create github repositories within OneDrive
 
-We have not reached the github step yet, but as you think about where you want your folder for the book, please **do not** use a folder within OneDrive. Sometimes it works, but most of the time it causes chaos as OneDrive is trying to track changes, github is trying to track changes, which ends in them fighting over file permissions.
+We have not reached the github step yet, but as you think about where you want your folder for the presentation, please **do not** use a folder within OneDrive. Sometimes it works, but most of the time it causes chaos as OneDrive is trying to track changes, github is trying to track changes, which ends in them fighting over file permissions.
 :::
 
-Once you have a folder your book can live in, open RStudio and set your working directory to this folder, for example from the top menu `Session >> set working directory >> Choose directory` and navigate to this folder.
+For presentations, there are a couple of options for your starting point. Compared to books and websites in other chapters, there is not a standalone option for a presentation project to create a folder with the files inside. So, you have one of two options: 
 
-Once RStudio knows where you want your working directory, you can create the book using the following code in the console and editing accordingly before you run the code. Do not worry though, you can edit all of these later, but this will create the initial version.
+1. You just create a presentation by clicking `File > New File > Quarto Presentation...`. Enter a title, author, and keep the default Reveal JS option. Click Create and you will have a blank .Qmd called Untitled1.qmd. You can then create a new folder for the presentation to live in as you save Untitled1.qmd with a proper file name. 
+
+2. You first create an R Project by clicking `File > New Project` to create a new folder/directory. This creates the folder and an R Project (.RProj) file to help organise things, then you complete step 1 to add the Quarto presentation. 
+
+If you are not including any data, it will not make much difference which way you create the presentation. However, if you want to include an element of data analysis, it can be useful to use an R Project to help organise your working directory.
+
+Once you have created your presentation .qmd file, you can Render it and see a bland looking .html page with your title and author. Congratulations, you have a presentation skeleton to work with!
+
+## Editing your Quarto presentation
+
+Weirdly, the default presentation file does not actually specify it should be a presentation. So, your initial render was a very bland looking webpage. Edit the YAML section at the start of the file from the default title and author to add a few lines about the formatting:
 
 ```{r eval=FALSE}
-# We first need to load the booktem library, assuming its installed properly
-library(booktem)
-
-create_book(path = "your_book_file_name", # If you set your working directory, you should not need to add the full path
-            title = "My book title", # The main title of your book
-            authors = list( # You need a new line for any additional author, or delete the author 2 line if you're solo
-              c("Author 1 first name", "Author 1 last name", "Author 1 ORCiD"),
-              c("Author 2 first name", "Author 2 last name", "Author 2 ORCiD"))
-            )
+---
+title: "Example Presentation"
+author: "James Bartlett"
+format:
+  revealjs:
+      embed-resources: true
+---
 ```
 
-Once you press run, you should get a bunch of progress messages from `Setting up project...`. Once it's finished, your book will open in a new session and you will see the rendered version appear in your default internet browser.
+If you click Render again, *now* it will look and behave as a presentation. 
 
-Congratulations, you have a book skeleton to work with!
+The `embed-resources` part makes the .html files slightly larger and takes longer to render but it means you can open them independently. Without this, there will be a folder in your directory called "yourtitle_files" which it needs to add the formatting. If you just shared the .html file without the files folder, it would look weird. If you set `embed-resources` to true, all the formatting will be contained within the .html file and you can share it as a single file. 
 
-## Tour of the Quarto book template
+### Adding sections and slides
 
-1.  `_quarto.yml`
+The YAML section will control the title page but to add individual slides, you use level 1 and level 2 headers. 
 
-We will start by exploring the `_quarto.yml` file where you can edit all the details for your book, like the title, description, author(s), and the licence. In Quarto books, this is also how you control the order of chapters.
-
-::: callout-note
-#### What is a .yml file?
-
-YAML / .yml are configuration files for programs which must follow specific formatting conventions.
-:::
-
-Within the .yml file, I will highlight key features in: project, book, bibliography, csl, and format.
-
-2.  index.qmd
-
-Index will be the opening page for the link to your book, so this will typically include an overview of what your book contains, who to contact for problems/questions etc.
-
-3.  `R/` folder
-
-The `R/` folder is where you can save bits of R code that your book relies on. There is some code in here that Lisa has worked on to help with certain functionality, like how the glossary looks.
-
-4.  `include/` folder
-
-The `include/` folder is a similar idea to `R/`. It has a bunch of files the book uses for formatting and any chapters would be able to access stuff here. For example, a .bib file for your references and a .csl file for the style of your references.
-
-5.  `docs/` folder
-
-The `docs/` folder is where the rendered .html versions of your book will update to. The process behind creating books in Quarto is writing them in Markdown, then Markdown is converted to .html. When we add the book to github pages, this is the folder you point it to as the source for how it appears as a webpage.
-
-6.  Licence
-
-By default, `booktem` gives the books a CC-BY-SA-4.0 licence. This is a Creative Commons licence which states people can adapt your materials but they must provide you with credit. You can learn more about different types of [Creative Commons licences online](https://creativecommons.org/){target="_blank"}. If you want to state a different licence depending on your materials, you can update the text in the Licence file and in the .yml.
-
-7.  Chapter files
-
-By default, you get an example index.qmd and one chapter .qmd for an example. The example chapter has a bunch of advice on what to edit and features like I will demonstrate, but you can delete this text or create your own files to start writing chapters.
-
-You will need one level 1 header (`# Chapter title`) to start the file, and that will be the name of your chapter at the top of the page and in the table of contents.
-
-::: callout-warning
-Make sure you only use one level 1 header per chapter. If you try and add multiple within one file, it will think they are separate chapters and try and split them when it renders, making it look weird.
-:::
-
-Once you start adding multiple chapters, remember to update the .yml file for the order you want them in your book.
-
-::: callout-tip
-If you are converting a previous book to the new template, there is a handy little function `rmd2qmd`. This copies .Rmd files and renames them to .qmd. The function looks like this
+A level 1 header (one hash #) will create a section and a level 2 header (two hashes ##) will create a regular title. You can just use level 2 headers to create basic slides with a title, but periodic level 1 headers can be useful for organisation to create sections which are easier to navigate in the contents menu. 
 
 ```{r eval=FALSE}
-rmd2qmd(from_path = "",  # file path where your .Rmd files are
-        to_path = "") # file path where you want your new .qmd files to go
+# This is a section
+
+## This is a slide
+
+Add your content here.  
 ```
 
-where you specify a file path to access the old .Rmd files and a file path to where you want the new .qmd files saving. Keep your working directory in mind as you will probably be starting from your book folder at this point. I usually save my old .Rmd files in a folder within the new book directory, then save the new .qmd files to the new book main directory.
+
+::: {.callout-tip}
+#### Try this
+
+Try and switch between combinations of level 1 and level 2 headers to see how it looks when you render your presentation. 
 :::
 
-8.  Rendering files
+Alternatively, if you want to create a slide without a title, you can use three dashes to start a new slide: 
 
-Once you have finished editing or you want to check how it looks, you need to click Render for Quarto to process the code and turn it into something pretty. Once you click Render once, you can open it up in the browser and keep checking as you make edits. When you want it to rerender, click Reload the page and it will show your new edits.
+```{r eval=FALSE}
+# This is a section
 
-::: callout-tip
-The single best part of Quarto and the new book template is you can keep rendering and checking what your work looks like in the flesh. Previously, you had to render the whole book to check how it rendered, but now you can keep updating the browser to see what your changes look like.
+## This is a slide
+
+Add your content here.  
+
+---
+
+This is a slide without a title. 
+```
+
+### Adding content 
+
+Once you have added your slides, you can add your content to them. This can include simple text, bullet points, code, and images. For the following demonstrations, if you want to play around with text to see how it looks, try using the *Lorem ipsum* typesetting passages: 
+
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+#### Smaller text
+
+It will take some practice and tweaking to learn how much you can fit on slides before you need to create a new slide. It's probably a good hint to question how much content you are including if there is too much to fit, but you can specify smaller text with a tag on the header. 
+
+```{r eval=FALSE}
+## This is a slide {.smaller}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq...
+```
+
+::: {.callout-tip}
+#### Try this
+
+Try and compare the full typesetting extract with and without the `{.smaller}` tag. 
 :::
 
-::: callout-caution
-If you introduce an error, you will get an error and red box on the screen to highlight Quarto cannot render the book. If you look in the Background Jobs tab in the console below, you should get an error message for the source of the problem if you are unsure what you did wrong.
+#### Multiple columns of content 
 
-After an error, you will need to press Render again rather than just refreshing the browser.
+Like the smaller text tag, there is a class of tag called `.columns` which you can use to specify columns and their width on the slide. For example, if we wanted two equal columns both containing text, you could add: 
+
+```{r eval=FALSE}
+:::: {.columns}
+
+::: {.column width="50%"}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq...
 :::
 
-These are the key components to make your book. Until this point, these edits all exist on your own computer. But now it is time to track your code using github and make your book accessible online via github pages.
+::: {.column width="50%"}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq...
+:::
+
+::::
+```
+
+Within each column, you can include any regular content like text, bullet points, or images. 
+
+#### Individual images
+
+If you do not want to run code to create an image or visualisation for your presentation, you can save an image to your 
+
+If you want a test image, you can download this [lovely picture of a duck](images/Duck.png). Save the image in your presentation folder (or a subfolder called images if there are lots you want to keep tidy) and add one of the following two options: 
+
+```{r eval=FALSE}
+![](Duck.png)
+```
+
+or
+
+```{{r}}
+knitr::include_graphics("Duck.png")
+```
+
+You can see a longer overview of image options in the [Quarto features](#image_options) chapter, but knitr is a package RStudio uses for dynamic documents like RMarkdown and Quarto. It includes a handy function called `include_graphics()` which takes a file path as it's first argument. 
+
+If there are several images you want to include on a slide and you want to carefully size or position them, there are some advanced features in the [reveal documentation](https://quarto.org/docs/presentations/revealjs/advanced.html#absolute-position){target="_blank"}. 
+
+#### Code and output 
+
+As we are using Quarto within RStudio, you can add any code and output that would comfortable fit on a slide. This is a great feature if you are teaching about coding as you do not need to worry about adding screenshots of code and output. If you are presenting results from your research, it also means you can include reproducible analyses or visualisation.
+
+By default, you will only see the output of code if you try and render a slide with this: 
+
+```{{r}}
+summary(mtcars)
+```
+
+But you can set echo=TRUE within the code chunk after the `r` to also show the underlying code if that is relevant to what you are presenting.
+
+### Changing the theme 
+
+The slides use a default theme without any further edits, but Quarto presentations come with a few built-in themes you can use. They are all pretty minimalist but you can explore which suit your needs best.
+
+To edit the theme, you need to specify the theme in the YAML section at the start of the file, but be careful of indentation: 
+
+```{r eval=FALSE}
+---
+title: "Example Presentation"
+author: "James Bartlett"
+format:
+  revealjs:
+    embed-resources: true
+    theme: dark
+---
+```
+
+::: {.callout-tip}
+#### Try this
+
+There are 11 [built-in themes](https://quarto.org/docs/presentations/revealjs/#themes){target="_blank"}, so try and change it to one of the other themes such as "simple" or "moon" to see what they look like. 
+:::
+
+::: {.callout-note}
+#### How can I make more specific edits?
+
+The one downside to using Quarto presentations is that it is more difficult to edit basic features like the font than if you were using MS PowerPoint. If you do want a specific look to your presentation, you will need to play around with adding a .css file for styling. You can learn more about this on the [Reveal Themes page](https://quarto.org/docs/presentations/revealjs/themes.html){target="_blank"}. 
+:::
+
+These are the key components to make your presentation. Until this point, these edits all exist on your own computer. But now it is time to track your code using github and make your presentation accessible online via github pages.
 
 ## Creating a github repository
 
-Once you have a working barebones version of your book ready to go, it's time to associate your book folder with a github repository and start some version control. If you want another resource, you can see the [github documentation online](https://docs.github.com/en/desktop/overview/creating-your-first-repository-using-github-desktop){target="_blank"}.
+Once you have a working barebones version of your presentation ready to go, it's time to associate your presentation folder with a github repository and start some version control. If you want another resource, you can see the [github documentation online](https://docs.github.com/en/desktop/overview/creating-your-first-repository-using-github-desktop){target="_blank"}.
 
-In future, you could actually start with this part. You can create a new folder, create a repository using this new folder, and then use the `create_book()` function to add the book file to. However, we started by creating the book first, so we need to create a repository for an existing folder without a git component.
+In future, you could actually start with this part. You can create a new folder, create a repository using this new folder, and then add your new presentation. However, we started by creating the presentation first, so we need to create a repository for an existing folder without a git component.
 
 In the github desktop application, click `add >> Create a New Repository` and complete the details.
 
@@ -127,7 +204,7 @@ As a reminder, please **do not** use a folder within OneDrive for your github re
 
 -   Name: This will be the name of your repository on github, so call it something short but sensible.
 
--   Local path: Click Choose... and navigate to your book folder. You want the path to be the main folder your book lives in.
+-   Local path: Click Choose... and navigate to your presentation folder. You want the path to be the main folder your presentation lives in.
 
 The other fields you can edit later, so click Create Repository when you are ready.
 
@@ -135,60 +212,48 @@ Your newly minted repository should be showing as the Current Repository. This e
 
 ## Navigating github and github pages
 
-Now your files are available online, navigate to your github account and find your new repository.
+Now your files are available online, navigate to your github account and find your new repository. I will provide a little overview in the workshop of key things to look out for and what each tab contains.
 
-I will provide a little overview in the workshop of key things to look out for and what each tab contains.
+If you are only interested in using github to share your presentation, the key tabs are Code and Settings. In Code, you will see all your files you published. These will all be the same as what you created on your computer. This is the idea behind version control and storing all your code/files like OneDrive. 
 
-If you are only interested in using github to work on a book, the key tabs are Code and Settings. In Code, you will see all your files you published. These will all be the same as what you created on your computer. This is the idea behind version control and storing all your code/files like OneDrive.
-
-In Settings, this is where you can edit things about your repository. If you plan on working on your book in a team, you can add collaborators by adding their github profile. They will then receive an email saying you have invited them to collaborate on their github repository. After they accept, they can pull the repository and start working on it too.
-
-::: callout-warning
-Working collaboratively is one of the main motivations behind git and github, but it can be tricky if you are unfamiliar with more advanced features like merging and clashes. Before you start editing the same repository with someone, I *heavily* recommend completing units 4 and 5 of the [version control Moodle course](#github_prep) provided by Maths and Stats.
-:::
-
-Within Settings is the key section we need to get your book available online.
+In Settings, this is where you can edit things about your repository and it is the key section we need to get your presentation online.
 
 ### Publish to github pages
 
-In Settings, navigate to Pages within Code and automation. Under Build and deployment, this will be set to none by default. You must click the drop down, choose Main and select /docs. You will remember /docs is where we store all the html versions of the book files, so you are pointing Github pages here as the source for your book.
+In Settings, navigate to Pages within Code and automation. Under Build and deployment, this will be set to none by default. You must click the drop down, choose Main and select `/(root)`. This is slightly different to the book and website process in the other chapters. We do not need to point GitHub Pages to the `docs/` folder as we do not have one for this output. Instead, the rendered .html file is in the main directory. This means `/(root)` will be looking for something within your top-level (or root) directory. 
 
-When you press Save, this will start building your book. It will not be available immediately and will take a few minutes. When it is ready, at the top of the page, it will say "Your site is live at..." with your new URL you can click on and open. In the Actions tab, it will also show as a green tick when it has finished building.
+When you press Save, this will start building your presentation. It will not be available immediately and will take a few minutes. When it is ready, at the top of the page, it will say "Your site is live at..." with your new URL you can click on and open. In the Actions tab, it will also show as a green tick when it has finished building.
 
-Congratulations! After seeing your rendered book for the first time, this is the second most satisfying part as you can see everything is working.
-
-::: callout-tip
-#### Add shortcuts to your book
-
-Once the site is live, I recommend adding the link to two places. First, save it as a browser shortcut so you can quickly access it outside of github. Second, return to the Code tab. Click the cog icon next to Above on the right side and tick to add your website from github pages. This will show the URL to your book on the Code tab for easy access from here.
-:::
+Congratulations! Your presentation is now available to view and share online! 
 
 ::: callout-tip
-#### Customise the URL
+#### Add shortcuts to your presentation
 
-By default, the URL to your book will be your github username + .github.io + your repository name. If you want to get fancy, you can add a custom domain from within Settings and Pages if you have bought one.
+Once the site is live, I recommend adding the URL to the about page. Return to the Code tab. Click the cog icon next to Above on the right side and tick to add your website from github pages. This will show the URL to your presentation on the Code tab for easy access from here.
 :::
 
 ::: callout-warning
-If you try and push a change that contains an error and your book does not render, you will get a red cross in Actions saying your book did not build and you will receive an email warning you about it too. Just go back to the book files in RStudio and fix any errors you are getting before you push the updates again.
+#### Why is it showing a different page as my site? 
+
+As the directory is set to the root directory, Github Pages will look for the first .html file in your directory. If that is not your presentation, it will show a different file. In some of my repositories, I have a rendered README file (explaining information about the repository and usage instructions) which shows as the "site". However, you can still get a link to your presentation by adding the full extension such as https://bartlettje.github.io/papaja_demo/papaja_slides.html.
 :::
 
 ## Commiting and pushing changes
 
-At this point, you have everything you need for the book workflow. As you work on your book, you will go through the workflow of:
+At this point, you have everything you need for the presentation workflow. As you work on your presentation, you will go through the workflow of:
 
-1.  Open .RProj and edit your book in RStudio, either by editing your past progress or adding new files.
+1.  Open the RProj file (if you are using a project file) and edit your presentation in RStudio.
 
 2.  When you hit a milestone you want to record, in github desktop tick all file changes or specific files, and add a commit message (and longer description if necessary).
 
-3.  If you are continuing to work on the book, keeping editing and committing.
+3.  If you are continuing to work on the presentation, keeping editing and committing.
 
 4.  When you are ready to push changes to github and github pages, push your commits.
 
-Before we have time to start working on your newly minted books, I will end on a couple of warnings and tips.
+Before we have time to start working on your presentation, I will end on a couple of warnings and tips.
 
 ::: callout-caution
-Remember just committing changes will do nothing to your github repository and book link. You need to push those committed changes for them to be available on github and used to build the book in github pages. It takes a few minutes to rebuild, so do not worry if you do not immediately see the changes.
+Remember just committing changes will do nothing to your github repository and presentation link. You need to push those committed changes for them to be available on github and used to build the presentation in github pages. It takes a few minutes to rebuild, so do not worry if you do not immediately see the changes.
 :::
 
 ::: callout-tip
@@ -197,10 +262,8 @@ Remember just committing changes will do nothing to your github repository and b
 One of the main features I use way too infrequently is reverting changes when something goes wrong. The idea behind version control is you save your work at specific milestones, where you can add commit messages that describe key changes you make. If you make a change that breaks something since your last commit, you can revert the changes to a previous version. To do this, go to github desktop, click History, and you will see all your commit history. Identify the last commit you want to revert to, right click on it, and select Revert Changes in Commit.
 :::
 
-## Start working on your own book!
+## Start working on your own presentation!
 
-Start working on your own book in the remaining time we have together.
+Start working on your own presentation in the remaining time we have together.
 
-See the next chapter on [Quarto features and book conventions](#quarto_features) for inspiration / example code for the kind of features you can use.
-
-Do not forget to make your own hex sticker for extra panache!
+See the final chapter on [Quarto features](#quarto_features) for inspiration / example code for the kind of features you can use.

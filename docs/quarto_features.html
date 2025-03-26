@@ -122,6 +122,15 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-VTQ832DEXY"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-VTQ832DEXY', { 'anonymize_ip': true});
+</script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
@@ -514,13 +523,13 @@ Figure&nbsp;6.2: This is a longer caption about our beloved duck.
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">5</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 13.627801  6.517619  6.872176 11.278417  8.962733</code></pre>
+<pre><code>[1]  7.321853  9.520078  9.178019  8.448327 11.975915</code></pre>
 </div>
 </div>
 <p>There are several features you can edit by adding different options. For example, if you do not want to show the code, you can set <code>echo=FALSE</code> after the r <code>{r echo=FALSE}</code>:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 11.951762 12.523379  8.916947  9.789619  8.773879</code></pre>
+<pre><code>[1] 10.469231  9.263930  3.764379 11.065465 10.257430</code></pre>
 </div>
 </div>
 <p>If you want to demonstrate code but not execute it - such as to demonstrate inaccurate code, you can set <code>eval=FALSE</code> after the r <code>{r eval=FALSE}</code>:</p>
@@ -765,8 +774,8 @@ How do I specify a .csl file?
 <h4 data-number="6.3.7.1" class="anchored" data-anchor-id="mcqs"><span class="header-section-number">6.3.7.1</span> MCQs</h4>
 <p>You can add questions through inline code, or by first specifying them in an R code block if it makes it easier to edit longer text.</p>
 <p>For example, this workshop is:</p>
-<div id="radio_QJPIHCTMJN" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_QJPIHCTMJN" value="answer"> <span>Life changing</span></label><label><input type="radio" autocomplete="off" name="radio_QJPIHCTMJN" value=""> <span>Boring</span></label><label><input type="radio" autocomplete="off" name="radio_QJPIHCTMJN" value=""> <span>Mediocre</span></label><label><input type="radio" autocomplete="off" name="radio_QJPIHCTMJN" value=""> <span>OK</span></label>
+<div id="radio_TGQNITZVMV" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_TGQNITZVMV" value="answer"> <span>Life changing</span></label><label><input type="radio" autocomplete="off" name="radio_TGQNITZVMV" value=""> <span>Boring</span></label><label><input type="radio" autocomplete="off" name="radio_TGQNITZVMV" value=""> <span>Mediocre</span></label><label><input type="radio" autocomplete="off" name="radio_TGQNITZVMV" value=""> <span>OK</span></label>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">r longmcq(c(answer = "Life changing", "Boring", "Mediocre", "OK"))</span><span class="st">`</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

@@ -1,6 +1,6 @@
 # Websites and blogs {#quarto_websites}
 
-In this chapter, you will learn how to create professional websites and/or blogs using Quarto. For academics, an online presence is critical but often overlooked. From early career researchers to experienced academics, you will benefit from people being able find out more about you, such as your publications, talks, and contact information. You might think the technical barrier is too high to maintain your own website, but there are plenty of tools out there to make it easy. The combination of Quarto and github pages is a free example of this which you can maintain yourself. This chapter rolls websites and blogs into one as the general principles are the same, where blogs are just a specialised website to present individual posts. 
+In this chapter, you will learn how to create professional websites and/or blogs using Quarto. For academics, an online presence is critical but often overlooked. From early career researchers to experienced academics, you will benefit from people being able find out more about you, such as your publications, talks, and contact information. You might think the technical barrier is too high to maintain your own website, but there are plenty of tools out there to make it easy. The combination of Quarto and Github Pages is a free example of this which you can maintain yourself alongside the other outputs I covered in this book. This chapter rolls websites and blogs into one as the general principles are the same, where blogs are just a specialised form of website to present individual posts on the index page.
 
 ## Example websites and Quarto documentation
 
@@ -50,13 +50,13 @@ Regardless of whether you want to create a website or a blog, you will see a new
 
 Click "Create project" and after a couple of seconds, it will open a new project window with the template in. Congratulations, you have a website/blog skeleton to work with!
 
-Although there is a lot of overlap between the two outputs, I have split the tour into a website section and a blog section as there are a couple of key distinctions to highlight. So, you can navigate to the one most relevant to you at this point. 
+Although there is a lot of overlap between the two outputs, I have split the tour into a [website section](#website-template) and a [blog section](#blog-template) as there are a couple of key distinctions to highlight. So, you can navigate to the one most relevant to you at this point.
 
-## Tour of the Quarto website template {#website template}
+## Tour of the Quarto website template {#website-template}
 
-Blah. 
+Blah.
 
-## Tour of the Quarto blog template {#blog_template}
+## Tour of the Quarto blog template {#blog-template}
 
 1.  `_quarto.yml`
 
@@ -69,6 +69,12 @@ YAML / .yml are configuration files for programs which must follow specific form
 :::
 
 Within the .yml file, I will highlight in the workshop key features such as: title, navbar, and format.
+
+::: callout-tip
+#### Adding new pages to your website
+
+By default, your website will have the main index and an about page in the navigation bar. To add more pages, simply create new .qmd files in the directory (including at least a title in the YAML) and specify where you want them in the .yml file. 
+:::
 
 For presenting your book using github pages, edit the `project` from the standard first two lines:
 
@@ -87,108 +93,127 @@ project:
 
 Be careful, indentation is important in .yml files. We do this as by default, it will create a folder called `_site` where the rendered .html files will live. For github pages though, it looks for a folder called `docs`, so this will streamline things later.
 
+::: callout-tip
+#### Adding Google analytics
+
+If you want to track how many people view your website and access other kinds of analytics, you can add a Google analytics key into the .yml options. 
+
+You would add it into the `website:` section like: 
+
+```{r eval=FALSE}
+website:
+  google-analytics: "UA-XXXXXXXX"
+```
+
+There are additional options like turning on a cookies warning if you are using this feature to tell people you are tracking user activity on your website, so I recommend reading the [Quarto documentation](https://quarto.org/docs/websites/website-tools.html#google-analytics) for these features. 
+:::
+
 2.  index.qmd
 
-For a blog, there is not too much to edit here. An index file will be the opening page to your blog and every website needs an index, but it's main function here is to display a preview of all your blog posts. Below the YAML which controls the title and listings, you can add text, code, and/or images like a normal .qmd file, but following this will be a list of blog posts in descending date order. 
+For a blog, there is not too much to edit here. An index file will be the opening page to your blog, but it's main function here is to display a preview of all your blog posts. Below the YAML which controls the title and listings, you can add text, code, and/or images like a normal .qmd file, but following this will be a list of blog posts in descending date order.
 
-3. About.qmd
+3.  About.qmd
 
-4. The `posts` folder
+By default, you get an about page which is meant to describe you and provide key contact information, such as your social media profiles. 
 
-By default, you get two example posts to show how they should be structured. In index.qmd, part of the YAML specified `contents: posts`. This means it is using the contents of the posts folder to generate the blog posts. 
+About pages have a special template with a few presets which you can learn about in the [Quarto documentation](https://quarto.org/docs/websites/website-about.html){target="_blank"}. The default will be "jolla", but you can change it to another template that suits your needs. 
 
-If you click on the posts folder, you will see each post lives in its own folder. To create a new post, you would create a new folder with a short but informative name. Within that folder, there is another index.qmd file and any supporting files such as images. Each post needs its own index file and the YAML controls the title, author, date, and any categories. Editing these will customise the look of the post in the preview on your home page and the top of your blog post when you open it. 
+Otherwise, anything below the initial YAML section will be formatted like a regular .qmd file for text, code, images etc. 
+
+4.  The `posts` folder
+
+By default, you get two example posts to show how they should be structured. In index.qmd, part of the YAML specified `contents: posts`. This means it is using the contents of the `posts` folder to generate the blog posts.
+
+If you click on the `posts` folder, you will see each post lives in its own folder. To create a new post, you would create a new folder with a short but informative name. Within that folder, there is another index.qmd file and any supporting files such as images. Each post needs its own index file and the YAML at the top controls the title, author, date, and any categories. Editing these will customise the look of the post in the preview on your home page and the top of your blog post when you open it.
 
 5.  Rendering files
 
-Once you have finished editing or you want to check how it looks, you need to click Render for Quarto to process the code and turn it into something pretty. Once you click Render once, you can open it up in the browser and keep checking as you make edits. When you want it to rerender, click Reload the page and it will show your new edits.
+Once you have finished editing each page or post and you want to check how it looks, you need to click Render for Quarto to process the code and turn it into something pretty. Once you click Render, you can open it up in the browser and keep checking as you make edits.
 
 ::: callout-caution
 If you introduce an error, you will get an error and red box on the screen to highlight Quarto cannot render the book. If you look in the Background Jobs tab in the console below, you should get an error message for the source of the problem if you are unsure what you did wrong.
-
-After an error, you will need to press Render again rather than just refreshing the browser.
 :::
 
-These are the key components to make your book. Until this point, these edits all exist on your own computer. But now it is time to track your code using github and make your book accessible online via github pages.
+These are the key components to make your blog. Until this point, these edits all exist on your own computer. But now it is time to track your code using github and make your blog accessible online via github pages.
 
 ## Creating a github repository
 
-Once you have a working barebones version of your book ready to go, it's time to associate your book folder with a github repository and start some version control. If you want another resource, you can see the [github documentation online](https://docs.github.com/en/desktop/overview/creating-your-first-repository-using-github-desktop){target="_blank"}.
+Once you have a working barebones version of your website ready to go, it's time to associate your website folder with a github repository and start some version control. If you want another resource, you can see the [github documentation online](https://docs.github.com/en/desktop/overview/creating-your-first-repository-using-github-desktop){target="_blank"}.
 
-In future, you could actually start with this part. You can create a new folder, create a repository using this new folder, and then use the `create_book()` function to add the book file to. However, we started by creating the book first, so we need to create a repository for an existing folder without a git component.
+In future, you could actually start with this part. You can create a new folder, create a repository using this new folder, and then create a new R Project for your output within this folder. However, we started by creating the website first, so we need to create a repository for an existing folder without a git component.
 
 In the github desktop application, click `add >> Create a New Repository` and complete the details.
 
-::: callout-warning
-#### Seriously, do not create github repositories within OneDrive
+::: callout-tip
+#### Your github username as your website URL
 
-As a reminder, please **do not** use a folder within OneDrive for your github repository.
+Unless you want to buy a custom URL, the typical format for the link will be yourusername + github.io/ + your repository name. For a website or blog, you can take advantage of a feature where every profile receives [one site through Github Pages](https://pages.github.com/). You can create a repository called yourusername + github.io (e.g., bartlettje.github.io) and this will be the URL of your site, rather than another repo appended to the end. You only get one per github account though, so it's best to use it on a website and blog where you're likely to only have one.
 :::
 
 -   Name: This will be the name of your repository on github, so call it something short but sensible.
 
--   Local path: Click Choose... and navigate to your book folder. You want the path to be the main folder your book lives in.
+-   Local path: Click Choose... and navigate to your website folder. You want the path to be the main folder your website lives in.
 
 The other fields you can edit later, so click Create Repository when you are ready.
 
 Your newly minted repository should be showing as the Current Repository. This exists on your computer, but it is still not available online. You need to click Publish repository, and that will push all of your files to github and be available online.
 
-## Navigating github and github pages
+## Navigating github and Github pages
 
 Now your files are available online, navigate to your github account and find your new repository.
 
 I will provide a little overview in the workshop of key things to look out for and what each tab contains.
 
-If you are only interested in using github to work on a book, the key tabs are Code and Settings. In Code, you will see all your files you published. These will all be the same as what you created on your computer. This is the idea behind version control and storing all your code/files like OneDrive.
+If you are only interested in using github to work on a website, the key tabs are Code and Settings. In Code, you will see all your files you published. These will all be the same as what you created on your computer. This is the idea behind version control and storing all your code/files like OneDrive.
 
-In Settings, this is where you can edit things about your repository. If you plan on working on your book in a team, you can add collaborators by adding their github profile. They will then receive an email saying you have invited them to collaborate on their github repository. After they accept, they can pull the repository and start working on it too.
+In Settings, this is where you can edit things about your repository. If you plan on working on your website in a team, you can add collaborators by adding their github profile. They will then receive an email saying you have invited them to collaborate on their github repository. After they accept, they can pull the repository and start working on it too.
 
 ::: callout-warning
 Working collaboratively is one of the main motivations behind git and github, but it can be tricky if you are unfamiliar with more advanced features like merging and clashes. Before you start editing the same repository with someone, I *heavily* recommend completing units 4 and 5 of the [version control Moodle course](#github_prep) provided by Maths and Stats.
 :::
 
-Within Settings is the key section we need to get your book available online.
+Within Settings is the key section we need to get your website available online.
 
-### Publish to github pages
+### Publish to Github Pages
 
-In Settings, navigate to Pages within Code and automation. Under Build and deployment, this will be set to none by default. You must click the drop down, choose Main and select /docs. You will remember /docs is where we store all the html versions of the book files, so you are pointing Github pages here as the source for your book.
+In Settings, navigate to Pages within Code and automation. Under Build and deployment, this will be set to none by default. You must click the drop down, choose Main and select /docs. You will remember /docs is where we store all the html versions of the website files, so you are pointing Github Pages here as the source for your website.
 
-When you press Save, this will start building your book. It will not be available immediately and will take a few minutes. When it is ready, at the top of the page, it will say "Your site is live at..." with your new URL you can click on and open. In the Actions tab, it will also show as a green tick when it has finished building.
+When you press Save, this will start building your website. It will not be available immediately and will take a few minutes. When it is ready, at the top of the page, it will say "Your site is live at..." with your new URL you can click on and open. In the Actions tab, it will also show as a green tick when it has finished building.
 
-Congratulations! After seeing your rendered book for the first time, this is the second most satisfying part as you can see everything is working.
+Congratulations! After seeing your rendered website for the first time, this is the second most satisfying part as you can see everything is working.
 
 ::: callout-tip
 #### Add shortcuts to your book
 
-Once the site is live, I recommend adding the link to two places. First, save it as a browser shortcut so you can quickly access it outside of github. Second, return to the Code tab. Click the cog icon next to Above on the right side and tick to add your website from github pages. This will show the URL to your book on the Code tab for easy access from here.
+Once the site is live, I recommend adding the link to two places. First, save it as a browser shortcut so you can quickly access it outside of github. Second, return to the Code tab. Click the cog icon next to Above on the right side and tick to add your website from github pages. This will show the URL to your website on the Code tab for easy access from here.
 :::
 
 ::: callout-tip
 #### Customise the URL
 
-By default, the URL to your book will be your github username + .github.io + your repository name. If you want to get fancy, you can add a custom domain from within Settings and Pages if you have bought one.
+By default, the URL to your website will be your github username + .github.io + your repository name. If you want to get fancy, you can add a custom domain from within Settings and Pages if you have bought one. See the [github documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site){target="_blank"} for further details. 
 :::
 
 ::: callout-warning
-If you try and push a change that contains an error and your book does not render, you will get a red cross in Actions saying your book did not build and you will receive an email warning you about it too. Just go back to the book files in RStudio and fix any errors you are getting before you push the updates again.
+If you try and push a change that contains an error and your website does not render, you will get a red cross in Actions saying your website did not build and you will receive an email warning you about it too. Just go back to the website files in RStudio and fix any errors you are getting before you push the updates again.
 :::
 
 ## Commiting and pushing changes
 
-At this point, you have everything you need for the book workflow. As you work on your book, you will go through the workflow of:
+At this point, you have everything you need for the website workflow. As you work on your website, you will go through the workflow of:
 
-1.  Open .RProj and edit your book in RStudio, either by editing your past progress or adding new files.
+1.  Open .RProj and edit your website in RStudio, either by editing your past progress or adding new files.
 
 2.  When you hit a milestone you want to record, in github desktop tick all file changes or specific files, and add a commit message (and longer description if necessary).
 
-3.  If you are continuing to work on the book, keeping editing and committing.
+3.  If you are continuing to work on the website, keep editing and committing.
 
-4.  When you are ready to push changes to github and github pages, push your commits.
+4.  When you are ready to push changes to github and Github Pages, push your commits.
 
-Before we have time to start working on your newly minted books, I will end on a couple of warnings and tips.
+Before we have time to start working on your newly minted website, I will end on a couple of warnings and tips.
 
 ::: callout-caution
-Remember just committing changes will do nothing to your github repository and book link. You need to push those committed changes for them to be available on github and used to build the book in github pages. It takes a few minutes to rebuild, so do not worry if you do not immediately see the changes.
+Remember just committing changes will do nothing to your github repository and website link. You need to push those committed changes for them to be available on github and used to build the website in github pages. Likewise, you can edit the code in your .qmd file but not render those edits into the formatted html files. It takes a few minutes to rebuild, so do not worry if you do not immediately see the changes.
 :::
 
 ::: callout-tip
@@ -197,10 +222,8 @@ Remember just committing changes will do nothing to your github repository and b
 One of the main features I use way too infrequently is reverting changes when something goes wrong. The idea behind version control is you save your work at specific milestones, where you can add commit messages that describe key changes you make. If you make a change that breaks something since your last commit, you can revert the changes to a previous version. To do this, go to github desktop, click History, and you will see all your commit history. Identify the last commit you want to revert to, right click on it, and select Revert Changes in Commit.
 :::
 
-## Start working on your own book!
+## Start working on your own website!
 
 Start working on your own book in the remaining time we have together.
 
-See the next chapter on [Quarto features and book conventions](#quarto_features) for inspiration / example code for the kind of features you can use.
-
-Do not forget to make your own hex sticker for extra panache!
+See the final chapter on [Quarto features and book conventions](#quarto_features) for inspiration / example code for the kind of features you can use.

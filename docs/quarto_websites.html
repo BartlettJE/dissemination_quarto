@@ -102,6 +102,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-VTQ832DEXY"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-VTQ832DEXY', { 'anonymize_ip': true});
+</script>
 
 
 <link rel="stylesheet" href="include/webex.css">
@@ -248,16 +257,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#example-book" id="toc-example-book" class="nav-link active" data-scroll-target="#example-book"><span class="header-section-number">5.1</span> Example book</a></li>
-  <li><a href="#creating-the-book-template" id="toc-creating-the-book-template" class="nav-link" data-scroll-target="#creating-the-book-template"><span class="header-section-number">5.2</span> Creating the book template</a></li>
-  <li><a href="#tour-of-the-quarto-book-template" id="toc-tour-of-the-quarto-book-template" class="nav-link" data-scroll-target="#tour-of-the-quarto-book-template"><span class="header-section-number">5.3</span> Tour of the Quarto book template</a></li>
-  <li><a href="#creating-a-github-repository" id="toc-creating-a-github-repository" class="nav-link" data-scroll-target="#creating-a-github-repository"><span class="header-section-number">5.4</span> Creating a github repository</a></li>
-  <li><a href="#navigating-github-and-github-pages" id="toc-navigating-github-and-github-pages" class="nav-link" data-scroll-target="#navigating-github-and-github-pages"><span class="header-section-number">5.5</span> Navigating github and github pages</a>
+  <li><a href="#example-websites-and-quarto-documentation" id="toc-example-websites-and-quarto-documentation" class="nav-link active" data-scroll-target="#example-websites-and-quarto-documentation"><span class="header-section-number">5.1</span> Example websites and Quarto documentation</a></li>
+  <li><a href="#creating-a-quarto-website-or-blog" id="toc-creating-a-quarto-website-or-blog" class="nav-link" data-scroll-target="#creating-a-quarto-website-or-blog"><span class="header-section-number">5.2</span> Creating a Quarto website or blog</a></li>
+  <li><a href="#website-template" id="toc-website-template" class="nav-link" data-scroll-target="#website-template"><span class="header-section-number">5.3</span> Tour of the Quarto website template</a></li>
+  <li><a href="#blog-template" id="toc-blog-template" class="nav-link" data-scroll-target="#blog-template"><span class="header-section-number">5.4</span> Tour of the Quarto blog template</a></li>
+  <li><a href="#creating-a-github-repository" id="toc-creating-a-github-repository" class="nav-link" data-scroll-target="#creating-a-github-repository"><span class="header-section-number">5.5</span> Creating a github repository</a></li>
+  <li><a href="#navigating-github-and-github-pages" id="toc-navigating-github-and-github-pages" class="nav-link" data-scroll-target="#navigating-github-and-github-pages"><span class="header-section-number">5.6</span> Navigating github and Github pages</a>
   <ul class="collapse">
-  <li><a href="#publish-to-github-pages" id="toc-publish-to-github-pages" class="nav-link" data-scroll-target="#publish-to-github-pages"><span class="header-section-number">5.5.1</span> Publish to github pages</a></li>
+  <li><a href="#publish-to-github-pages" id="toc-publish-to-github-pages" class="nav-link" data-scroll-target="#publish-to-github-pages"><span class="header-section-number">5.6.1</span> Publish to Github Pages</a></li>
   </ul></li>
-  <li><a href="#commiting-and-pushing-changes" id="toc-commiting-and-pushing-changes" class="nav-link" data-scroll-target="#commiting-and-pushing-changes"><span class="header-section-number">5.6</span> Commiting and pushing changes</a></li>
-  <li><a href="#start-working-on-your-own-book" id="toc-start-working-on-your-own-book" class="nav-link" data-scroll-target="#start-working-on-your-own-book"><span class="header-section-number">5.7</span> Start working on your own book!</a></li>
+  <li><a href="#commiting-and-pushing-changes" id="toc-commiting-and-pushing-changes" class="nav-link" data-scroll-target="#commiting-and-pushing-changes"><span class="header-section-number">5.7</span> Commiting and pushing changes</a></li>
+  <li><a href="#start-working-on-your-own-website" id="toc-start-working-on-your-own-website" class="nav-link" data-scroll-target="#start-working-on-your-own-website"><span class="header-section-number">5.8</span> Start working on your own website!</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/BartlettJE/dissemination_quarto/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/BartlettJE/dissemination_quarto/blob/main/quarto_websites.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
     </div>
@@ -283,10 +293,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In this chapter, you will see how to use the PsyTeachR book template developed by Prof.&nbsp;Lisa DeBruine. This template is what we use for all the data skills resources in the School of Psychology and Neuroscience. This has some nice features compared to the standard Quarto book template, such as supporting webexercises for interactive questions and including a glossary.</p>
-<section id="example-book" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="example-book"><span class="header-section-number">5.1</span> Example book</h2>
-<p>For an example of the PsyTeachR book template, you can explore the <a href="https://psyteachr.github.io/quant-fun-v3/" target="_blank">Fundamentals of Quantitative Analysis</a> book. If there is a feature you like, you can see the <a href="https://github.com/PsyTeachR/quant-fun-v3" target="_blank">source code on github</a> to adapt to your needs.</p>
+<p>In this chapter, you will learn how to create professional websites and/or blogs using Quarto. For academics, an online presence is critical but often overlooked. From early career researchers to experienced academics, you will benefit from people being able find out more about you, such as your publications, talks, and contact information. You might think the technical barrier is too high to maintain your own website, but there are plenty of tools out there to make it easy. The combination of Quarto and Github Pages is a free example of this which you can maintain yourself alongside the other outputs I covered in this book. This chapter rolls websites and blogs into one as the general principles are the same, where blogs are just a specialised form of website to present individual posts on the index page.</p>
+<section id="example-websites-and-quarto-documentation" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="example-websites-and-quarto-documentation"><span class="header-section-number">5.1</span> Example websites and Quarto documentation</h2>
+<p>For an example of a Quarto website, you can explore the <a href="https://www.ukcots.org/" target="_blank">UK Conference on Teaching Statistics</a> website which I helped to create and maintain. If there is a feature you like, you can see the <a href="https://github.com/rssteachingstats/ukcots" target="_blank">source code on github</a> to adapt to your needs.</p>
 <p>For other examples, Solomon Kurz - a psychology researcher who writes about programming / stats - posted on BlueSky about academic websites. The thread has over 40 replies, so you can explore how other people have used Quarto or similar tools:</p>
 <blockquote class="bluesky-embed blockquote" data-bluesky-uri="at://did:plc:vvh2bpvv5h5hmruh36seh7i4/app.bsky.feed.post/3lkqfdfav7k2r" data-bluesky-cid="bafyreihe623nwhpxik3fgpuhdda33gaevtar56v43zhwh7hz7f5vwb6iyy" data-bluesky-embed-color-mode="system">
 <p lang="en">
@@ -296,17 +306,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>— Solomon Kurz (<a href="https://bsky.app/profile/did:plc:vvh2bpvv5h5hmruh36seh7i4?ref_src=embed"><span class="citation" data-cites="solomonkurz.bsky.social">(</span></a><a href="#ref-solomonkurz.bsky.social" role="doc-biblioref"><strong>solomonkurz.bsky.social?</strong></a>)) <a href="https://bsky.app/profile/did:plc:vvh2bpvv5h5hmruh36seh7i4/post/3lkqfdfav7k2r?ref_src=embed">19 March 2025 at 14:27</a></p>
 </blockquote>
 <script async="" src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
-<p>Alternative/combined solutions:</p>
-<ul>
-<li><p>https://hugoblox.com/?utm_campaign=poweredby</p></li>
-<li><p>https://www.dsquintana.blog/create-an-academic-website-free-easy-2020/</p></li>
-</ul>
+<p>Your main source of information for this output is the <a href="https://quarto.org/docs/websites/" target="_blank">Creating a Website</a> and <a href="https://quarto.org/docs/websites/website-blog.html#quick-start" target="_blank">Creating a Blog</a> sections of the Quarto guide.</p>
 </section>
-<section id="creating-the-book-template" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="creating-the-book-template"><span class="header-section-number">5.2</span> Creating the book template</h2>
-<p>Your main source of information for this output is the <a href="https://quarto.org/docs/websites/" target="_blank">Creating a Website</a> section of the Quarto guide.</p>
-<p>If you have not followed the <a href="workshop_prep.html">preparation instructions</a> yet, you need R/RStudio installed to your computer, the <code>booktem</code> package installed from Lisa’s github, and git/github desktop installed on your computer. I will be demonstrating how to use github desktop rather than the command line, as git could easily be it’s own workshop.</p>
-<p>The first step is thinking about where you want your book folder stored on your computer, where all the files will live. I have a folder within <code>Documents</code> called <code>git_repos</code> where I store all my git repositories away from OneDrive (see below). You do not need to create a folder for the book itself as the function will do that for you, but you need somewhere for that folder to live.</p>
+<section id="creating-a-quarto-website-or-blog" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="creating-a-quarto-website-or-blog"><span class="header-section-number">5.2</span> Creating a Quarto website or blog</h2>
+<p>If you have not followed the <a href="workshop_prep.html">preparation instructions</a> yet, you need R/RStudio and git/github desktop installed on your computer. I will be demonstrating how to use github desktop rather than the command line, as git could easily be it’s own workshop.</p>
+<p>The first step is thinking about where you want your website folder stored on your computer for where all the files will live. I have a folder within <code>Documents</code> called <code>git_repos</code> where I store all my git repositories away from OneDrive (see below).</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -317,31 +322,28 @@ Do not create github repositories within OneDrive
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We have not reached the github step yet, but as you think about where you want your folder for the book, please <strong>do not</strong> use a folder within OneDrive. Sometimes it works, but most of the time it causes chaos as OneDrive is trying to track changes, github is trying to track changes, which ends in them fighting over file permissions.</p>
+<p>We have not reached the github step yet, but as you think about where you want your folder for the website, please <strong>do not</strong> use a folder within OneDrive. Sometimes it works, but most of the time it causes chaos as OneDrive is trying to track changes, github is trying to track changes, which ends in them fighting over file permissions.</p>
 </div>
 </div>
-<p>Once you have a folder your book can live in, open RStudio and set your working directory to this folder, for example from the top menu <code>Session &gt;&gt; set working directory &gt;&gt; Choose directory</code> and navigate to this folder.</p>
-<p>Once RStudio knows where you want your working directory, you can create the book using the following code in the console and editing accordingly before you run the code. Do not worry though, you can edit all of these later, but this will create the initial version.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We first need to load the booktem library, assuming its installed properly</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(booktem)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">create_book</span>(<span class="at">path =</span> <span class="st">"your_book_file_name"</span>, <span class="co"># If you set your working directory, you should not need to add the full path</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">title =</span> <span class="st">"My book title"</span>, <span class="co"># The main title of your book</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">authors =</span> <span class="fu">list</span>( <span class="co"># You need a new line for any additional author, or delete the author 2 line if you're solo</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>              <span class="fu">c</span>(<span class="st">"Author 1 first name"</span>, <span class="st">"Author 1 last name"</span>, <span class="st">"Author 1 ORCiD"</span>),</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>              <span class="fu">c</span>(<span class="st">"Author 2 first name"</span>, <span class="st">"Author 2 last name"</span>, <span class="st">"Author 2 ORCiD"</span>))</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Once you press run, you should get a bunch of progress messages from <code>Setting up project...</code>. Once it’s finished, your book will open in a new session and you will see the rendered version appear in your default internet browser.</p>
-<p>Congratulations, you have a book skeleton to work with!</p>
+<p>Once you have decided where your website will live, open RStudio and click <code>File &gt; New Project... &gt; New Directory &gt; Quarto Website</code> for a website, or <code>File &gt; New Project... &gt; New Directory &gt; Quarto Blog</code> for a blog.</p>
+<p>Regardless of whether you want to create a website or a blog, you will see a new window asking for you to specify:</p>
+<ul>
+<li><p>“Directory name:” - the name of the folder it will create, so keep it short and without spaces.</p></li>
+<li><p>“Create a project in the subdirectory of:” - click browse to navigate to the folder you want your website/blog to live in. Creating the website/blog will create a new folder within this directory, so you do not need to create a folder yourself.</p></li>
+</ul>
+<p>Click “Create project” and after a couple of seconds, it will open a new project window with the template in. Congratulations, you have a website/blog skeleton to work with!</p>
+<p>Although there is a lot of overlap between the two outputs, I have split the tour into a <a href="#website-template">website section</a> and a <a href="#blog-template">blog section</a> as there are a couple of key distinctions to highlight. So, you can navigate to the one most relevant to you at this point.</p>
 </section>
-<section id="tour-of-the-quarto-book-template" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="tour-of-the-quarto-book-template"><span class="header-section-number">5.3</span> Tour of the Quarto book template</h2>
+<section id="website-template" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="website-template"><span class="header-section-number">5.3</span> Tour of the Quarto website template</h2>
+<p>Blah.</p>
+</section>
+<section id="blog-template" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="blog-template"><span class="header-section-number">5.4</span> Tour of the Quarto blog template</h2>
 <ol type="1">
 <li><code>_quarto.yml</code></li>
 </ol>
-<p>We will start by exploring the <code>_quarto.yml</code> file where you can edit all the details for your book, like the title, description, author(s), and the licence. In Quarto books, this is also how you control the order of chapters.</p>
+<p>We will start by exploring the <code>_quarto.yml</code> file where you can edit all the details for your blog, like the title, author(s), and the licence. In Quarto websites, this is also how you control the number and order of pages in the navigation bar.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -355,81 +357,70 @@ What is a .yml file?
 <p>YAML / .yml are configuration files for programs which must follow specific formatting conventions.</p>
 </div>
 </div>
-<p>Within the .yml file, I will highlight key features in: project, book, bibliography, csl, and format.</p>
+<p>Within the .yml file, I will highlight in the workshop key features such as: title, navbar, and format.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Adding new pages to your website
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By default, your website will have the main index and an about page in the navigation bar. To add more pages, simply create new .qmd files in the directory (including at least a title in the YAML) and specify where you want them in the .yml file.</p>
+</div>
+</div>
+<p>For presenting your book using github pages, edit the <code>project</code> from the standard first two lines:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>project<span class="sc">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  type<span class="sc">:</span> website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To add a new third line:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>project<span class="sc">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  type<span class="sc">:</span> website</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">-</span>dir<span class="sc">:</span> docs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Be careful, indentation is important in .yml files. We do this as by default, it will create a folder called <code>_site</code> where the rendered .html files will live. For github pages though, it looks for a folder called <code>docs</code>, so this will streamline things later.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Adding Google analytics
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you want to track how many people view your website and access other kinds of analytics, you can add a Google analytics key into the .yml options.</p>
+<p>You would add it into the <code>website:</code> section like:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>website<span class="sc">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  google<span class="sc">-</span>analytics<span class="sc">:</span> <span class="st">"UA-XXXXXXXX"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>There are additional options like turning on a cookies warning if you are using this feature to tell people you are tracking user activity on your website, so I recommend reading the <a href="https://quarto.org/docs/websites/website-tools.html#google-analytics">Quarto documentation</a> for these features.</p>
+</div>
+</div>
 <ol start="2" type="1">
 <li>index.qmd</li>
 </ol>
-<p>Index will be the opening page for the link to your book, so this will typically include an overview of what your book contains, who to contact for problems/questions etc.</p>
+<p>For a blog, there is not too much to edit here. An index file will be the opening page to your blog, but it’s main function here is to display a preview of all your blog posts. Below the YAML which controls the title and listings, you can add text, code, and/or images like a normal .qmd file, but following this will be a list of blog posts in descending date order.</p>
 <ol start="3" type="1">
-<li><code>R/</code> folder</li>
+<li>About.qmd</li>
 </ol>
-<p>The <code>R/</code> folder is where you can save bits of R code that your book relies on. There is some code in here that Lisa has worked on to help with certain functionality, like how the glossary looks.</p>
+<p>By default, you get an about page which is meant to describe you and provide key contact information, such as your social media profiles.</p>
+<p>About pages have a special template with a few presets which you can learn about in the <a href="https://quarto.org/docs/websites/website-about.html" target="_blank">Quarto documentation</a>. The default will be “jolla”, but you can change it to another template that suits your needs.</p>
+<p>Otherwise, anything below the initial YAML section will be formatted like a regular .qmd file for text, code, images etc.</p>
 <ol start="4" type="1">
-<li><code>include/</code> folder</li>
+<li>The <code>posts</code> folder</li>
 </ol>
-<p>The <code>include/</code> folder is a similar idea to <code>R/</code>. It has a bunch of files the book uses for formatting and any chapters would be able to access stuff here. For example, a .bib file for your references and a .csl file for the style of your references.</p>
+<p>By default, you get two example posts to show how they should be structured. In index.qmd, part of the YAML specified <code>contents: posts</code>. This means it is using the contents of the <code>posts</code> folder to generate the blog posts.</p>
+<p>If you click on the <code>posts</code> folder, you will see each post lives in its own folder. To create a new post, you would create a new folder with a short but informative name. Within that folder, there is another index.qmd file and any supporting files such as images. Each post needs its own index file and the YAML at the top controls the title, author, date, and any categories. Editing these will customise the look of the post in the preview on your home page and the top of your blog post when you open it.</p>
 <ol start="5" type="1">
-<li><code>docs/</code> folder</li>
-</ol>
-<p>The <code>docs/</code> folder is where the rendered .html versions of your book will update to. The process behind creating books in Quarto is writing them in Markdown, then Markdown is converted to .html. When we add the book to github pages, this is the folder you point it to as the source for how it appears as a webpage.</p>
-<ol start="6" type="1">
-<li>Licence</li>
-</ol>
-<p>By default, <code>booktem</code> gives the books a CC-BY-SA-4.0 licence. This is a Creative Commons licence which states people can adapt your materials but they must provide you with credit. You can learn more about different types of <a href="https://creativecommons.org/" target="_blank">Creative Commons licences online</a>. If you want to state a different licence depending on your materials, you can update the text in the Licence file and in the .yml.</p>
-<ol start="7" type="1">
-<li>Chapter files</li>
-</ol>
-<p>By default, you get an example index.qmd and one chapter .qmd for an example. The example chapter has a bunch of advice on what to edit and features like I will demonstrate, but you can delete this text or create your own files to start writing chapters.</p>
-<p>You will need one level 1 header (<code># Chapter title</code>) to start the file, and that will be the name of your chapter at the top of the page and in the table of contents.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Make sure you only use one level 1 header per chapter. If you try and add multiple within one file, it will think they are separate chapters and try and split them when it renders, making it look weird.</p>
-</div>
-</div>
-<p>Once you start adding multiple chapters, remember to update the .yml file for the order you want them in your book.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If you are converting a previous book to the new template, there is a handy little function <code>rmd2qmd</code>. This copies .Rmd files and renames them to .qmd. The function looks like this</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rmd2qmd</span>(<span class="at">from_path =</span> <span class="st">""</span>,  <span class="co"># file path where your .Rmd files are</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">to_path =</span> <span class="st">""</span>) <span class="co"># file path where you want your new .qmd files to go</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>where you specify a file path to access the old .Rmd files and a file path to where you want the new .qmd files saving. Keep your working directory in mind as you will probably be starting from your book folder at this point. I usually save my old .Rmd files in a folder within the new book directory, then save the new .qmd files to the new book main directory.</p>
-</div>
-</div>
-<ol start="8" type="1">
 <li>Rendering files</li>
 </ol>
-<p>Once you have finished editing or you want to check how it looks, you need to click Render for Quarto to process the code and turn it into something pretty. Once you click Render once, you can open it up in the browser and keep checking as you make edits. When you want it to rerender, click Reload the page and it will show your new edits.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The single best part of Quarto and the new book template is you can keep rendering and checking what your work looks like in the flesh. Previously, you had to render the whole book to check how it rendered, but now you can keep updating the browser to see what your changes look like.</p>
-</div>
-</div>
+<p>Once you have finished editing each page or post and you want to check how it looks, you need to click Render for Quarto to process the code and turn it into something pretty. Once you click Render, you can open it up in the browser and keep checking as you make edits.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -441,42 +432,41 @@ Caution
 </div>
 <div class="callout-body-container callout-body">
 <p>If you introduce an error, you will get an error and red box on the screen to highlight Quarto cannot render the book. If you look in the Background Jobs tab in the console below, you should get an error message for the source of the problem if you are unsure what you did wrong.</p>
-<p>After an error, you will need to press Render again rather than just refreshing the browser.</p>
 </div>
 </div>
-<p>These are the key components to make your book. Until this point, these edits all exist on your own computer. But now it is time to track your code using github and make your book accessible online via github pages.</p>
+<p>These are the key components to make your blog. Until this point, these edits all exist on your own computer. But now it is time to track your code using github and make your blog accessible online via github pages.</p>
 </section>
-<section id="creating-a-github-repository" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="creating-a-github-repository"><span class="header-section-number">5.4</span> Creating a github repository</h2>
-<p>Once you have a working barebones version of your book ready to go, it’s time to associate your book folder with a github repository and start some version control. If you want another resource, you can see the <a href="https://docs.github.com/en/desktop/overview/creating-your-first-repository-using-github-desktop" target="_blank">github documentation online</a>.</p>
-<p>In future, you could actually start with this part. You can create a new folder, create a repository using this new folder, and then use the <code>create_book()</code> function to add the book file to. However, we started by creating the book first, so we need to create a repository for an existing folder without a git component.</p>
+<section id="creating-a-github-repository" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="creating-a-github-repository"><span class="header-section-number">5.5</span> Creating a github repository</h2>
+<p>Once you have a working barebones version of your website ready to go, it’s time to associate your website folder with a github repository and start some version control. If you want another resource, you can see the <a href="https://docs.github.com/en/desktop/overview/creating-your-first-repository-using-github-desktop" target="_blank">github documentation online</a>.</p>
+<p>In future, you could actually start with this part. You can create a new folder, create a repository using this new folder, and then create a new R Project for your output within this folder. However, we started by creating the website first, so we need to create a repository for an existing folder without a git component.</p>
 <p>In the github desktop application, click <code>add &gt;&gt; Create a New Repository</code> and complete the details.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Seriously, do not create github repositories within OneDrive
+Your github username as your website URL
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>As a reminder, please <strong>do not</strong> use a folder within OneDrive for your github repository.</p>
+<p>Unless you want to buy a custom URL, the typical format for the link will be yourusername + github.io/ + your repository name. For a website or blog, you can take advantage of a feature where every profile receives <a href="https://pages.github.com/">one site through Github Pages</a>. You can create a repository called yourusername + github.io (e.g., bartlettje.github.io) and this will be the URL of your site, rather than another repo appended to the end. You only get one per github account though, so it’s best to use it on a website and blog where you’re likely to only have one.</p>
 </div>
 </div>
 <ul>
 <li><p>Name: This will be the name of your repository on github, so call it something short but sensible.</p></li>
-<li><p>Local path: Click Choose… and navigate to your book folder. You want the path to be the main folder your book lives in.</p></li>
+<li><p>Local path: Click Choose… and navigate to your website folder. You want the path to be the main folder your website lives in.</p></li>
 </ul>
 <p>The other fields you can edit later, so click Create Repository when you are ready.</p>
 <p>Your newly minted repository should be showing as the Current Repository. This exists on your computer, but it is still not available online. You need to click Publish repository, and that will push all of your files to github and be available online.</p>
 </section>
-<section id="navigating-github-and-github-pages" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="navigating-github-and-github-pages"><span class="header-section-number">5.5</span> Navigating github and github pages</h2>
+<section id="navigating-github-and-github-pages" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="navigating-github-and-github-pages"><span class="header-section-number">5.6</span> Navigating github and Github pages</h2>
 <p>Now your files are available online, navigate to your github account and find your new repository.</p>
 <p>I will provide a little overview in the workshop of key things to look out for and what each tab contains.</p>
-<p>If you are only interested in using github to work on a book, the key tabs are Code and Settings. In Code, you will see all your files you published. These will all be the same as what you created on your computer. This is the idea behind version control and storing all your code/files like OneDrive.</p>
-<p>In Settings, this is where you can edit things about your repository. If you plan on working on your book in a team, you can add collaborators by adding their github profile. They will then receive an email saying you have invited them to collaborate on their github repository. After they accept, they can pull the repository and start working on it too.</p>
+<p>If you are only interested in using github to work on a website, the key tabs are Code and Settings. In Code, you will see all your files you published. These will all be the same as what you created on your computer. This is the idea behind version control and storing all your code/files like OneDrive.</p>
+<p>In Settings, this is where you can edit things about your repository. If you plan on working on your website in a team, you can add collaborators by adding their github profile. They will then receive an email saying you have invited them to collaborate on their github repository. After they accept, they can pull the repository and start working on it too.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -490,12 +480,12 @@ Warning
 <p>Working collaboratively is one of the main motivations behind git and github, but it can be tricky if you are unfamiliar with more advanced features like merging and clashes. Before you start editing the same repository with someone, I <em>heavily</em> recommend completing units 4 and 5 of the <a href="workshop_prep.html#github_prep">version control Moodle course</a> provided by Maths and Stats.</p>
 </div>
 </div>
-<p>Within Settings is the key section we need to get your book available online.</p>
-<section id="publish-to-github-pages" class="level3" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="publish-to-github-pages"><span class="header-section-number">5.5.1</span> Publish to github pages</h3>
-<p>In Settings, navigate to Pages within Code and automation. Under Build and deployment, this will be set to none by default. You must click the drop down, choose Main and select /docs. You will remember /docs is where we store all the html versions of the book files, so you are pointing Github pages here as the source for your book.</p>
-<p>When you press Save, this will start building your book. It will not be available immediately and will take a few minutes. When it is ready, at the top of the page, it will say “Your site is live at…” with your new URL you can click on and open. In the Actions tab, it will also show as a green tick when it has finished building.</p>
-<p>Congratulations! After seeing your rendered book for the first time, this is the second most satisfying part as you can see everything is working.</p>
+<p>Within Settings is the key section we need to get your website available online.</p>
+<section id="publish-to-github-pages" class="level3" data-number="5.6.1">
+<h3 data-number="5.6.1" class="anchored" data-anchor-id="publish-to-github-pages"><span class="header-section-number">5.6.1</span> Publish to Github Pages</h3>
+<p>In Settings, navigate to Pages within Code and automation. Under Build and deployment, this will be set to none by default. You must click the drop down, choose Main and select /docs. You will remember /docs is where we store all the html versions of the website files, so you are pointing Github Pages here as the source for your website.</p>
+<p>When you press Save, this will start building your website. It will not be available immediately and will take a few minutes. When it is ready, at the top of the page, it will say “Your site is live at…” with your new URL you can click on and open. In the Actions tab, it will also show as a green tick when it has finished building.</p>
+<p>Congratulations! After seeing your rendered website for the first time, this is the second most satisfying part as you can see everything is working.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -506,7 +496,7 @@ Add shortcuts to your book
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Once the site is live, I recommend adding the link to two places. First, save it as a browser shortcut so you can quickly access it outside of github. Second, return to the Code tab. Click the cog icon next to Above on the right side and tick to add your website from github pages. This will show the URL to your book on the Code tab for easy access from here.</p>
+<p>Once the site is live, I recommend adding the link to two places. First, save it as a browser shortcut so you can quickly access it outside of github. Second, return to the Code tab. Click the cog icon next to Above on the right side and tick to add your website from github pages. This will show the URL to your website on the Code tab for easy access from here.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -519,7 +509,7 @@ Customise the URL
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>By default, the URL to your book will be your github username + .github.io + your repository name. If you want to get fancy, you can add a custom domain from within Settings and Pages if you have bought one.</p>
+<p>By default, the URL to your website will be your github username + .github.io + your repository name. If you want to get fancy, you can add a custom domain from within Settings and Pages if you have bought one. See the <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site" target="_blank">github documentation</a> for further details.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -532,21 +522,21 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you try and push a change that contains an error and your book does not render, you will get a red cross in Actions saying your book did not build and you will receive an email warning you about it too. Just go back to the book files in RStudio and fix any errors you are getting before you push the updates again.</p>
+<p>If you try and push a change that contains an error and your website does not render, you will get a red cross in Actions saying your website did not build and you will receive an email warning you about it too. Just go back to the website files in RStudio and fix any errors you are getting before you push the updates again.</p>
 </div>
 </div>
 </section>
 </section>
-<section id="commiting-and-pushing-changes" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="commiting-and-pushing-changes"><span class="header-section-number">5.6</span> Commiting and pushing changes</h2>
-<p>At this point, you have everything you need for the book workflow. As you work on your book, you will go through the workflow of:</p>
+<section id="commiting-and-pushing-changes" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="commiting-and-pushing-changes"><span class="header-section-number">5.7</span> Commiting and pushing changes</h2>
+<p>At this point, you have everything you need for the website workflow. As you work on your website, you will go through the workflow of:</p>
 <ol type="1">
-<li><p>Open .RProj and edit your book in RStudio, either by editing your past progress or adding new files.</p></li>
+<li><p>Open .RProj and edit your website in RStudio, either by editing your past progress or adding new files.</p></li>
 <li><p>When you hit a milestone you want to record, in github desktop tick all file changes or specific files, and add a commit message (and longer description if necessary).</p></li>
-<li><p>If you are continuing to work on the book, keeping editing and committing.</p></li>
-<li><p>When you are ready to push changes to github and github pages, push your commits.</p></li>
+<li><p>If you are continuing to work on the website, keep editing and committing.</p></li>
+<li><p>When you are ready to push changes to github and Github Pages, push your commits.</p></li>
 </ol>
-<p>Before we have time to start working on your newly minted books, I will end on a couple of warnings and tips.</p>
+<p>Before we have time to start working on your newly minted website, I will end on a couple of warnings and tips.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -557,7 +547,7 @@ Caution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Remember just committing changes will do nothing to your github repository and book link. You need to push those committed changes for them to be available on github and used to build the book in github pages. It takes a few minutes to rebuild, so do not worry if you do not immediately see the changes.</p>
+<p>Remember just committing changes will do nothing to your github repository and website link. You need to push those committed changes for them to be available on github and used to build the website in github pages. Likewise, you can edit the code in your .qmd file but not render those edits into the formatted html files. It takes a few minutes to rebuild, so do not worry if you do not immediately see the changes.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -574,11 +564,10 @@ Reverting changes
 </div>
 </div>
 </section>
-<section id="start-working-on-your-own-book" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="start-working-on-your-own-book"><span class="header-section-number">5.7</span> Start working on your own book!</h2>
+<section id="start-working-on-your-own-website" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="start-working-on-your-own-website"><span class="header-section-number">5.8</span> Start working on your own website!</h2>
 <p>Start working on your own book in the remaining time we have together.</p>
-<p>See the next chapter on <a href="quarto_features.html">Quarto features and book conventions</a> for inspiration / example code for the kind of features you can use.</p>
-<p>Do not forget to make your own hex sticker for extra panache!</p>
+<p>See the final chapter on <a href="quarto_features.html">Quarto features and book conventions</a> for inspiration / example code for the kind of features you can use.</p>
 
 
 </section>

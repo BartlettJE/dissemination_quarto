@@ -3,6 +3,7 @@ project:
   output-dir: docs
 
 book:
+  google-analytics: "G-VTQ832DEXY"
   title: "Dissemination using Quarto and Github Pages"
   author: "James Bartlett"
   date: "03/20/2025"

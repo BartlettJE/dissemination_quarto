@@ -4,21 +4,23 @@ In this chapter, you will see how to use the PsyTeachR book template developed b
 
 **Intended learning outcomes**
 
-By the end of this chapter, you will be able to: 
+By the end of this chapter, you will be able to:
 
-- Create and edit a Quarto book using the PsyTeachR template. 
+-   Create and edit a Quarto book using the PsyTeachR template.
 
-- Publish your book using github pages. 
+-   Publish your book using github pages.
 
-## Example books
+## Example books and Quarto documentation
 
-For a selection of examples of the PsyTeachR book template, you can explore: 
+For a selection of examples of the PsyTeachR book template, you can explore:
 
-- The [Fundamentals of Quantitative Analysis](https://psyteachr.github.io/quant-fun-v3/){target="_blank"} book designed for MSc Psychology conversion students. If there is a feature you like, you can see the [source code on github](https://github.com/PsyTeachR/quant-fun-v3){target="_blank"} to adapt to your needs.
+-   The [Fundamentals of Quantitative Analysis](https://psyteachr.github.io/quant-fun-v3/){target="_blank"} book designed for MSc Psychology conversion students. If there is a feature you like, you can see the [source code on github](https://github.com/PsyTeachR/quant-fun-v3){target="_blank"} to adapt to your needs.
 
-- The [Data Skills for Reproducible Research](https://psyteachr.github.io/reprores-v4/){target="_blank"} book designed for MSc Research Methods of Psychological Science and MSc Brain Sciences students. If there is a feature you like, you can see the [source code on github](https://github.com/PsyTeachR/reprores-v4){target="_blank"} to adapt to your needs.
+-   The [Data Skills for Reproducible Research](https://psyteachr.github.io/reprores-v4/){target="_blank"} book designed for MSc Research Methods of Psychological Science and MSc Brain Sciences students. If there is a feature you like, you can see the [source code on github](https://github.com/PsyTeachR/reprores-v4){target="_blank"} to adapt to your needs.
 
-You can see the whole PsyTeachR suite of resources on [our website](https://psyteachr.github.io/){target="_blank"}. 
+You can see the whole PsyTeachR suite of resources on [our website](https://psyteachr.github.io/){target="_blank"}.
+
+Your main source of information for this output is the [Creating a Book](https://quarto.org/docs/books/){target="_blank"} section of the Quarto guide. 
 
 ## Creating the book template
 

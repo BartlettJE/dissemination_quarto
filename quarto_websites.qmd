@@ -1,10 +1,10 @@
 # Websites and blogs {#quarto_websites}
 
-In this chapter, you will see how to use the PsyTeachR book template developed by Prof. Lisa DeBruine. This template is what we use for all the data skills resources in the School of Psychology and Neuroscience. This has some nice features compared to the standard Quarto book template, such as supporting webexercises for interactive questions and including a glossary.
+In this chapter, you will learn how to create professional websites and/or blogs using Quarto. For academics, an online presence is critical but often overlooked. From early career researchers to experienced academics, you will benefit from people being able find out more about you, such as your publications, talks, and contact information. You might think the technical barrier is too high to maintain your own website, but there are plenty of tools out there to make it easy. The combination of Quarto and github pages is a free example of this which you can maintain yourself. This chapter rolls websites and blogs into one as the general principles are the same, where blogs are just a specialised website to present individual posts. 
 
-## Example book
+## Example websites and Quarto documentation
 
-For an example of the PsyTeachR book template, you can explore the [Fundamentals of Quantitative Analysis](https://psyteachr.github.io/quant-fun-v3/){target="_blank"} book. If there is a feature you like, you can see the [source code on github](https://github.com/PsyTeachR/quant-fun-v3){target="_blank"} to adapt to your needs.
+For an example of a Quarto website, you can explore the [UK Conference on Teaching Statistics](https://www.ukcots.org/){target="_blank"} website which I helped to create and maintain. If there is a feature you like, you can see the [source code on github](https://github.com/rssteachingstats/ukcots){target="_blank"} to adapt to your needs.
 
 For other examples, Solomon Kurz - a psychology researcher who writes about programming / stats - posted on BlueSky about academic websites. The thread has over 40 replies, so you can explore how other people have used Quarto or similar tools:
 
@@ -26,51 +26,41 @@ I’m especially interested in websites by grad students, and in websites built 
 <script async src="https://embed.bsky.app/static/embed.js" charset="utf-8"></script>
 ```
 
-Alternative/combined solutions:
+Your main source of information for this output is the [Creating a Website](https://quarto.org/docs/websites/){target="_blank"} and [Creating a Blog](https://quarto.org/docs/websites/website-blog.html#quick-start){target="_blank"} sections of the Quarto guide.
 
-- https://hugoblox.com/?utm_campaign=poweredby
+## Creating a Quarto website or blog
 
-- https://www.dsquintana.blog/create-an-academic-website-free-easy-2020/
+If you have not followed the [preparation instructions](#workshop_prep) yet, you need R/RStudio and git/github desktop installed on your computer. I will be demonstrating how to use github desktop rather than the command line, as git could easily be it's own workshop.
 
-## Creating the book template
-
-Your main source of information for this output is the [Creating a Website](https://quarto.org/docs/websites/){target="_blank"} section of the Quarto guide. 
-
-If you have not followed the [preparation instructions](#workshop_prep) yet, you need R/RStudio installed to your computer, the `booktem` package installed from Lisa's github, and git/github desktop installed on your computer. I will be demonstrating how to use github desktop rather than the command line, as git could easily be it's own workshop.
-
-The first step is thinking about where you want your book folder stored on your computer, where all the files will live. I have a folder within `Documents` called `git_repos` where I store all my git repositories away from OneDrive (see below). You do not need to create a folder for the book itself as the function will do that for you, but you need somewhere for that folder to live.
+The first step is thinking about where you want your website folder stored on your computer for where all the files will live. I have a folder within `Documents` called `git_repos` where I store all my git repositories away from OneDrive (see below).
 
 ::: callout-warning
 #### Do not create github repositories within OneDrive
 
-We have not reached the github step yet, but as you think about where you want your folder for the book, please **do not** use a folder within OneDrive. Sometimes it works, but most of the time it causes chaos as OneDrive is trying to track changes, github is trying to track changes, which ends in them fighting over file permissions.
+We have not reached the github step yet, but as you think about where you want your folder for the website, please **do not** use a folder within OneDrive. Sometimes it works, but most of the time it causes chaos as OneDrive is trying to track changes, github is trying to track changes, which ends in them fighting over file permissions.
 :::
 
-Once you have a folder your book can live in, open RStudio and set your working directory to this folder, for example from the top menu `Session >> set working directory >> Choose directory` and navigate to this folder.
+Once you have decided where your website will live, open RStudio and click `File > New Project... > New Directory > Quarto Website` for a website, or `File > New Project... > New Directory > Quarto Blog` for a blog.
 
-Once RStudio knows where you want your working directory, you can create the book using the following code in the console and editing accordingly before you run the code. Do not worry though, you can edit all of these later, but this will create the initial version.
+Regardless of whether you want to create a website or a blog, you will see a new window asking for you to specify:
 
-```{r eval=FALSE}
-# We first need to load the booktem library, assuming its installed properly
-library(booktem)
+-   "Directory name:" - the name of the folder it will create, so keep it short and without spaces.
 
-create_book(path = "your_book_file_name", # If you set your working directory, you should not need to add the full path
-            title = "My book title", # The main title of your book
-            authors = list( # You need a new line for any additional author, or delete the author 2 line if you're solo
-              c("Author 1 first name", "Author 1 last name", "Author 1 ORCiD"),
-              c("Author 2 first name", "Author 2 last name", "Author 2 ORCiD"))
-            )
-```
+-   "Create a project in the subdirectory of:" - click browse to navigate to the folder you want your website/blog to live in. Creating the website/blog will create a new folder within this directory, so you do not need to create a folder yourself.
 
-Once you press run, you should get a bunch of progress messages from `Setting up project...`. Once it's finished, your book will open in a new session and you will see the rendered version appear in your default internet browser.
+Click "Create project" and after a couple of seconds, it will open a new project window with the template in. Congratulations, you have a website/blog skeleton to work with!
 
-Congratulations, you have a book skeleton to work with!
+Although there is a lot of overlap between the two outputs, I have split the tour into a website section and a blog section as there are a couple of key distinctions to highlight. So, you can navigate to the one most relevant to you at this point. 
 
-## Tour of the Quarto book template
+## Tour of the Quarto website template {#website template}
+
+Blah. 
+
+## Tour of the Quarto blog template {#blog_template}
 
 1.  `_quarto.yml`
 
-We will start by exploring the `_quarto.yml` file where you can edit all the details for your book, like the title, description, author(s), and the licence. In Quarto books, this is also how you control the order of chapters.
+We will start by exploring the `_quarto.yml` file where you can edit all the details for your blog, like the title, author(s), and the licence. In Quarto websites, this is also how you control the number and order of pages in the navigation bar.
 
 ::: callout-note
 #### What is a .yml file?
@@ -78,58 +68,40 @@ We will start by exploring the `_quarto.yml` file where you can edit all the det
 YAML / .yml are configuration files for programs which must follow specific formatting conventions.
 :::
 
-Within the .yml file, I will highlight key features in: project, book, bibliography, csl, and format.
+Within the .yml file, I will highlight in the workshop key features such as: title, navbar, and format.
+
+For presenting your book using github pages, edit the `project` from the standard first two lines:
+
+```{r eval=FALSE}
+project:
+  type: website
+```
+
+To add a new third line:
+
+```{r eval=FALSE}
+project:
+  type: website
+  output-dir: docs
+```
+
+Be careful, indentation is important in .yml files. We do this as by default, it will create a folder called `_site` where the rendered .html files will live. For github pages though, it looks for a folder called `docs`, so this will streamline things later.
 
 2.  index.qmd
 
-Index will be the opening page for the link to your book, so this will typically include an overview of what your book contains, who to contact for problems/questions etc.
+For a blog, there is not too much to edit here. An index file will be the opening page to your blog and every website needs an index, but it's main function here is to display a preview of all your blog posts. Below the YAML which controls the title and listings, you can add text, code, and/or images like a normal .qmd file, but following this will be a list of blog posts in descending date order. 
 
-3.  `R/` folder
+3. About.qmd
 
-The `R/` folder is where you can save bits of R code that your book relies on. There is some code in here that Lisa has worked on to help with certain functionality, like how the glossary looks.
+4. The `posts` folder
 
-4.  `include/` folder
+By default, you get two example posts to show how they should be structured. In index.qmd, part of the YAML specified `contents: posts`. This means it is using the contents of the posts folder to generate the blog posts. 
 
-The `include/` folder is a similar idea to `R/`. It has a bunch of files the book uses for formatting and any chapters would be able to access stuff here. For example, a .bib file for your references and a .csl file for the style of your references.
+If you click on the posts folder, you will see each post lives in its own folder. To create a new post, you would create a new folder with a short but informative name. Within that folder, there is another index.qmd file and any supporting files such as images. Each post needs its own index file and the YAML controls the title, author, date, and any categories. Editing these will customise the look of the post in the preview on your home page and the top of your blog post when you open it. 
 
-5.  `docs/` folder
-
-The `docs/` folder is where the rendered .html versions of your book will update to. The process behind creating books in Quarto is writing them in Markdown, then Markdown is converted to .html. When we add the book to github pages, this is the folder you point it to as the source for how it appears as a webpage.
-
-6.  Licence
-
-By default, `booktem` gives the books a CC-BY-SA-4.0 licence. This is a Creative Commons licence which states people can adapt your materials but they must provide you with credit. You can learn more about different types of [Creative Commons licences online](https://creativecommons.org/){target="_blank"}. If you want to state a different licence depending on your materials, you can update the text in the Licence file and in the .yml.
-
-7.  Chapter files
-
-By default, you get an example index.qmd and one chapter .qmd for an example. The example chapter has a bunch of advice on what to edit and features like I will demonstrate, but you can delete this text or create your own files to start writing chapters.
-
-You will need one level 1 header (`# Chapter title`) to start the file, and that will be the name of your chapter at the top of the page and in the table of contents.
-
-::: callout-warning
-Make sure you only use one level 1 header per chapter. If you try and add multiple within one file, it will think they are separate chapters and try and split them when it renders, making it look weird.
-:::
-
-Once you start adding multiple chapters, remember to update the .yml file for the order you want them in your book.
-
-::: callout-tip
-If you are converting a previous book to the new template, there is a handy little function `rmd2qmd`. This copies .Rmd files and renames them to .qmd. The function looks like this
-
-```{r eval=FALSE}
-rmd2qmd(from_path = "",  # file path where your .Rmd files are
-        to_path = "") # file path where you want your new .qmd files to go
-```
-
-where you specify a file path to access the old .Rmd files and a file path to where you want the new .qmd files saving. Keep your working directory in mind as you will probably be starting from your book folder at this point. I usually save my old .Rmd files in a folder within the new book directory, then save the new .qmd files to the new book main directory.
-:::
-
-8.  Rendering files
+5.  Rendering files
 
 Once you have finished editing or you want to check how it looks, you need to click Render for Quarto to process the code and turn it into something pretty. Once you click Render once, you can open it up in the browser and keep checking as you make edits. When you want it to rerender, click Reload the page and it will show your new edits.
-
-::: callout-tip
-The single best part of Quarto and the new book template is you can keep rendering and checking what your work looks like in the flesh. Previously, you had to render the whole book to check how it rendered, but now you can keep updating the browser to see what your changes look like.
-:::
 
 ::: callout-caution
 If you introduce an error, you will get an error and red box on the screen to highlight Quarto cannot render the book. If you look in the Background Jobs tab in the console below, you should get an error message for the source of the problem if you are unsure what you did wrong.

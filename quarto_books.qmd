@@ -10,13 +10,13 @@ By the end of this chapter, you will be able to:
 
 -   Publish your book using github pages.
 
-## Example book
+## Example book and Quarto documentation
 
 For an example of the standard Quarto version, you can explore this very book on [Dissemination using Quarto and Github Pages](https://bartlettje.github.io/dissemination_quarto/){target="_blank"}! If there is a feature you like, you can see the [source code on github](https://github.com/BartlettJE/dissemination_quarto){target="_blank"} to adapt to your needs.
 
-## Creating a Quarto book
+Your main source of information for this output is the [Creating a Book](https://quarto.org/docs/books/){target="_blank"} section of the Quarto guide.
 
-Your main source of information for this output is the [Creating a Book](https://quarto.org/docs/books/){target="_blank"} section of the Quarto guide. 
+## Creating a Quarto book
 
 If you have not followed the [preparation instructions](#workshop_prep) yet, you need R/RStudio and git/github desktop installed on your computer. I will be demonstrating how to use github desktop rather than the command line, as git could easily be it's own workshop.
 

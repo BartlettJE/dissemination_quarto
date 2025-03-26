@@ -1,6 +1,6 @@
 # Overview {.unnumbered}
 
-This book outlines how you can combine Quarto - a new version of R Markdown - with github pages to create an online profile and disseminate your work. You will learn about writing online books, sharing reproducible presentations, and creating websites and blogs.
+This book outlines how you can combine [Quarto](https://quarto.org/docs/get-started/hello/rstudio.html){target="_blank"} - a new version of R Markdown - with [github pages](https://pages.github.com/){target="_blank"} to create an online profile and disseminate your work. You will learn about writing online books, sharing reproducible presentations, and creating websites and blogs.
 
 There are alternative options to all of these outputs, but once you are comfortable with the workflow of Quarto and github, you will have a flexible toolkit to manage and share all your outputs in one place. Once you render your book/presentation/website and push any changes to github, you get a URL to share with anyone.
 

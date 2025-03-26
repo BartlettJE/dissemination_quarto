@@ -1,18 +1,18 @@
 # Reproducible presentations {#quarto_presentations}
 
-In this chapter, you will learn how to create presentations that you can share with a URL. Your presentation might be purely conceptual where you use words and images, or you might be presenting your research and you want to share reproducible analyses and figures. This is great for exposure as it's better than your name and abstract in a programme, and it's much easier to share a URL link to your presentation which people can repost compared to a PDF.  
+In this chapter, you will learn how to create presentations that you can share with a URL. Your presentation might be purely conceptual where you use words and images, or you might be presenting your research and you want to share reproducible analyses and figures. This is great for exposure as it's better than your name and abstract in a programme, and it's much easier to share a URL link to your presentation which people can repost compared to a PDF.
 
-## Example presentation
+## Example presentations and Quarto documentation
 
 For an example of creating Quarto presentations, you can explore a [papaja demonstration](https://bartlettje.github.io/papaja_demo/papaja_slides.html){target="_blank"} I co-presented for a previous data upskilling workshop. If there is a feature you like, you can see the [source code on github](https://github.com/BartlettJE/papaja_demo){target="_blank"} to adapt to your needs.
 
-Prof. Lisa DeBruine has a great website where she shares all her talks and you can see the underlying code in [her github repository](https://github.com/debruine/talks){target="_blank"}. Each folder contains all the files for one talk, so you can see the variation in how to achieve different features. **Note**: Lisa also adds some custom css features (styling for html pages) which we will not really be getting into in this workshop. 
+Prof. Lisa DeBruine has a great website where she shares all her talks and you can see the underlying code in [her github repository](https://github.com/debruine/talks){target="_blank"}. Each folder contains all the files for one talk, so you can see the variation in how to achieve different features. **Note**: Lisa also adds some custom css features (styling for html pages) which we will not really be getting into in this workshop.
 
-## Creating a Quarto presentation 
+Your main source of information for this output is the [Revealjs section](https://quarto.org/docs/presentations/revealjs/){target="_blank"} of the Quarto guide.
 
-Your main source of information for this output is the [Revealjs section](https://quarto.org/docs/presentations/revealjs/){target="_blank"} of the Quarto guide. 
+## Creating a Quarto presentation
 
-The first step is thinking about where you want your presentation folder stored on your computer, where all the files will live. I have a folder within `Documents` called `git_repos` where I store all my git repositories away from OneDrive (see below). 
+The first step is thinking about where you want your presentation folder stored on your computer, where all the files will live. I have a folder within `Documents` called `git_repos` where I store all my git repositories away from OneDrive (see below).
 
 ::: callout-warning
 #### Do not create github repositories within OneDrive
@@ -20,11 +20,11 @@ The first step is thinking about where you want your presentation folder stored 
 We have not reached the github step yet, but as you think about where you want your folder for the presentation, please **do not** use a folder within OneDrive. Sometimes it works, but most of the time it causes chaos as OneDrive is trying to track changes, github is trying to track changes, which ends in them fighting over file permissions.
 :::
 
-For presentations, there are a couple of options for your starting point. Compared to books and websites in other chapters, there is not a standalone option for a presentation project to create a folder with the files inside. So, you have one of two options: 
+For presentations, there are a couple of options for your starting point. Compared to books and websites in other chapters, there is not a standalone option for a presentation project to create a folder with the files inside. So, you have one of two options:
 
-1. You just create a presentation by clicking `File > New File > Quarto Presentation...`. Enter a title, author, and keep the default Reveal JS option. Click Create and you will have a blank .Qmd called Untitled1.qmd. You can then create a new folder for the presentation to live in as you save Untitled1.qmd with a proper file name. 
+1.  You just create a presentation by clicking `File > New File > Quarto Presentation...`. Enter a title, author, and keep the default Reveal JS option. Click Create and you will have a blank .Qmd called Untitled1.qmd. You can then create a new folder for the presentation to live in as you save Untitled1.qmd with a proper file name.
 
-2. You first create an R Project by clicking `File > New Project` to create a new folder/directory. This creates the folder and an R Project (.RProj) file to help organise things, then you complete step 1 to add the Quarto presentation. 
+2.  You first create an R Project by clicking `File > New Project` to create a new folder/directory. This creates the folder and an R Project (.RProj) file to help organise things, then you complete step 1 to add the Quarto presentation.
 
 If you are not including any data, it will not make much difference which way you create the presentation. However, if you want to include an element of data analysis, it can be useful to use an R Project to help organise your working directory.
 
@@ -44,15 +44,15 @@ format:
 ---
 ```
 
-If you click Render again, *now* it will look and behave as a presentation. 
+If you click Render again, *now* it will look and behave as a presentation.
 
-The `embed-resources` part makes the .html files slightly larger and takes longer to render but it means you can open them independently. Without this, there will be a folder in your directory called "yourtitle_files" which it needs to add the formatting. If you just shared the .html file without the files folder, it would look weird. If you set `embed-resources` to true, all the formatting will be contained within the .html file and you can share it as a single file. 
+The `embed-resources` part makes the .html files slightly larger and takes longer to render but it means you can open them independently. Without this, there will be a folder in your directory called "yourtitle_files" which it needs to add the formatting. If you just shared the .html file without the files folder, it would look weird. If you set `embed-resources` to true, all the formatting will be contained within the .html file and you can share it as a single file.
 
 ### Adding sections and slides
 
-The YAML section will control the title page but to add individual slides, you use level 1 and level 2 headers. 
+The YAML section will control the title page but to add individual slides, you use level 1 and level 2 headers.
 
-A level 1 header (one hash #) will create a section and a level 2 header (two hashes ##) will create a regular title. You can just use level 2 headers to create basic slides with a title, but periodic level 1 headers can be useful for organisation to create sections which are easier to navigate in the contents menu. 
+A level 1 header (one hash #) will create a section and a level 2 header (two hashes ##) will create a regular title. You can just use level 2 headers to create basic slides with a title, but periodic level 1 headers can be useful for organisation to create sections which are easier to navigate in the contents menu.
 
 ```{r eval=FALSE}
 # This is a section
@@ -62,14 +62,13 @@ A level 1 header (one hash #) will create a section and a level 2 header (two ha
 Add your content here.  
 ```
 
-
-::: {.callout-tip}
+::: callout-tip
 #### Try this
 
-Try and switch between combinations of level 1 and level 2 headers to see how it looks when you render your presentation. 
+Try and switch between combinations of level 1 and level 2 headers to see how it looks when you render your presentation.
 :::
 
-Alternatively, if you want to create a slide without a title, you can use three dashes to start a new slide: 
+Alternatively, if you want to create a slide without a title, you can use three dashes to start a new slide:
 
 ```{r eval=FALSE}
 # This is a section
@@ -83,15 +82,15 @@ Add your content here.
 This is a slide without a title. 
 ```
 
-### Adding content 
+### Adding content
 
-Once you have added your slides, you can add your content to them. This can include simple text, bullet points, code, and images. For the following demonstrations, if you want to play around with text to see how it looks, try using the *Lorem ipsum* typesetting passages: 
+Once you have added your slides, you can add your content to them. This can include simple text, bullet points, code, and images. For the following demonstrations, if you want to play around with text to see how it looks, try using the *Lorem ipsum* typesetting passages:
 
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 #### Smaller text
 
-It will take some practice and tweaking to learn how much you can fit on slides before you need to create a new slide. It's probably a good hint to question how much content you are including if there is too much to fit, but you can specify smaller text with a tag on the header. 
+It will take some practice and tweaking to learn how much you can fit on slides before you need to create a new slide. It's probably a good hint to question how much content you are including if there is too much to fit, but you can specify smaller text with a tag on the header.
 
 ```{r eval=FALSE}
 ## This is a slide {.smaller}
@@ -99,15 +98,15 @@ It will take some practice and tweaking to learn how much you can fit on slides 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq...
 ```
 
-::: {.callout-tip}
+::: callout-tip
 #### Try this
 
-Try and compare the full typesetting extract with and without the `{.smaller}` tag. 
+Try and compare the full typesetting extract with and without the `{.smaller}` tag.
 :::
 
-#### Multiple columns of content 
+#### Multiple columns of content
 
-Like the smaller text tag, there is a class of tag called `.columns` which you can use to specify columns and their width on the slide. For example, if we wanted two equal columns both containing text, you could add: 
+Like the smaller text tag, there is a class of tag called `.columns` which you can use to specify columns and their width on the slide. For example, if we wanted two equal columns both containing text, you could add:
 
 ```{r eval=FALSE}
 :::: {.columns}
@@ -123,13 +122,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ::::
 ```
 
-Within each column, you can include any regular content like text, bullet points, or images. 
+Within each column, you can include any regular content like text, bullet points, or images.
 
 #### Individual images
 
-If you do not want to run code to create an image or visualisation for your presentation, you can save an image to your 
+If you do not want to run code to create an image or visualisation for your presentation, you can save an image to your
 
-If you want a test image, you can download this [lovely picture of a duck](images/Duck.png). Save the image in your presentation folder (or a subfolder called images if there are lots you want to keep tidy) and add one of the following two options: 
+If you want a test image, you can download this [lovely picture of a duck](images/Duck.png). Save the image in your presentation folder (or a subfolder called images if there are lots you want to keep tidy) and add one of the following two options:
 
 ```{r eval=FALSE}
 ![](Duck.png)
@@ -141,15 +140,15 @@ or
 knitr::include_graphics("Duck.png")
 ```
 
-You can see a longer overview of image options in the [Quarto features](#image_options) chapter, but knitr is a package RStudio uses for dynamic documents like RMarkdown and Quarto. It includes a handy function called `include_graphics()` which takes a file path as it's first argument. 
+You can see a longer overview of image options in the [Quarto features](#image_options) chapter, but knitr is a package RStudio uses for dynamic documents like RMarkdown and Quarto. It includes a handy function called `include_graphics()` which takes a file path as it's first argument.
 
-If there are several images you want to include on a slide and you want to carefully size or position them, there are some advanced features in the [reveal documentation](https://quarto.org/docs/presentations/revealjs/advanced.html#absolute-position){target="_blank"}. 
+If there are several images you want to include on a slide and you want to carefully size or position them, there are some advanced features in the [reveal documentation](https://quarto.org/docs/presentations/revealjs/advanced.html#absolute-position){target="_blank"}.
 
-#### Code and output 
+#### Code and output
 
 As we are using Quarto within RStudio, you can add any code and output that would comfortable fit on a slide. This is a great feature if you are teaching about coding as you do not need to worry about adding screenshots of code and output. If you are presenting results from your research, it also means you can include reproducible analyses or visualisation.
 
-By default, you will only see the output of code if you try and render a slide with this: 
+By default, you will only see the output of code if you try and render a slide with this:
 
 ```{{r}}
 summary(mtcars)
@@ -157,11 +156,11 @@ summary(mtcars)
 
 But you can set echo=TRUE within the code chunk after the `r` to also show the underlying code if that is relevant to what you are presenting.
 
-### Changing the theme 
+### Changing the theme
 
 The slides use a default theme without any further edits, but Quarto presentations come with a few built-in themes you can use. They are all pretty minimalist but you can explore which suit your needs best.
 
-To edit the theme, you need to specify the theme in the YAML section at the start of the file, but be careful of indentation: 
+To edit the theme, you need to specify the theme in the YAML section at the start of the file, but be careful of indentation:
 
 ```{r eval=FALSE}
 ---
@@ -174,16 +173,16 @@ format:
 ---
 ```
 
-::: {.callout-tip}
+::: callout-tip
 #### Try this
 
-There are 11 [built-in themes](https://quarto.org/docs/presentations/revealjs/#themes){target="_blank"}, so try and change it to one of the other themes such as "simple" or "moon" to see what they look like. 
+There are 11 [built-in themes](https://quarto.org/docs/presentations/revealjs/#themes){target="_blank"}, so try and change it to one of the other themes such as "simple" or "moon" to see what they look like.
 :::
 
-::: {.callout-note}
+::: callout-note
 #### How can I make more specific edits?
 
-The one downside to using Quarto presentations is that it is more difficult to edit basic features like the font than if you were using MS PowerPoint. If you do want a specific look to your presentation, you will need to play around with adding a .css file for styling. You can learn more about this on the [Reveal Themes page](https://quarto.org/docs/presentations/revealjs/themes.html){target="_blank"}. 
+The one downside to using Quarto presentations is that it is more difficult to edit basic features like the font than if you were using MS PowerPoint. If you do want a specific look to your presentation, you will need to play around with adding a .css file for styling. You can learn more about this on the [Reveal Themes page](https://quarto.org/docs/presentations/revealjs/themes.html){target="_blank"}.
 :::
 
 These are the key components to make your presentation. Until this point, these edits all exist on your own computer. But now it is time to track your code using github and make your presentation accessible online via github pages.
@@ -214,17 +213,17 @@ Your newly minted repository should be showing as the Current Repository. This e
 
 Now your files are available online, navigate to your github account and find your new repository. I will provide a little overview in the workshop of key things to look out for and what each tab contains.
 
-If you are only interested in using github to share your presentation, the key tabs are Code and Settings. In Code, you will see all your files you published. These will all be the same as what you created on your computer. This is the idea behind version control and storing all your code/files like OneDrive. 
+If you are only interested in using github to share your presentation, the key tabs are Code and Settings. In Code, you will see all your files you published. These will all be the same as what you created on your computer. This is the idea behind version control and storing all your code/files like OneDrive.
 
 In Settings, this is where you can edit things about your repository and it is the key section we need to get your presentation online.
 
 ### Publish to github pages
 
-In Settings, navigate to Pages within Code and automation. Under Build and deployment, this will be set to none by default. You must click the drop down, choose Main and select `/(root)`. This is slightly different to the book and website process in the other chapters. We do not need to point GitHub Pages to the `docs/` folder as we do not have one for this output. Instead, the rendered .html file is in the main directory. This means `/(root)` will be looking for something within your top-level (or root) directory. 
+In Settings, navigate to Pages within Code and automation. Under Build and deployment, this will be set to none by default. You must click the drop down, choose Main and select `/(root)`. This is slightly different to the book and website process in the other chapters. We do not need to point GitHub Pages to the `docs/` folder as we do not have one for this output. Instead, the rendered .html file is in the main directory. This means `/(root)` will be looking for something within your top-level (or root) directory.
 
 When you press Save, this will start building your presentation. It will not be available immediately and will take a few minutes. When it is ready, at the top of the page, it will say "Your site is live at..." with your new URL you can click on and open. In the Actions tab, it will also show as a green tick when it has finished building.
 
-Congratulations! Your presentation is now available to view and share online! 
+Congratulations! Your presentation is now available to view and share online!
 
 ::: callout-tip
 #### Add shortcuts to your presentation
@@ -233,7 +232,7 @@ Once the site is live, I recommend adding the URL to the about page. Return to t
 :::
 
 ::: callout-warning
-#### Why is it showing a different page as my site? 
+#### Why is it showing a different page as my site?
 
 As the directory is set to the root directory, Github Pages will look for the first .html file in your directory. If that is not your presentation, it will show a different file. In some of my repositories, I have a rendered README file (explaining information about the repository and usage instructions) which shows as the "site". However, you can still get a link to your presentation by adding the full extension such as https://bartlettje.github.io/papaja_demo/papaja_slides.html.
 :::

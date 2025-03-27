@@ -261,7 +261,7 @@ gtag('config', 'G-VTQ832DEXY', { 'anonymize_ip': true});
   <li><a href="#creating-a-quarto-website-or-blog" id="toc-creating-a-quarto-website-or-blog" class="nav-link" data-scroll-target="#creating-a-quarto-website-or-blog"><span class="header-section-number">5.2</span> Creating a Quarto website or blog</a></li>
   <li><a href="#website-template" id="toc-website-template" class="nav-link" data-scroll-target="#website-template"><span class="header-section-number">5.3</span> Tour of the Quarto website template</a></li>
   <li><a href="#blog-template" id="toc-blog-template" class="nav-link" data-scroll-target="#blog-template"><span class="header-section-number">5.4</span> Tour of the Quarto blog template</a></li>
-  <li><a href="#creating-a-github-repository" id="toc-creating-a-github-repository" class="nav-link" data-scroll-target="#creating-a-github-repository"><span class="header-section-number">5.5</span> Creating a github repository</a></li>
+  <li><a href="#create-github" id="toc-create-github" class="nav-link" data-scroll-target="#create-github"><span class="header-section-number">5.5</span> Creating a github repository</a></li>
   <li><a href="#navigating-github-and-github-pages" id="toc-navigating-github-and-github-pages" class="nav-link" data-scroll-target="#navigating-github-and-github-pages"><span class="header-section-number">5.6</span> Navigating github and Github pages</a>
   <ul class="collapse">
   <li><a href="#publish-to-github-pages" id="toc-publish-to-github-pages" class="nav-link" data-scroll-target="#publish-to-github-pages"><span class="header-section-number">5.6.1</span> Publish to Github Pages</a></li>
@@ -336,7 +336,148 @@ Do not create github repositories within OneDrive
 </section>
 <section id="website-template" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="website-template"><span class="header-section-number">5.3</span> Tour of the Quarto website template</h2>
-<p>Blah.</p>
+<ol type="1">
+<li><code>_quarto.yml</code></li>
+</ol>
+<p>We will start by exploring the <code>_quarto.yml</code> file where you can edit all the details for your website, like the title, licence, theme, and any styling. In Quarto websites, this is also how you control the number and order of pages in the navigation bar.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What is a .yml file?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>YAML / .yml are configuration files for programs which must follow specific formatting conventions.</p>
+</div>
+</div>
+<p>Within the .yml file, I will highlight in the workshop key features such as: title, navbar, and format.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Adding new pages to your website
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>By default, your website will have the main index and an about page in the navigation bar. To add more pages, simply create new .qmd files in the directory (including at least a title in the YAML) and specify where you want them in the .yml file.</p>
+</div>
+</div>
+<p>For presenting your website using github pages, edit the <code>project</code> from the standard first two lines:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>project<span class="sc">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  type<span class="sc">:</span> website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To add a new third line:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>project<span class="sc">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  type<span class="sc">:</span> website</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">-</span>dir<span class="sc">:</span> docs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Be careful, indentation is important in .yml files. We do this as by default, it will create a folder called <code>_site</code> where the rendered .html files will live. For Github Pages though, it looks for a folder called <code>docs</code>, so this will streamline things later.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Adding Google analytics
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you want to track how many people view your website and access other kinds of analytics, you can add a Google analytics key into the .yml options.</p>
+<p>You would add it into the <code>website:</code> section like:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>website<span class="sc">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  google<span class="sc">-</span>analytics<span class="sc">:</span> <span class="st">"UA-XXXXXXXX"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>There are additional options like turning on a cookies warning if you are using this feature to tell people you are tracking user activity on your website, so I recommend reading the <a href="https://quarto.org/docs/websites/website-tools.html#google-analytics">Quarto documentation</a> for these features.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Add a license for your work
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>One important consideration is telling people how they can use your work. In the .yml, you can specify a license (see the <a href="https://quarto.org/docs/authoring/front-matter.html#license" target="_blank">License section</a> of the documentation) and make this super clear in the footer of your output. I like to specify this using the following settings under <code>website</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>website<span class="sc">:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  license<span class="sc">:</span> <span class="st">"CC BY-SA"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  page<span class="sc">-</span>footer<span class="sc">:</span> CC<span class="sc">-</span>BY<span class="sc">-</span>SA<span class="fl">-4.0</span> (<span class="dv">2025</span>) James Bartlett</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>I usually apply a CC-BY-SA license from Creative Commons as one of the most permissive licenses for reusing work, but they must provide attribution. You can look at the <a href="https://creativecommons.org/share-your-work/cclicenses/" target="_blank">Creative Commons site</a> for different license options.</p>
+</div>
+</div>
+<ol start="2" type="1">
+<li>index.qmd</li>
+</ol>
+<p>The index file will be the opening page to your website, so imagine it as a kind of home page. You can edit the title which may or may not be the same as your overall website title. Everything below the YAML section will be rendered as a regular .qmd file, so think about what you want to present to people.</p>
+<ol start="3" type="1">
+<li>About.qmd</li>
+</ol>
+<p>By default, you get an about page which is meant to describe you or your website. You might include information like your social media profiles and how best to contact you.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Add about page formatting
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As you will see in the <a href="#blog-template">blog section</a>, the about page in a Quarto blog can include several default templates. Weirdly, this is not activated in the website template, but you can use the same code in the YAML section.</p>
+<p>The standard about page will look like:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"About"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>But you can specify <code>about</code> as a section to add this formatting and preset link options such as github:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"About"</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>about<span class="sc">:</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  template<span class="sc">:</span> jolla</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  links<span class="sc">:</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="sc">-</span> icon<span class="sc">:</span> github</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>      text<span class="sc">:</span> Github</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>      href<span class="sc">:</span> https<span class="sc">:</span><span class="er">//</span>github.com</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Custom css styling</li>
+</ol>
+<p>The only other file remaining in the template is styles.css. In this workshop, we are not exploring css (cascading style sheets), but this is essentially how you can customise the look of html pages. If you are not totally happy with the preset themes, you can explore how to edit the css styling on the <a href="https://quarto.org/docs/visual-editor/content.html#css-styles" target="_blank">CSS Styles</a> Quarto documentation.</p>
+<ol start="5" type="1">
+<li>Rendering files</li>
+</ol>
+<p>Once you have finished editing each page and you want to check how it looks, you need to click Render for Quarto to process the code and turn it into something pretty. Once you click Render, you can open it up in the browser and keep checking as you make edits.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you introduce an error, you will get an error and red box on the screen to highlight Quarto cannot render the book. If you look in the Background Jobs tab in the console below, you should get an error message for the source of the problem if you are unsure what you did wrong.</p>
+</div>
+</div>
+<p>These are the key components to make your website. Until this point, these edits all exist on your own computer. But now it is time to track your code using github and make your website accessible online via github pages. Skip ahead to the <a href="#create-github">creating a github repository</a> section if you do not want to read about blogs.</p>
 </section>
 <section id="blog-template" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="blog-template"><span class="header-section-number">5.4</span> Tour of the Quarto blog template</h2>
@@ -371,16 +512,16 @@ Adding new pages to your website
 <p>By default, your website will have the main index and an about page in the navigation bar. To add more pages, simply create new .qmd files in the directory (including at least a title in the YAML) and specify where you want them in the .yml file.</p>
 </div>
 </div>
-<p>For presenting your book using github pages, edit the <code>project</code> from the standard first two lines:</p>
+<p>For presenting your blog using github pages, edit the <code>project</code> from the standard first two lines:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>project<span class="sc">:</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  type<span class="sc">:</span> website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>project<span class="sc">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  type<span class="sc">:</span> website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To add a new third line:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>project<span class="sc">:</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  type<span class="sc">:</span> website</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">-</span>dir<span class="sc">:</span> docs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>project<span class="sc">:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  type<span class="sc">:</span> website</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  output<span class="sc">-</span>dir<span class="sc">:</span> docs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Be careful, indentation is important in .yml files. We do this as by default, it will create a folder called <code>_site</code> where the rendered .html files will live. For github pages though, it looks for a folder called <code>docs</code>, so this will streamline things later.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -396,10 +537,29 @@ Adding Google analytics
 <p>If you want to track how many people view your website and access other kinds of analytics, you can add a Google analytics key into the .yml options.</p>
 <p>You would add it into the <code>website:</code> section like:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>website<span class="sc">:</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  google<span class="sc">-</span>analytics<span class="sc">:</span> <span class="st">"UA-XXXXXXXX"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>website<span class="sc">:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  google<span class="sc">-</span>analytics<span class="sc">:</span> <span class="st">"UA-XXXXXXXX"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>There are additional options like turning on a cookies warning if you are using this feature to tell people you are tracking user activity on your website, so I recommend reading the <a href="https://quarto.org/docs/websites/website-tools.html#google-analytics">Quarto documentation</a> for these features.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Add a license for your work
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>One important consideration is telling people how they can use your work. In the .yml, you can specify a license (see the <a href="https://quarto.org/docs/authoring/front-matter.html#license" target="_blank">License section</a> of the documentation) and make this super clear in the footer of your output. I like to specify this using the following settings under <code>website</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>website<span class="sc">:</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  license<span class="sc">:</span> <span class="st">"CC BY-SA"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  page<span class="sc">-</span>footer<span class="sc">:</span> CC<span class="sc">-</span>BY<span class="sc">-</span>SA<span class="fl">-4.0</span> (<span class="dv">2025</span>) James Bartlett</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>I usually apply a CC-BY-SA license from Creative Commons as one of the most permissive licenses for reusing work, but they must provide attribution. You can look at the <a href="https://creativecommons.org/share-your-work/cclicenses/" target="_blank">Creative Commons site</a> for different license options.</p>
 </div>
 </div>
 <ol start="2" type="1">
@@ -418,6 +578,10 @@ Adding Google analytics
 <p>By default, you get two example posts to show how they should be structured. In index.qmd, part of the YAML specified <code>contents: posts</code>. This means it is using the contents of the <code>posts</code> folder to generate the blog posts.</p>
 <p>If you click on the <code>posts</code> folder, you will see each post lives in its own folder. To create a new post, you would create a new folder with a short but informative name. Within that folder, there is another index.qmd file and any supporting files such as images. Each post needs its own index file and the YAML at the top controls the title, author, date, and any categories. Editing these will customise the look of the post in the preview on your home page and the top of your blog post when you open it.</p>
 <ol start="5" type="1">
+<li>Custom css styling</li>
+</ol>
+<p>The only other file remaining in the template is styles.css. In this workshop, we are not exploring css (cascading style sheets), but this is essentially how you can customise the look of html pages. If you are not totally happy with the preset themes, you can explore how to edit the css styling on the <a href="https://quarto.org/docs/visual-editor/content.html#css-styles" target="_blank">CSS Styles</a> Quarto documentation.</p>
+<ol start="6" type="1">
 <li>Rendering files</li>
 </ol>
 <p>Once you have finished editing each page or post and you want to check how it looks, you need to click Render for Quarto to process the code and turn it into something pretty. Once you click Render, you can open it up in the browser and keep checking as you make edits.</p>
@@ -436,8 +600,8 @@ Caution
 </div>
 <p>These are the key components to make your blog. Until this point, these edits all exist on your own computer. But now it is time to track your code using github and make your blog accessible online via github pages.</p>
 </section>
-<section id="creating-a-github-repository" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="creating-a-github-repository"><span class="header-section-number">5.5</span> Creating a github repository</h2>
+<section id="create-github" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="create-github"><span class="header-section-number">5.5</span> Creating a github repository</h2>
 <p>Once you have a working barebones version of your website ready to go, it’s time to associate your website folder with a github repository and start some version control. If you want another resource, you can see the <a href="https://docs.github.com/en/desktop/overview/creating-your-first-repository-using-github-desktop" target="_blank">github documentation online</a>.</p>
 <p>In future, you could actually start with this part. You can create a new folder, create a repository using this new folder, and then create a new R Project for your output within this folder. However, we started by creating the website first, so we need to create a repository for an existing folder without a git component.</p>
 <p>In the github desktop application, click <code>add &gt;&gt; Create a New Repository</code> and complete the details.</p>
@@ -1212,8 +1376,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>CC-BY-SA-4.0 (2025) James Bartlett</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/BartlettJE/dissemination_quarto/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/BartlettJE/dissemination_quarto/blob/main/quarto_websites.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/BartlettJE/dissemination_quarto/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/BartlettJE/dissemination_quarto/blob/main/quarto_websites.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
+</body></html>

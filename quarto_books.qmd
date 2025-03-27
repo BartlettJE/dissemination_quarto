@@ -71,6 +71,20 @@ project:
 
 Be careful, indentation is important in .yml files. We do this as by default, it will create a folder called `_book` where the rendered .html files will live. For github pages though, it looks for a folder called `docs`, so this will streamline things later.
 
+::: {.callout-important}
+#### Add a license for your work
+
+One important consideration is telling people how they can use your work. In the .yml, you can specify a license (see the [License section](https://quarto.org/docs/authoring/front-matter.html#license){target="_blank"} of the documentation) and make this super clear in the footer of your output. I like to specify this using the following settings under `website`: 
+
+```{r eval=FALSE}
+book:
+  license: "CC BY-SA"
+  page-footer: CC-BY-SA-4.0 (2025) James Bartlett
+```
+
+I usually apply a CC-BY-SA license from Creative Commons as one of the most permissive licenses for reusing work, but they must provide attribution. You can look at the [Creative Commons site](https://creativecommons.org/share-your-work/cclicenses/){target="_blank"} for different license options.
+:::
+
 2.  index.qmd
 
 Index will be the opening page for the link to your book, so this will typically include an overview of what your book contains, who to contact for problems/questions etc.

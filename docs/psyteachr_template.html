@@ -362,6 +362,25 @@ What is a .yml file?
 </div>
 </div>
 <p>Within the .yml file, I will highlight key features in: project, book, bibliography, csl, and format.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Add a license for your work
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>One important consideration is telling people how they can use your work. In the .yml, you can specify a license (see the <a href="https://quarto.org/docs/authoring/front-matter.html#license" target="_blank">License section</a> of the documentation) and make this super clear in the footer of your output. I like to specify this using the following settings under <code>website</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>book<span class="sc">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  license<span class="sc">:</span> <span class="st">"CC BY-SA"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  page<span class="sc">-</span>footer<span class="sc">:</span> CC<span class="sc">-</span>BY<span class="sc">-</span>SA<span class="fl">-4.0</span> (<span class="dv">2025</span>) James Bartlett</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>I usually apply a CC-BY-SA license from Creative Commons as one of the most permissive licenses for reusing work, but they must provide attribution. You can look at the <a href="https://creativecommons.org/share-your-work/cclicenses/" target="_blank">Creative Commons site</a> for different license options.</p>
+</div>
+</div>
 <ol start="2" type="1">
 <li>index.qmd</li>
 </ol>
@@ -413,8 +432,8 @@ Tip
 <div class="callout-body-container callout-body">
 <p>If you are converting a previous book to the new template, there is a handy little function <code>rmd2qmd</code>. This copies .Rmd files and renames them to .qmd. The function looks like this</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rmd2qmd</span>(<span class="at">from_path =</span> <span class="st">""</span>,  <span class="co"># file path where your .Rmd files are</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">to_path =</span> <span class="st">""</span>) <span class="co"># file path where you want your new .qmd files to go</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rmd2qmd</span>(<span class="at">from_path =</span> <span class="st">""</span>,  <span class="co"># file path where your .Rmd files are</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">to_path =</span> <span class="st">""</span>) <span class="co"># file path where you want your new .qmd files to go</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>where you specify a file path to access the old .Rmd files and a file path to where you want the new .qmd files saving. Keep your working directory in mind as you will probably be starting from your book folder at this point. I usually save my old .Rmd files in a folder within the new book directory, then save the new .qmd files to the new book main directory.</p>
 </div>
@@ -1229,8 +1248,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>CC-BY-SA-4.0 (2025) James Bartlett</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/BartlettJE/dissemination_quarto/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/BartlettJE/dissemination_quarto/blob/main/psyteachr_template.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/BartlettJE/dissemination_quarto/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li><li><a href="https://github.com/BartlettJE/dissemination_quarto/blob/main/psyteachr_template.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div></div></footer></body></html>
+</body></html>

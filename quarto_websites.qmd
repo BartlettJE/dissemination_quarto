@@ -54,7 +54,120 @@ Although there is a lot of overlap between the two outputs, I have split the tou
 
 ## Tour of the Quarto website template {#website-template}
 
-Blah.
+1.  `_quarto.yml`
+
+We will start by exploring the `_quarto.yml` file where you can edit all the details for your website, like the title, licence, theme, and any styling. In Quarto websites, this is also how you control the number and order of pages in the navigation bar.
+
+::: callout-note
+#### What is a .yml file?
+
+YAML / .yml are configuration files for programs which must follow specific formatting conventions.
+:::
+
+Within the .yml file, I will highlight in the workshop key features such as: title, navbar, and format.
+
+::: callout-tip
+#### Adding new pages to your website
+
+By default, your website will have the main index and an about page in the navigation bar. To add more pages, simply create new .qmd files in the directory (including at least a title in the YAML) and specify where you want them in the .yml file.
+:::
+
+For presenting your website using github pages, edit the `project` from the standard first two lines:
+
+```{r eval=FALSE}
+project:
+  type: website
+```
+
+To add a new third line:
+
+```{r eval=FALSE}
+project:
+  type: website
+  output-dir: docs
+```
+
+Be careful, indentation is important in .yml files. We do this as by default, it will create a folder called `_site` where the rendered .html files will live. For Github Pages though, it looks for a folder called `docs`, so this will streamline things later.
+
+::: callout-tip
+#### Adding Google analytics
+
+If you want to track how many people view your website and access other kinds of analytics, you can add a Google analytics key into the .yml options.
+
+You would add it into the `website:` section like:
+
+```{r eval=FALSE}
+website:
+  google-analytics: "UA-XXXXXXXX"
+```
+
+There are additional options like turning on a cookies warning if you are using this feature to tell people you are tracking user activity on your website, so I recommend reading the [Quarto documentation](https://quarto.org/docs/websites/website-tools.html#google-analytics) for these features.
+:::
+
+::: {.callout-important}
+#### Add a license for your work
+
+One important consideration is telling people how they can use your work. In the .yml, you can specify a license (see the [License section](https://quarto.org/docs/authoring/front-matter.html#license){target="_blank"} of the documentation) and make this super clear in the footer of your output. I like to specify this using the following settings under `website`: 
+
+```{r eval=FALSE}
+website:
+  license: "CC BY-SA"
+  page-footer: CC-BY-SA-4.0 (2025) James Bartlett
+```
+
+I usually apply a CC-BY-SA license from Creative Commons as one of the most permissive licenses for reusing work, but they must provide attribution. You can look at the [Creative Commons site](https://creativecommons.org/share-your-work/cclicenses/){target="_blank"} for different license options.
+:::
+
+2.  index.qmd
+
+The index file will be the opening page to your website, so imagine it as a kind of home page. You can edit the title which may or may not be the same as your overall website title. Everything below the YAML section will be rendered as a regular .qmd file, so think about what you want to present to people.
+
+3.  About.qmd
+
+By default, you get an about page which is meant to describe you or your website. You might include information like your social media profiles and how best to contact you. 
+
+::: callout-tip
+#### Add about page formatting
+
+As you will see in the [blog section](#blog-template), the about page in a Quarto blog can include several default templates. Weirdly, this is not activated in the website template, but you can use the same code in the YAML section. 
+
+The standard about page will look like: 
+
+```{r, eval=FALSE}
+---
+title: "About"
+---
+```
+
+But you can specify `about` as a section to add this formatting and preset link options such as github:
+
+```{r eval=FALSE}
+---
+title: "About"
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com
+---
+```
+
+:::
+
+4. Custom css styling 
+
+The only other file remaining in the template is styles.css. In this workshop, we are not exploring css (cascading style sheets), but this is essentially how you can customise the look of html pages. If you are not totally happy with the preset themes, you can explore how to edit the css styling on the [CSS Styles](https://quarto.org/docs/visual-editor/content.html#css-styles){target="_blank"} Quarto documentation. 
+
+5.  Rendering files
+
+Once you have finished editing each page and you want to check how it looks, you need to click Render for Quarto to process the code and turn it into something pretty. Once you click Render, you can open it up in the browser and keep checking as you make edits.
+
+::: callout-caution
+If you introduce an error, you will get an error and red box on the screen to highlight Quarto cannot render the book. If you look in the Background Jobs tab in the console below, you should get an error message for the source of the problem if you are unsure what you did wrong.
+:::
+
+These are the key components to make your website. Until this point, these edits all exist on your own computer. But now it is time to track your code using github and make your website accessible online via github pages. Skip ahead to the [creating a github repository](#create-github) section if you do not want to read about blogs. 
 
 ## Tour of the Quarto blog template {#blog-template}
 
@@ -73,10 +186,10 @@ Within the .yml file, I will highlight in the workshop key features such as: tit
 ::: callout-tip
 #### Adding new pages to your website
 
-By default, your website will have the main index and an about page in the navigation bar. To add more pages, simply create new .qmd files in the directory (including at least a title in the YAML) and specify where you want them in the .yml file. 
+By default, your website will have the main index and an about page in the navigation bar. To add more pages, simply create new .qmd files in the directory (including at least a title in the YAML) and specify where you want them in the .yml file.
 :::
 
-For presenting your book using github pages, edit the `project` from the standard first two lines:
+For presenting your blog using github pages, edit the `project` from the standard first two lines:
 
 ```{r eval=FALSE}
 project:
@@ -96,16 +209,30 @@ Be careful, indentation is important in .yml files. We do this as by default, it
 ::: callout-tip
 #### Adding Google analytics
 
-If you want to track how many people view your website and access other kinds of analytics, you can add a Google analytics key into the .yml options. 
+If you want to track how many people view your website and access other kinds of analytics, you can add a Google analytics key into the .yml options.
 
-You would add it into the `website:` section like: 
+You would add it into the `website:` section like:
 
 ```{r eval=FALSE}
 website:
   google-analytics: "UA-XXXXXXXX"
 ```
 
-There are additional options like turning on a cookies warning if you are using this feature to tell people you are tracking user activity on your website, so I recommend reading the [Quarto documentation](https://quarto.org/docs/websites/website-tools.html#google-analytics) for these features. 
+There are additional options like turning on a cookies warning if you are using this feature to tell people you are tracking user activity on your website, so I recommend reading the [Quarto documentation](https://quarto.org/docs/websites/website-tools.html#google-analytics) for these features.
+:::
+
+::: {.callout-important}
+#### Add a license for your work
+
+One important consideration is telling people how they can use your work. In the .yml, you can specify a license (see the [License section](https://quarto.org/docs/authoring/front-matter.html#license){target="_blank"} of the documentation) and make this super clear in the footer of your output. I like to specify this using the following settings under `website`: 
+
+```{r eval=FALSE}
+website:
+  license: "CC BY-SA"
+  page-footer: CC-BY-SA-4.0 (2025) James Bartlett
+```
+
+I usually apply a CC-BY-SA license from Creative Commons as one of the most permissive licenses for reusing work, but they must provide attribution. You can look at the [Creative Commons site](https://creativecommons.org/share-your-work/cclicenses/){target="_blank"} for different license options.
 :::
 
 2.  index.qmd
@@ -114,11 +241,11 @@ For a blog, there is not too much to edit here. An index file will be the openin
 
 3.  About.qmd
 
-By default, you get an about page which is meant to describe you and provide key contact information, such as your social media profiles. 
+By default, you get an about page which is meant to describe you and provide key contact information, such as your social media profiles.
 
-About pages have a special template with a few presets which you can learn about in the [Quarto documentation](https://quarto.org/docs/websites/website-about.html){target="_blank"}. The default will be "jolla", but you can change it to another template that suits your needs. 
+About pages have a special template with a few presets which you can learn about in the [Quarto documentation](https://quarto.org/docs/websites/website-about.html){target="_blank"}. The default will be "jolla", but you can change it to another template that suits your needs.
 
-Otherwise, anything below the initial YAML section will be formatted like a regular .qmd file for text, code, images etc. 
+Otherwise, anything below the initial YAML section will be formatted like a regular .qmd file for text, code, images etc.
 
 4.  The `posts` folder
 
@@ -126,7 +253,11 @@ By default, you get two example posts to show how they should be structured. In 
 
 If you click on the `posts` folder, you will see each post lives in its own folder. To create a new post, you would create a new folder with a short but informative name. Within that folder, there is another index.qmd file and any supporting files such as images. Each post needs its own index file and the YAML at the top controls the title, author, date, and any categories. Editing these will customise the look of the post in the preview on your home page and the top of your blog post when you open it.
 
-5.  Rendering files
+5. Custom css styling 
+
+The only other file remaining in the template is styles.css. In this workshop, we are not exploring css (cascading style sheets), but this is essentially how you can customise the look of html pages. If you are not totally happy with the preset themes, you can explore how to edit the css styling on the [CSS Styles](https://quarto.org/docs/visual-editor/content.html#css-styles){target="_blank"} Quarto documentation. 
+
+6.  Rendering files
 
 Once you have finished editing each page or post and you want to check how it looks, you need to click Render for Quarto to process the code and turn it into something pretty. Once you click Render, you can open it up in the browser and keep checking as you make edits.
 
@@ -136,7 +267,7 @@ If you introduce an error, you will get an error and red box on the screen to hi
 
 These are the key components to make your blog. Until this point, these edits all exist on your own computer. But now it is time to track your code using github and make your blog accessible online via github pages.
 
-## Creating a github repository
+## Creating a github repository {#create-github}
 
 Once you have a working barebones version of your website ready to go, it's time to associate your website folder with a github repository and start some version control. If you want another resource, you can see the [github documentation online](https://docs.github.com/en/desktop/overview/creating-your-first-repository-using-github-desktop){target="_blank"}.
 
@@ -191,7 +322,7 @@ Once the site is live, I recommend adding the link to two places. First, save it
 ::: callout-tip
 #### Customise the URL
 
-By default, the URL to your website will be your github username + .github.io + your repository name. If you want to get fancy, you can add a custom domain from within Settings and Pages if you have bought one. See the [github documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site){target="_blank"} for further details. 
+By default, the URL to your website will be your github username + .github.io + your repository name. If you want to get fancy, you can add a custom domain from within Settings and Pages if you have bought one. See the [github documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site){target="_blank"} for further details.
 :::
 
 ::: callout-warning

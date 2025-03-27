@@ -20,7 +20,7 @@ For a selection of examples of the PsyTeachR book template, you can explore:
 
 You can see the whole PsyTeachR suite of resources on [our website](https://psyteachr.github.io/){target="_blank"}.
 
-Your main source of information for this output is the [Creating a Book](https://quarto.org/docs/books/){target="_blank"} section of the Quarto guide. 
+Your main source of information for this output is the [Creating a Book](https://quarto.org/docs/books/){target="_blank"} section of the Quarto guide.
 
 ## Creating the book template
 
@@ -67,6 +67,20 @@ YAML / .yml are configuration files for programs which must follow specific form
 :::
 
 Within the .yml file, I will highlight key features in: project, book, bibliography, csl, and format.
+
+::: {.callout-important}
+#### Add a license for your work
+
+One important consideration is telling people how they can use your work. In the .yml, you can specify a license (see the [License section](https://quarto.org/docs/authoring/front-matter.html#license){target="_blank"} of the documentation) and make this super clear in the footer of your output. I like to specify this using the following settings under `website`: 
+
+```{r eval=FALSE}
+book:
+  license: "CC BY-SA"
+  page-footer: CC-BY-SA-4.0 (2025) James Bartlett
+```
+
+I usually apply a CC-BY-SA license from Creative Commons as one of the most permissive licenses for reusing work, but they must provide attribution. You can look at the [Creative Commons site](https://creativecommons.org/share-your-work/cclicenses/){target="_blank"} for different license options.
+:::
 
 2.  index.qmd
 

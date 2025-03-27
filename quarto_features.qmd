@@ -5,29 +5,19 @@ library(webexercises)
 library(glossary)
 ```
 
-As you work on your own book, you might find the following features useful for inspiration.
+As you work on your own output, you might find the following features useful for inspiration.
 
 ## Quarto guide
 
 To check different features of Quarto, you can see an [extensive user guide](https://quarto.org/docs/guide/){target="_blank"} online.
 
-## Worked examples
-
-If you look through these books for inspiration, you can check the code to see how they do it.
-
-Dr Wil Toivo and I are rewriting the [Fundamentals of Quantitative Analysis](https://bartlettje.github.io/quant-fun-v3/){target="_blank"} book and you can see our [github repository](https://github.com/BartlettJE/quant-fun-v3){target="_blank"}.
-
-You can also see the [Applied Data Skills](https://psyteachr.github.io/ads-v3/){target="_blank"} book developed by Dr Emily Nordmann and Prof Lisa DeBruine, along with their [github repository](https://github.com/PsyTeachR/ads-v3){target="_blank"}.
-
-## Useful features
-
-### Markdown
+## Markdown
 
 Quarto still uses Markdown for formatting, so you can see this part of the [Quarto guide for Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html){target="_blank"}.
 
-#### Headers
+### Headers
 
-The book template table of contents goes by default to level 3 headers (but you can go to level 6 headers if you *really* want), so keep in mind what will be a logical nesting of headers, sub-headers etc. You add a hash for each level of header:
+The table of contents in Quarto outputs goes by default to level 3 headers (but you can go to level 6 headers if you *really* want), so keep in mind what will be a logical nesting of headers, sub-headers etc. You add a hash for each level of header:
 
 ```{r}
 # Level 1 header
@@ -37,7 +27,7 @@ The book template table of contents goes by default to level 3 headers (but you 
 ### Level 3 header
 ```
 
-#### Text formatting
+### Text formatting
 
 You make text *italics* by surrounding it with one star (`*italics*`), or **bold** by surrounding it with two stars (`**bold**`).
 
@@ -103,7 +93,7 @@ Or even sub-lists with a little indent:
 
 2.  List 2
 
-#### Links
+### Links
 
 You can add [hyperlinks](https://quarto.org/docs/authoring/markdown-basics.html#links-images){target="_blank"} with the form:
 
@@ -117,21 +107,21 @@ where the writing in square brackets is the text, and the link goes in the round
 [hyperlinks](https://quarto.org/docs/authoring/markdown-basics.html#links-images){target="_blank"}
 ```
 
-#### Internal hyperlinks
+### Internal hyperlinks
 
-If you want to reference a chapter or section of your book, you can create internal hyperlinks through curly brackets and a hash. For example, if I wanted to point you back to the [Workshop Plan](#workshop_plan) chapter, you first need to add a tag on the chapter heading:
+If you want to reference a chapter or section of your book, you can create internal hyperlinks through curly brackets and a hash. For example, if I wanted to point you back to the [workshop preparation](#workshop_prep) chapter, you first need to add a tag on the chapter heading:
 
 ```{r eval=FALSE}
-# Workshop plan {#workshop_plan}
+# Preparation before the workshop {#workshop_prep}
 ```
 
 You can then use the tag to create a link with a similar format to URL hyperlinks:
 
 ```{r eval=FALSE}
-...back to the [Workshop Plan](#workshop_plan) chapter
+...back to the [workshop preparation](#workshop_prep) chapter
 ```
 
-#### Images {#image_options}
+### Images {#image_options}
 
 There are different ways to add images, where the Markdown version uses a similar format to links which I will demonstrate through this duck:
 
@@ -181,9 +171,9 @@ knitr::include_graphics("images/Duck.png")
 knitr::include_graphics("images/Duck.png")
 ```
 
-### Code chunks
+## Code chunks
 
-If you are making a book to show code, there are a couple of features that might be useful.
+If you are making a book or website to show code, there are a couple of features that might be useful.
 
 Adding code chunks will by default show both the code and output:
 
@@ -207,7 +197,7 @@ If you want to demonstrate code but not execute it - such as to demonstrate inac
 rnorm(n = 5, mean = 10, sd = 2)
 ```
 
-### Callout blocks
+## Callout blocks
 
 My personal favourite features, you can highlight content with callout blocks. These range from notes that people might find interesting, to warnings that something could go mortally wrong.
 
@@ -301,7 +291,7 @@ Here is a caution about something.
 Here is a caution about something.
 :::
 
-### Embedding posts or videos
+## Embedding posts or videos
 
 When you write in Markdown language, it renders to a .html page. This means you can add html code directly into your .qmd files and it will render in the final .html page. If you want to embed posts from social media, you can copy the embed post code from something like BlueSky (click the three dots ... below a post and select embed post):
 
@@ -333,7 +323,7 @@ This is our data skills book for MSc conversion students, so they must rapidly g
 
 This also works for embedding something like a YouTube video where you can click `Share > Embed` from under a video, and paste the code into your .qmd file.
 
-### Equations using LaTeX
+## Equations using LaTeX
 
 For books, one useful feature might be the support of LaTeX equations if mathematics or statistics is a key component of your material. For example, you can add simple or complex equations within two dollar symbols:
 
@@ -349,7 +339,7 @@ $$
 E = MC^2
 $$
 
-### References
+## References
 
 If you want to add proper references instead of just hyperlinks, you need a .bib file from a reference manager.
 
@@ -392,11 +382,11 @@ csl: include/apa.csl
 `.csl` stands for citation style language and you can download one from the [Zotero style repository](https://www.zotero.org/styles){target="_blank"}. For example, you could search for vancouver, click on the link, and it will download a new .csl file you can add to your repository within `include/`.
 :::
 
-### `webexercises` interactive questions
+## `webexercises` interactive questions
 
-The book template automatically includes the `webexercises` package which can add interactive questions for self-tests. This is great for students checking their understanding through MCQs or adding easy to check answers like numbers.
+The PsyTeachR `booktem` automatically includes the `webexercises` package which can add interactive questions for self-tests. This is great for students checking their understanding through MCQs or adding easy to check answers like numbers.
 
-#### MCQs
+### MCQs
 
 You can add questions through inline code, or by first specifying them in an R code block if it makes it easier to edit longer text.
 
@@ -408,7 +398,7 @@ For example, this workshop is:
 `r longmcq(c(answer = "Life changing", "Boring", "Mediocre", "OK"))` 
 ```
 
-#### Single answer
+### Single answer
 
 You can ask simple single answers that are easy to evaluate:
 
@@ -418,7 +408,7 @@ You can ask simple single answers that are easy to evaluate:
 `r fitb(7)`
 ```
 
-#### True or false
+### True or false
 
 If you want an even simpler response, you can ask true or false.
 
@@ -428,7 +418,7 @@ If you want an even simpler response, you can ask true or false.
 `r torf(TRUE)`
 ```
 
-### Embedding files to download
+## Embedding files to download
 
 Using a similar format to creating hyperlinks, you can embed files for people to download and use in the chapter. This can be really useful for student activities as you can give them a data set to follow along to your tutorials with.
 
@@ -440,9 +430,9 @@ If you click on [.csv file](include/test_data.csv){target="_blank"}, it will dow
 click on [.csv file](include/test_data.csv)
 ```
 
-### Adding a glossary
+## Adding a glossary
 
-Another cool feature that Lisa created is adding a glossary of terms. `glossary` is its own R package, but by default `booktem` includes it. You have two options, you can either add your own definitions as you go along, or if you are teaching data skills, you can use the [PsyTeachR glossary](https://psyteachr.github.io/glossary/){target="_blank"}.
+Another cool feature that Lisa DeBruine created is adding a glossary of terms. `glossary` is its own R package, but by default `booktem` includes it. You have two options, you can either add your own definitions as you go along, or if you are teaching data skills, you can use the [PsyTeachR glossary](https://psyteachr.github.io/glossary/){target="_blank"}.
 
 ::: callout-important
 You still need to add definitions for anything that is not included in the PsyTeachR glossary. If you try and render and the item does not exist, you will get an error and you will need to manually add the definition within the inline code.

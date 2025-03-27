@@ -6,7 +6,9 @@ book:
   google-analytics: "G-VTQ832DEXY"
   title: "Dissemination using Quarto and Github Pages"
   author: "James Bartlett"
-  date: "03/20/2025"
+  date: "03/28/2025"
+  license: "CC BY-SA"
+  page-footer: CC-BY-SA-4.0 (2025) James Bartlett
   repo-url: https://github.com/BartlettJE/dissemination_quarto
   repo-actions: [issue, source]
   downloads:

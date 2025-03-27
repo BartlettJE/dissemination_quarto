@@ -81,6 +81,10 @@ Potentially the most unfamiliar element of this process will be working with git
 
 There is an [installation guide](https://github.com/git-guides/install-git){target="_blank"} on github, but we have access to a fantastic resource developed by our colleagues in Mathematics and Statistics. They developed an accessible online course on [Moodle](https://moodle.gla.ac.uk/course/view.php?id=41115){target="_blank"} introducing staff and students to version control using git and github. You will need the enrollment code **git_psych_24** to access the course. If you use it, please consider completing their feedback form on the Moodle page so they can improve the resource in future.
 
+::: {.callout-warning}
+Unfortunately, this course is only available to students and staff within the University of Glasgow. If you are not, please use the github guidance above or another resources for learning about git and github. 
+:::
+
 There are 7 units in total which do not take very long, but for the purposes of this workshop, I would consider 1 and 2 as **essential** for downloading git/github desktop and using it as a single user to track changes. Reaching this point will be super helpful for following along in the workshop as the terms will be more familiar to you like repositories, commits, and pushing changes.
 
 If you have time, completing unit 3 will give you everything you need if you are only using it on your own. If you plan on writing materials in a team, units 4 and 5 cover being a group project user, then 6 and 7 for advanced features.

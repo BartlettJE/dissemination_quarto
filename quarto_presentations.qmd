@@ -32,7 +32,7 @@ Once you have created your presentation .qmd file, you can Render it and see a b
 
 ## Editing your Quarto presentation
 
-Weirdly, the default presentation file does not actually specify it should be a presentation. So, your initial render was a very bland looking webpage. Edit the YAML section at the start of the file from the default title and author to add a few lines about the formatting:
+When you create a presentation, I have found it can be temperamental in whether the default presentation file actually specifies it should be a presentation. So, your initial render was a very bland looking document. Edit the YAML section at the start of the file from the default title and author to add a few lines about the formatting:
 
 ```{r eval=FALSE}
 ---
@@ -44,7 +44,7 @@ format:
 ---
 ```
 
-If you click Render again, *now* it will look and behave as a presentation.
+If you click Render again, *now* it will look and behave as a presentation. This is down to the `format: revealjs` element as revealjs is the engine for rendering slides as a .html file. 
 
 The `embed-resources` part makes the .html files slightly larger and takes longer to render but it means you can open them independently. Without this, there will be a folder in your directory called "yourtitle_files" which it needs to add the formatting. If you just shared the .html file without the files folder, it would look weird. If you set `embed-resources` to true, all the formatting will be contained within the .html file and you can share it as a single file.
 
@@ -191,7 +191,7 @@ These are the key components to make your presentation. Until this point, these 
 
 Once you have a working barebones version of your presentation ready to go, it's time to associate your presentation folder with a github repository and start some version control. If you want another resource, you can see the [github documentation online](https://docs.github.com/en/desktop/overview/creating-your-first-repository-using-github-desktop){target="_blank"}.
 
-In future, you could actually start with this part. You can create a new folder, create a repository using this new folder, and then add your new presentation. However, we started by creating the presentation first, so we need to create a repository for an existing folder without a git component.
+In future, you could actually start with this part. You can create a new repository/folder with git enabled, and then add your new presentation. However, we started by creating the presentation first, so we need to create a repository for an existing folder without a git component.
 
 In the github desktop application, click `add >> Create a New Repository` and complete the details.
 
@@ -204,6 +204,12 @@ As a reminder, please **do not** use a folder within OneDrive for your github re
 -   Name: This will be the name of your repository on github, so call it something short but sensible.
 
 -   Local path: Click Choose... and navigate to your presentation folder. You want the path to be the main folder your presentation lives in.
+
+::: callout-warning
+### Select the folder, do not double click
+
+One mistake I make every now and again is opening the folder you want to create a github repository for, rather than just selecting the folder. If you open the folder when selecting the local path, it will create a repository within your folder as a subdirectory. This means it will only apply version control to a level below your main folder and not track the files you want to track.
+:::
 
 The other fields you can edit later, so click Create Repository when you are ready.
 

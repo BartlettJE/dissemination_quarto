@@ -68,10 +68,10 @@ YAML / .yml are configuration files for programs which must follow specific form
 
 Within the .yml file, I will highlight key features in: project, book, bibliography, csl, and format.
 
-::: {.callout-important}
+::: callout-important
 #### Add a license for your work
 
-One important consideration is telling people how they can use your work. In the .yml, you can specify a license (see the [License section](https://quarto.org/docs/authoring/front-matter.html#license){target="_blank"} of the documentation) and make this super clear in the footer of your output. I like to specify this using the following settings under `website`: 
+One important consideration is telling people how they can use your work. In the .yml, you can specify a license (see the [License section](https://quarto.org/docs/authoring/front-matter.html#license){target="_blank"} of the documentation) and make this super clear in the footer of your output. I like to specify this using the following settings under `website`:
 
 ```{r eval=FALSE}
 book:
@@ -145,7 +145,7 @@ These are the key components to make your book. Until this point, these edits al
 
 Once you have a working barebones version of your book ready to go, it's time to associate your book folder with a github repository and start some version control. If you want another resource, you can see the [github documentation online](https://docs.github.com/en/desktop/overview/creating-your-first-repository-using-github-desktop){target="_blank"}.
 
-In future, you could actually start with this part. You can create a new folder, create a repository using this new folder, and then use the `create_book()` function to add the book file to. However, we started by creating the book first, so we need to create a repository for an existing folder without a git component.
+In future, you could actually start with this part. You can create a new repository/folder with git enabled, and then use `create_book()` function to add the book file to that repository/folder. However, we started by creating the book first, so we need to create a repository for an existing folder without a git component.
 
 In the github desktop application, click `add >> Create a New Repository` and complete the details.
 
@@ -158,6 +158,12 @@ As a reminder, please **do not** use a folder within OneDrive for your github re
 -   Name: This will be the name of your repository on github, so call it something short but sensible.
 
 -   Local path: Click Choose... and navigate to your book folder. You want the path to be the main folder your book lives in.
+
+::: callout-warning
+### Select the folder, do not double click
+
+One mistake I make every now and again is opening the folder you want to create a github repository for, rather than just selecting the folder. If you open the folder when selecting the local path, it will create a repository within your folder as a subdirectory. This means it will only apply version control to a level below your main folder and not track the files you want to track.
+:::
 
 The other fields you can edit later, so click Create Repository when you are ready.
 

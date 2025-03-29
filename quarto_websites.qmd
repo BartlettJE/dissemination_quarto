@@ -104,10 +104,10 @@ website:
 There are additional options like turning on a cookies warning if you are using this feature to tell people you are tracking user activity on your website, so I recommend reading the [Quarto documentation](https://quarto.org/docs/websites/website-tools.html#google-analytics) for these features.
 :::
 
-::: {.callout-important}
+::: callout-important
 #### Add a license for your work
 
-One important consideration is telling people how they can use your work. In the .yml, you can specify a license (see the [License section](https://quarto.org/docs/authoring/front-matter.html#license){target="_blank"} of the documentation) and make this super clear in the footer of your output. I like to specify this using the following settings under `website`: 
+One important consideration is telling people how they can use your work. In the .yml, you can specify a license (see the [License section](https://quarto.org/docs/authoring/front-matter.html#license){target="_blank"} of the documentation) and make this super clear in the footer of your output. I like to specify this using the following settings under `website`:
 
 ```{r eval=FALSE}
 website:
@@ -124,14 +124,14 @@ The index file will be the opening page to your website, so imagine it as a kind
 
 3.  About.qmd
 
-By default, you get an about page which is meant to describe you or your website. You might include information like your social media profiles and how best to contact you. 
+By default, you get an about page which is meant to describe you or your website. You might include information like your social media profiles and how best to contact you.
 
 ::: callout-tip
 #### Add about page formatting
 
-As you will see in the [blog section](#blog-template), the about page in a Quarto blog can include several default templates. Weirdly, this is not activated in the website template, but you can use the same code in the YAML section. 
+As you will see in the [blog section](#blog-template), the about page in a Quarto blog can include several default templates. Weirdly, this is not activated in the website template, but you can use the same code in the YAML section.
 
-The standard about page will look like: 
+The standard about page will look like:
 
 ```{r, eval=FALSE}
 ---
@@ -152,12 +152,11 @@ about:
       href: https://github.com
 ---
 ```
-
 :::
 
-4. Custom css styling 
+4.  Custom css styling
 
-The only other file remaining in the template is styles.css. In this workshop, we are not exploring css (cascading style sheets), but this is essentially how you can customise the look of html pages. If you are not totally happy with the preset themes, you can explore how to edit the css styling on the [CSS Styles](https://quarto.org/docs/visual-editor/content.html#css-styles){target="_blank"} Quarto documentation. 
+The only other file remaining in the template is styles.css. In this workshop, we are not exploring css (cascading style sheets), but this is essentially how you can customise the look of html pages. If you are not totally happy with the preset themes, you can explore how to edit the css styling on the [CSS Styles](https://quarto.org/docs/visual-editor/content.html#css-styles){target="_blank"} Quarto documentation.
 
 5.  Rendering files
 
@@ -167,7 +166,7 @@ Once you have finished editing each page and you want to check how it looks, you
 If you introduce an error, you will get an error and red box on the screen to highlight Quarto cannot render the book. If you look in the Background Jobs tab in the console below, you should get an error message for the source of the problem if you are unsure what you did wrong.
 :::
 
-These are the key components to make your website. Until this point, these edits all exist on your own computer. But now it is time to track your code using github and make your website accessible online via github pages. Skip ahead to the [creating a github repository](#create-github) section if you do not want to read about blogs. 
+These are the key components to make your website. Until this point, these edits all exist on your own computer. But now it is time to track your code using github and make your website accessible online via github pages. Skip ahead to the [creating a github repository](#create-github) section if you do not want to read about blogs.
 
 ## Tour of the Quarto blog template {#blog-template}
 
@@ -221,10 +220,10 @@ website:
 There are additional options like turning on a cookies warning if you are using this feature to tell people you are tracking user activity on your website, so I recommend reading the [Quarto documentation](https://quarto.org/docs/websites/website-tools.html#google-analytics) for these features.
 :::
 
-::: {.callout-important}
+::: callout-important
 #### Add a license for your work
 
-One important consideration is telling people how they can use your work. In the .yml, you can specify a license (see the [License section](https://quarto.org/docs/authoring/front-matter.html#license){target="_blank"} of the documentation) and make this super clear in the footer of your output. I like to specify this using the following settings under `website`: 
+One important consideration is telling people how they can use your work. In the .yml, you can specify a license (see the [License section](https://quarto.org/docs/authoring/front-matter.html#license){target="_blank"} of the documentation) and make this super clear in the footer of your output. I like to specify this using the following settings under `website`:
 
 ```{r eval=FALSE}
 website:
@@ -253,9 +252,9 @@ By default, you get two example posts to show how they should be structured. In 
 
 If you click on the `posts` folder, you will see each post lives in its own folder. To create a new post, you would create a new folder with a short but informative name. Within that folder, there is another index.qmd file and any supporting files such as images. Each post needs its own index file and the YAML at the top controls the title, author, date, and any categories. Editing these will customise the look of the post in the preview on your home page and the top of your blog post when you open it.
 
-5. Custom css styling 
+5.  Custom css styling
 
-The only other file remaining in the template is styles.css. In this workshop, we are not exploring css (cascading style sheets), but this is essentially how you can customise the look of html pages. If you are not totally happy with the preset themes, you can explore how to edit the css styling on the [CSS Styles](https://quarto.org/docs/visual-editor/content.html#css-styles){target="_blank"} Quarto documentation. 
+The only other file remaining in the template is styles.css. In this workshop, we are not exploring css (cascading style sheets), but this is essentially how you can customise the look of html pages. If you are not totally happy with the preset themes, you can explore how to edit the css styling on the [CSS Styles](https://quarto.org/docs/visual-editor/content.html#css-styles){target="_blank"} Quarto documentation.
 
 6.  Rendering files
 
@@ -271,7 +270,7 @@ These are the key components to make your blog. Until this point, these edits al
 
 Once you have a working barebones version of your website ready to go, it's time to associate your website folder with a github repository and start some version control. If you want another resource, you can see the [github documentation online](https://docs.github.com/en/desktop/overview/creating-your-first-repository-using-github-desktop){target="_blank"}.
 
-In future, you could actually start with this part. You can create a new folder, create a repository using this new folder, and then create a new R Project for your output within this folder. However, we started by creating the website first, so we need to create a repository for an existing folder without a git component.
+In future, you could actually start with this part. You can create a new repository/folder with git enabled, and then add your R Project files for your output within this folder. However, we started by creating the website first, so we need to create a repository for an existing folder without a git component.
 
 In the github desktop application, click `add >> Create a New Repository` and complete the details.
 
@@ -284,6 +283,12 @@ Unless you want to buy a custom URL, the typical format for the link will be you
 -   Name: This will be the name of your repository on github, so call it something short but sensible.
 
 -   Local path: Click Choose... and navigate to your website folder. You want the path to be the main folder your website lives in.
+
+::: callout-warning
+### Select the folder, do not double click
+
+One mistake I make every now and again is opening the folder you want to create a github repository for, rather than just selecting the folder. If you open the folder when selecting the local path, it will create a repository within your folder as a subdirectory. This means it will only apply version control to a level below your main folder and not track the files you want to track.
+:::
 
 The other fields you can edit later, so click Create Repository when you are ready.
 

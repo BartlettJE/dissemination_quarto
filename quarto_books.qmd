@@ -18,6 +18,10 @@ Your main source of information for this output is the [Creating a Book](https:/
 
 ## Creating a Quarto book
 
+If you would like a video walkthrough of this chapter, you can follow the steps via YouTube:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Hbixs7ACvvw?si=tULMbWL9TSdKC-vv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 If you have not followed the [preparation instructions](#workshop_prep) yet, you need R/RStudio and git/github desktop installed on your computer. I will be demonstrating how to use github desktop rather than the command line, as git could easily be it's own workshop.
 
 The first step is thinking about where you want your book folder stored on your computer for where all the files will live. I have a folder within `Documents` called `git_repos` where I store all my git repositories away from OneDrive (see below).
@@ -150,15 +154,21 @@ As a reminder, please **do not** use a folder within OneDrive for your github re
 
 -   Local path: Click Choose... and navigate to your book folder. You want the path to be the main folder your book lives in.
 
+- Git Ignore: From the drop-down, select R. By default, git will version control every file but we do not need it to track everything. By selecting R, it will create a git ignore file which tells git which files or file types you do not want it to track.
+
 ::: callout-warning
 ### Select the folder, do not double click
 
 One mistake I make every now and again is opening the folder you want to create a github repository for, rather than just selecting the folder. If you open the folder when selecting the local path, it will create a repository within your folder as a subdirectory. This means it will only apply version control to a level below your main folder and not track the files you want to track.
 :::
 
-The other fields you can edit later, so click "Create Repository" when you are ready.
+I will demonstrate how to add a licence in another chapter, so click "Create Repository" when you are ready.
 
 Your newly minted repository should be showing as the Current Repository. This exists on your computer, but it is still not available online. You need to click Publish repository, and that will push all of your files to github and be available online.
+
+Before moving on, go back to RStudio and open up your new .gitignore file which should be visible in the Files pane. Scroll down and around line 42/43 it will say `/docs`. Delete the comment and `/docs` as we do want to track these files since they are important for showing your book as a webpage.
+
+Once you save the changes, you will see your first example of version control as Github Desktop will show your edit and all the files within `/docs` it has now started tracking. Try a commit message saying something like "Track docs on github" and click "commit 1 file to main". Finally, at the top of the window, click push to origin and your edits will make it to Github. I explain more about the committing and pushing process later in the chapter, but it was important to start tracking `docs` before we move on. 
 
 ## Navigating github and github pages
 

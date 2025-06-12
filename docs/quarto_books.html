@@ -306,6 +306,9 @@ gtag('config', 'G-VTQ832DEXY', { 'anonymize_ip': true});
 </section>
 <section id="creating-a-quarto-book" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="creating-a-quarto-book"><span class="header-section-number">2.2</span> Creating a Quarto book</h2>
+<p>If you would like a video walkthrough of this chapter, you can follow the steps via YouTube:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Hbixs7ACvvw?si=tULMbWL9TSdKC-vv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
 <p>If you have not followed the <a href="workshop_prep.html">preparation instructions</a> yet, you need R/RStudio and git/github desktop installed on your computer. I will be demonstrating how to use github desktop rather than the command line, as git could easily be it’s own workshop.</p>
 <p>The first step is thinking about where you want your book folder stored on your computer for where all the files will live. I have a folder within <code>Documents</code> called <code>git_repos</code> where I store all my git repositories away from OneDrive (see below).</p>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -472,6 +475,7 @@ Seriously, do not create github repositories within OneDrive
 <ul>
 <li><p>Name: This will be the name of your repository on github, so call it something short but sensible. It makes sense to call this the same as your book folder wherever possible.</p></li>
 <li><p>Local path: Click Choose… and navigate to your book folder. You want the path to be the main folder your book lives in.</p></li>
+<li><p>Git Ignore: From the drop-down, select R. By default, git will version control every file but we do not need it to track everything. By selecting R, it will create a git ignore file which tells git which files or file types you do not want it to track.</p></li>
 </ul>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -486,8 +490,10 @@ Select the folder, do not double click
 <p>One mistake I make every now and again is opening the folder you want to create a github repository for, rather than just selecting the folder. If you open the folder when selecting the local path, it will create a repository within your folder as a subdirectory. This means it will only apply version control to a level below your main folder and not track the files you want to track.</p>
 </div>
 </div>
-<p>The other fields you can edit later, so click “Create Repository” when you are ready.</p>
+<p>I will demonstrate how to add a licence in another chapter, so click “Create Repository” when you are ready.</p>
 <p>Your newly minted repository should be showing as the Current Repository. This exists on your computer, but it is still not available online. You need to click Publish repository, and that will push all of your files to github and be available online.</p>
+<p>Before moving on, go back to RStudio and open up your new .gitignore file which should be visible in the Files pane. Scroll down and around line 42/43 it will say <code>/docs</code>. Delete the comment and <code>/docs</code> as we do want to track these files since they are important for showing your book as a webpage.</p>
+<p>Once you save the changes, you will see your first example of version control as Github Desktop will show your edit and all the files within <code>/docs</code> it has now started tracking. Try a commit message saying something like “Track docs on github” and click “commit 1 file to main”. Finally, at the top of the window, click push to origin and your edits will make it to Github. I explain more about the committing and pushing process later in the chapter, but it was important to start tracking <code>docs</code> before we move on.</p>
 </section>
 <section id="navigating-github-and-github-pages" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="navigating-github-and-github-pages"><span class="header-section-number">2.5</span> Navigating github and github pages</h2>

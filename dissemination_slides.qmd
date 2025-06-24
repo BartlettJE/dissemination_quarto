@@ -1,0 +1,61 @@
+---
+title: "An R/Quarto tutorial for writing open educational materials"
+author: "![](images/UKCOTS_25.png){width=300} <br> Dr James Bartlett <br> School of Psychology and Neuroscience <br> @bartlettje.bsky.social"
+format: 
+  revealjs:
+    theme: simple
+    embed-resources: true
+editor: visual
+---
+
+## Preparation steps
+
+-   R/RStudio downloaded to your laptop ✔️
+    -   At least RStudio v2022.07 or later
+
+\newline
+
+-   A github account if you do not have one already ✔️
+    -   Consider applying for an education account!
+
+\newline
+
+-   Download github desktop to access git and a graphical user interface (GUI) ✔️
+
+## Why open educational materials?
+
+::: incremental
+-   Although credit/incentives are not always optimal, open materials/tutorials benefit science ([PsyTeachR Team, 2022](https://www.nature.com/articles/s44159-022-00058-8)).
+
+\newline
+
+-   Academics need to work on self-branding to build your profile and reputation ([Dijkstra, 2022](https://www.timeshighereducation.com/campus/building-your-research-profile-social-media-focus-linkedin)).
+
+\newline
+
+-   "For the love of God, share what you do" ([Nordmann, 2025](https://www.emilynordmann.com/post/supporting-scholarship-in-yourself-and-others/)).
+:::
+
+# Key terminology
+
+## Quarto
+
+-   **Quarto** = scientific and technical publishing system to combine text and code.
+    -   **Render** = generate a new file that combines text, code, and output.
+
+## github
+
+-   **github** = a developer platform for managing and sharing code.
+    -   **git** = a version control system to track code/files.
+    -   **Repository** = a folder containing a saved version of your code.
+    -   **Pull** = retrieve the current version of code in a repository.
+    -   **Commit** = save any current changes to code.
+    -   **Push** = upload your changes to your repository.
+
+## Quarto workflow {.center}
+
+![](images/Quarto_workflow.png)
+
+## Dissemination workflow
+
+![](images/workflow flowchart.png)

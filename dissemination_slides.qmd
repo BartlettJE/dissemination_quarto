@@ -1,11 +1,11 @@
 ---
 title: "An R/Quarto tutorial for writing open educational materials"
-author: "![](images/UKCOTS_25.png){width=300} <br> Dr James Bartlett <br> School of Psychology and Neuroscience <br> @bartlettje.bsky.social"
+author: "Dr James Bartlett <br> University of Glasgow <br> @bartlettje.bsky.social <br> ESPLAT 2025 Münster 🇩🇪"
 format: 
   revealjs:
     theme: simple
     embed-resources: true
-editor: visual
+editor: source
 ---
 
 ## Preparation steps
@@ -58,4 +58,4 @@ editor: visual
 
 ## Dissemination workflow
 
-![](images/workflow flowchart.png)
+![](images/workflow%20flowchart.png)

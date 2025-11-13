@@ -4,7 +4,7 @@ In this chapter, you will learn how to create professional websites and/or blogs
 
 ## Example websites and Quarto documentation
 
-For an example of a Quarto website, you can explore the [UK Conference on Teaching Statistics](https://www.ukcots.org/){target="_blank"} website which I helped to create and maintain. If there is a feature you like, you can see the [source code on github](https://github.com/rssteachingstats/ukcots){target="_blank"} to adapt to your needs.
+For an example of a Quarto website, you can explore [my personal website](https://bartlettje.github.io/){target="_blank"}  or the [UK Conference on Teaching Statistics](https://www.ukcots.org/){target="_blank"} website which I helped to create and maintain. If there is a feature you like, you can see the [source code on github](https://github.com/rssteachingstats/ukcots){target="_blank"} to adapt to your needs.
 
 For other examples, Solomon Kurz - a psychology researcher who writes about programming / stats - posted on BlueSky about academic websites. The thread has over 40 replies, so you can explore how other people have used Quarto or similar tools:
 

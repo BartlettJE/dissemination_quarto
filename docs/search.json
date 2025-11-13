@@ -306,7 +306,7 @@
     "href": "quarto_websites.html",
     "title": "5  Websites and blogs",
     "section": "",
-    "text": "5.1 Example websites and Quarto documentation\nFor an example of a Quarto website, you can explore the UK Conference on Teaching Statistics website which I helped to create and maintain. If there is a feature you like, you can see the source code on github to adapt to your needs.\nFor other examples, Solomon Kurz - a psychology researcher who writes about programming / stats - posted on BlueSky about academic websites. The thread has over 40 replies, so you can explore how other people have used Quarto or similar tools:\nYour main source of information for this output is the Creating a Website and Creating a Blog sections of the Quarto guide.",
+    "text": "5.1 Example websites and Quarto documentation\nFor an example of a Quarto website, you can explore my personal website or the UK Conference on Teaching Statistics website which I helped to create and maintain. If there is a feature you like, you can see the source code on github to adapt to your needs.\nFor other examples, Solomon Kurz - a psychology researcher who writes about programming / stats - posted on BlueSky about academic websites. The thread has over 40 replies, so you can explore how other people have used Quarto or similar tools:\nYour main source of information for this output is the Creating a Website and Creating a Blog sections of the Quarto guide.",
     "crumbs": [
       "Creating Websites",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Websites and blogs</span>"

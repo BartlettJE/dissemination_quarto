@@ -1,6 +1,6 @@
 ---
-title: "An R/Quarto tutorial for writing open educational materials"
-author: "Dr James Bartlett <br> University of Glasgow <br> @bartlettje.bsky.social <br> ESPLAT 2025 Münster 🇩🇪"
+title: "Dissemination using Quarto and Github Pages"
+author: "Dr James Bartlett <br> University of Glasgow <br> @bartlettje.bsky.social <br> Data Upskilling Workshop"
 format: 
   revealjs:
     theme: simple
@@ -22,7 +22,7 @@ editor: source
 
 -   Download github desktop to access git and a graphical user interface (GUI) ✔️
 
-## Why open educational materials?
+## Why share you/your work?
 
 ::: incremental
 -   Although credit/incentives are not always optimal, open materials/tutorials benefit science ([PsyTeachR Team, 2022](https://www.nature.com/articles/s44159-022-00058-8)).

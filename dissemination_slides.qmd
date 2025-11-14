@@ -1,6 +1,6 @@
 ---
 title: "Dissemination using Quarto and Github Pages"
-author: "Dr James Bartlett <br> University of Glasgow <br> @bartlettje.bsky.social <br> Data Upskilling Workshop"
+author: "Dr James Bartlett <br> University of Glasgow <br> @bartlettje.bsky.social <br> Software Upskilling for Researchers"
 format: 
   revealjs:
     theme: simple
